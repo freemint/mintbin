@@ -1,0 +1,96 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(src/mintbin.c)
+AC_CANONICAL_SYSTEM
+AM_CONFIG_HEADER(config.h)
+AM_INIT_AUTOMAKE(mintbin, 0.3)
+
+dnl List of available translations.
+ALL_LINGUAS="de"
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_RANLIB 
+AC_PROG_INSTALL
+
+dnl This test must precede tests of compiler characteristics like
+dnl that for the inline keyword, since it may change the degree to
+dnl which the compiler supports such features.
+AC_ISC_POSIX
+AM_C_PROTOTYPES
+AC_C_CONST
+AC_C_BIGENDIAN
+AC_CHECK_SIZEOF(short, 2)
+AC_CHECK_SIZEOF(int, 4)
+AC_CHECK_SIZEOF(long int, 4)
+AC_C_CHAR_UNSIGNED
+
+AC_HEADER_STDC
+AC_STRUCT_TM
+AC_HEADER_TIME
+AC_HEADER_STAT
+AC_TYPE_SIGNAL
+AC_TYPE_MODE_T
+AC_TYPE_OFF_T
+AC_TYPE_SIZE_T
+
+dnl This test replaces the obsolescent AC_ISC_POSIX kludge.
+AC_CHECK_LIB(cposix, strerror, [LIBS="$LIBS -lcposix"])
+
+dnl Add missing library functions.
+AC_REPLACE_FUNCS(stpcpy strcasecmp strncasecmp strtol strtoul strstr)
+AC_FUNC_ALLOCA
+ 
+AC_CHECK_HEADERS(errno.h fcntl.h signal.h strings.h sys/time.h \
+sys/types.h sys/stat.h unistd.h values.h)
+
+AM_FUNC_ERROR_AT_LINE
+AM_FUNC_OBSTACK
+AC_FUNC_VPRINTF
+
+AC_CHECK_FUNCS(sbrk utimes)
+
+# Under Next 3.2 <utime.h> apparently does not define struct utimbuf
+# by default.
+AC_MSG_CHECKING([for utime.h])
+AC_CACHE_VAL(mb_cv_header_utime_h,
+[AC_TRY_COMPILE([#include <sys/types.h>
+#ifdef HAVE_TIME_H
+#include <time.h>
+#endif
+#include <utime.h>],
+[struct utimbuf s;],
+mb_cv_header_utime_h=yes, mb_cv_header_utime_h=no)])
+AC_MSG_RESULT($mb_cv_header_utime_h)
+if test $mb_cv_header_utime_h = yes; then
+  AC_DEFINE(HAVE_GOOD_UTIME_H)
+fi
+
+dnl This is just a kludge, should be removed.
+AC_CHECK_LIB(intl, bindtextdomain)
+
+dnl Now try not to mess up the cross-user's directories.
+crossincludedir=`echo $includedir | sed -e 's,/include$,,g' -e 's,/m68k-atari-mint,,g'`
+crossbindir=`echo $bindir | sed -e 's,/bin$,,g' -e 's,/m68k-atari-mint,,g'`
+crossincludedir=$crossincludedir/m68k-atari-mint/include
+crossbindir=$crossbindir/m68k-atari-mint/bin
+nativeincludedir=""
+nativebindir=""
+if test x$host_os != xmint; then
+  includedir=$crossincludedir
+  bindir=$crossbindir
+else
+  if test x$crossincludedir != x$includedir; then
+    nativeincludedir=$includedir
+    includedir=$crossincludedir
+  fi
+  if test x$crossbindir != x$bindir; then
+    nativebindir=$bindir
+    bindir=$crossbindir
+  fi
+fi
+AC_SUBST(nativeincludedir)
+AC_SUBST(nativebindir)
+AM_GNU_GETTEXT
+
+AC_OUTPUT([lib/Makefile intl/Makefile include/Makefile include/mint/Makefile \
+src/Makefile po/Makefile.in doc/Makefile misc/Makefile Makefile])

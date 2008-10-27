@@ -1,0 +1,34 @@
+1999-06-02  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: - Added alloca.c.
+	- Fixed include path to allow builddir.
+	- Removed hash.c, added cplus-dem.c.
+	- Removed hash.h, added ansidecl.h, demangle.h and libmb.h.
+
+1999-06-02  Guido Flohr  <guido@zowee.localnet>
+
+	* Makefile.am: - Added alloca.c.
+	- Fixed include path to allow builddir.
+	- Removed hash.c, added cplus-dem.c.
+	- Removed hash.h, added ansidecl.h, demangle.h and libmb.h.
+
+1999-02-06  Guido Flohr  <guido@zowee.localnet>
+
+	* Makefile.am: Added i18n support.
+
+1999-02-06  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: Added i18n support.
+
+1999-01-10  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: Corrected include path to work with build directory.
+
+1999-01-10  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: Corrected include path to work with build directory.
+
+1999-01-09  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: New file.
+

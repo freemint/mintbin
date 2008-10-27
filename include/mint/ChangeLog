@@ -1,0 +1,48 @@
+1999-06-07  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: Various fixes for building on native platform.
+
+1999-06-06  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: Removed superfluous backslash.
+
+1999-06-03  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* prg-out.h:
+	Replaced non-portable macro names with underscored _MINT_ version.
+
+1999-06-02  Guido Flohr  <guido@zowee.localnet>
+
+	* Makefile.am:
+	Install in $(prefix)/m68k-atari-mint, create hard links on native
+	(MiNT) platform.
+
+1999-05-18  Guido Flohr  <guido@zowee.localnet>
+
+	* a.out.h:
+	Changed type "unsigned" to "__exec_unsigned" to provide rudimentary support
+	for short ints (16 bit).
+
+1999-01-31  Guido Flohr  <guido@zowee.localnet>
+
+	* prg-out.h:
+	Bugfix:  Member g_jump_entry was really unsigned char and not
+	unsigned long.
+
+1999-01-26  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* prg-out.h: Renamed base relocation to TPA relocation.
+
+1999-01-10  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* prg-out.h, a.out.h, Makefile.am: New file.
+
+
+
+
+
+
+
+
+
+	

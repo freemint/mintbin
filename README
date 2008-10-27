@@ -1,0 +1,63 @@
+The programs in this package are necessary as a supplement to
+the GNU binutils for MiNT.  Please read the file COPYING for
+licensing.  See INSTALL for installation hints, and please
+read README-alpha.
+
+This package has been internationalized with GNU gettext 0.10.35.
+Currently they are translations available for German only.  If you
+volunteer to translate the messages into your native language you
+are welcome to contact the author.  But please don't start at
+once.  It is possible that a lot of messages have already been 
+translated into your language.
+
+If you want to use the internationalized versions of the programs
+please proceed as follows:  First you should read the file 
+ABOUT-NLS.  This gives you almost all the necessary information.
+However, some special things should be observed on FreeMiNT
+installations.  Atari computers traditionally use a non-standard
+codeset.  A codeset describes the mapping between characters
+(more exactly glyphs, i. e. the graphical outline of a certain
+characters) and their corresponding numbers (i. e. the bytes
+that they are encoded with in text files).  For "normal" ASCII
+characters the Atari codeset is compatible to the standard
+codeset (ISO-Latin-1 also known as ISO-8859-1), for special
+characters like accented characters, characters with a cedille
+or trema, it isn't (to be exact this only applies to 
+Western European languages but in fact the Atari is not really
+prepared for use with other than Western European languages).
+
+If you are working in a terminal based environment everything
+is probably set up correctly because the standard FreeMiNT 
+distributions install an ISO-8859-1 font by default.  If you
+are working under a graphical user interface (AES) this is 
+not necessarily true.  As a consequence, internationalized 
+messages may not display correctly.
+
+What should you do?  Well, you will most probably use a terminal
+emulator like TOSWIN or MiniWIN.  These programs usually allow
+to use an alternative font (i. e. not the standard system font).
+Try to find a suitable ISO-8859-1 fonts for use with these programs.
+This makes sense not only for the mintbin package but for 
+a lot of other important programs like more, less, info, or
+man.  The most common names for the ISO-8859-1 fonts are
+"latin08.fnt" and "latin16.fnt".  Try to find them on your system,
+install them in your fonts directory (usually C:\GEMSYS) and
+use them with your terminal emulator.
+
+Setting your preferred language (not only for MiNTBin but for
+all internationalized software packages) is best done in your 
+/home/yourname/.profile resp. /home/yourname/.login file.  
+These are the changes for .profile:
+
+	LANGUAGE=xx
+	export LANGUAGE
+
+and these are the necessary changes for .login:
+
+	setenv LANGUAGE xx
+
+If you want to make these changes system-wide you should edit
+"/etc/profile" instead of "~/.profile" and "/etc/csh.cshrc"
+instead of ".login".  To set the language system-wide is not
+really recommended.  Somebody may log into your machine and
+may be very confused to see program messages in your language.

@@ -1,0 +1,1230 @@
+Dies ist die Info-Datei mintbin.info, hergestellt von Makeinfo Version
+1.68 aus der Eingabe-Datei mintbin.texi.
+
+INFO-DIR-SECTION FreeMiNT Binary Utilities
+START-INFO-DIR-ENTRY
+* mintbin: (mintbin).                   FreeMiNT binutils.
+* stack: (mintbin)Invoking stack.       Display and manipulate stack settings.
+* arconv: (mintbin)Invoking arconv.     Convert libraries.
+END-INFO-DIR-ENTRY
+
+   This file provides documentation for the FreeMiNT supplementary
+binary utilities.  It also serves to some extent as a FreeMiNT-specific
+reference for the GNU binutils.
+
+   Copyright (C) 1999 Guido Flohr.
+
+   Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+   Permission is granted to copy and distribute modified versions of
+this manual under the conditions for verbatim copying, provided that
+the entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+   Permission is granted to copy and distribute translations of this
+manual into another language, under the above conditions for modified
+versions, except that this permission notice may be stated in a
+translation approved by the Foundation.
+
+   This manual documents mintbin, the FreeMiNT supplementary binary
+utilities.  It also documents some FreeMiNT-specific features of the GNU
+binutils and it also serves as a documentation of the program format
+under FreeMiNT.
+
+   If you want to develop programs yourself with the GNU development
+tools you should primarily refer to the documentation of these tools
+(for example gcc or the GNU binutils).  This manual only covers
+FreeMiNT-specific aspects of these tools as well as the supplementary
+tools needed for FreeMiNT.
+
+
+File: mintbin.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+
+FreeMiNT binary utilities
+*************************
+
+* Menue:
+
+* Introduction::                Overview and quick start.
+
+* Managing program files::      Handling program files.
+* The program stack::           Meaning of the program stack.
+* The program runtime flags::  Meaning of the program runtime flags.
+* Managing libraries::          All about libraries.
+* The linker::                  Tips for linking.
+* Object files::                All about object files.
+* Program files::               Program file internals.
+* The GNU binutils::            Overview of the GNU binutils.
+
+
+The program stack
+
+* Invoking stack::              Invoking the stack program.
+* What is the stack::           Brief explanation of the term stack.
+* The stack size::              Influences of the stack size.
+
+Managing libraries
+
+* The ar library format::       Format of runtime libraries as produced
+                                by the GNU archiver.
+* Invoking arconv::             Invoking the arconv program
+* Library names::               Library naming schemes
+
+The linker
+
+* Changes::                     What has changed with respect to older
+                                linkers.
+* New features::                Features that are new to the linker.
+* Invoking ld::                 Invoking ld.
+
+Program files
+
+* History::                     The GEMDOS program format.
+* Layout of program files::     Layout of program files on disk.
+* The TPA relocation info::     The TPA relocation info.
+* The symbol table::            The format of a GNU symbol table.
+
+The GNU binutils
+
+* Internals::                   Some internals of the GNU binutils.
+* Building the GNU binutils::   Building the GNU binutils.
+
+
+File: mintbin.info,  Node: Introduction,  Next: Managing program files,  Prev: Top,  Up: Top
+
+Introduction
+************
+
+   The GNU binutils version 2.9.1 or later fully support the FreeMiNT
+platform.  If you migrate to the GNU binutils from older versions of
+the corresponding development tools you will experience some minor
+changes:
+
+   * The program format has slightly changed.  These changes are not
+     visible to the end-user but may be significant to developers.  If
+     you are a developer you should browse through the corresponding
+     sections of this manual (*note Program files::.).
+
+   * The library format has changed significantly.  You will not have
+     to recompile your libraries, you will also be able to re-use
+     old-style libraries that you download from the Internet or other
+     sources.  But you will have to convert these libraries to the new
+     format using the arconv program.  Please read the chapter on
+     libraries (*note Managing libraries::.) to get an idea of what you
+     will have to do.
+
+   * Older linkers available for FreeMiNT had some oddities which have
+     vanished.  Some non-standard options have vanished, some have been
+     renamed (for the sake of portability to other platforms).  And --
+     important -- the library naming scheme has changed.  If your
+     runtime libraries still have a filename extender of `.olb' you
+     should read the chapter on the linker (*note The linker::.).
+
+   * If you plan to build the GNU binutils for the first time you should
+     read the section on the GNU binutils (*note The GNU binutils::.)
+     in this manual.
+
+   This manual is still in *DRAFT* state.  Some sections are still
+empty, or almost.  Contributions are welcome.
+
+   Please send suggestions and corrections to:
+
+     Internet address:
+         <gufl0000@stud.uni-sb.de>
+
+Please include the manual's edition number and update date in your
+messages.
+
+
+File: mintbin.info,  Node: Managing program files,  Next: The program stack,  Prev: Introduction,  Up: Top
+
+Managing program files
+**********************
+
+   If you have some experience in developing applications in a GNU
+based environment you are probably used to various special tools needed
+to handle program files (as opposed to object files or library
+archives).  As for program files created by the GNU linker version
+2.9.1 you no longer need most of these tools.  You can list symbols
+with the nm program (as opposed to the cnm program), you can report
+section sizes with the size program (and won't need the csize program
+any longer), you can copy distinct file sections with the objcopy
+program (resp. the strip program which is actually just a special
+version of objcopy).  Most tools will now work on either kind of binary
+file, be it an object file, a library or a program file.  Such behavior
+is standard on most other platforms and now supported for FreeMiNT as
+well.
+
+   You should refer to the documentation of these programs as included
+in the GNU binutils distribution (*note Introduction:
+(Binutils)Introduction.).
+
+   Please note that you will still need the programs cnm and csize for
+old-style program files.  Please do not remove them from your
+installation.
+
+   Two "Atari-specialties" remain:  The manipulation of the stack size
+and the manipulation of the program runtime flags will be performed by
+tools described in the following chapters of this manual (*note The
+program stack::. and *note The program runtime flags::.).
+
+
+File: mintbin.info,  Node: The program stack,  Next: The program runtime flags,  Prev: Managing program files,  Up: Top
+
+The program stack
+*****************
+
+   The stack program allows to examine and modify the current settings
+for the stack size of a given executable.  Its default action is to
+print the current settings.  If a program else known to run stable
+crashes for non-obvious reasons it is often advisable to first change
+its stack size.
+
+* Menue:
+
+* Invoking stack::              Invoking the stack program.
+* What is the stack::           Brief explanation of the term stack.
+* The stack size::              Influences of the stack size.
+
+
+File: mintbin.info,  Node: Invoking stack,  Next: What is the stack,  Prev: The program stack,  Up: The program stack
+
+Invoking stack
+==============
+
+   The stack program is normally invoked as
+
+     Usage: stack [ OPTIONS ] INPUT-FILE ...
+
+   You may specify multiple input files at once.  If not input file at
+all is specified, stack will look for a file named `a.out' instead.
+
+   The stack program understands a couple of options which control its
+behavior.  Note that arguments that are mandatory to long options, are
+mandatory to short options too.
+
+`-S SIZE'
+`--fix=SIZE'
+`--size=SIZE'
+     These invocations all cause stack to change the stack size
+     hard-coded into the program file to SIZE.  If the SIZE argument
+     starts with either "0x" or "0X" it is interpreted as a hexadecimal
+     number in standard C notation.  Otherwise, if it starts with the
+     digit zero it is interpreted as an octal number.  Else (by
+     default) it is interpreted as a decimal number.
+
+`-s'
+`--silent'
+`--quiet'
+     If invoked with this option stack will only print fatal error
+     messages.
+
+`-v'
+`--verbose'
+     In verbose mode the stack program will write some diagnostic
+     output to standard error.  You should run stack in verbose mode if
+     you are not absolutely familiar with the things you are doing.
+
+`-h'
+`--help'
+     If this option is encountered a short usage summary is printed and
+     the program exits immediately.
+
+`-V'
+`--version'
+     The program will output some version and copyright information and
+     exit immediately.
+
+
+File: mintbin.info,  Node: What is the stack,  Next: The stack size,  Prev: Invoking stack,  Up: The program stack
+
+What is the stack
+=================
+
+   If you already know and understand what a program stack is you will
+not need an explanation.  If you do not, the explanation given here --
+which is incomplete and wrong to some extent -- will probably be just
+alright for you.
+
+   You can imagine the program stack as a region of multi-purpose
+memory attached to the end of a program.  A program stores various
+intermediate results or other temporary needed information on the
+stack.  The memory on the stack is very easy to access and easy to
+handle by the programmer.  A special processor register -- the stack
+pointer -- keeps track of the position from where a program may use the
+stack at any time during program invocation.
+
+   At program start-up the stack pointer will point to the end of the
+stack.  During execution, the stack will "grow", i. e.  the stack
+pointer will move forward to lower addresses whenever the program
+recurses deeper or whenever memory from the stack is allocated.  If the
+program returns to lower recursion levels or stack memory will not be
+used any longer the stack will "shrink", i. e. the stack pointer will
+point to higher addresses.
+
+   Unfortunately so much memory may be consumed from the stack or your
+program may recurse so deep that the stack pointer will finally point
+somewhere into the program's own memory.  Other operating systems can
+catch such critical conditions and will automatically increase the
+stack size.  FreeMiNT and all other GEMDOS-based operating systems fail
+to detect such "stack overflows".  The effect is just the same as if
+another program would write into the program's memory or as if the
+program you run was corrupted from the beginning.  The data that the
+program needs will be messed up.
+
+   All kinds of errors can occur on such conditions, unfortunately none
+of them is really reported as a stack overflow.  Usually you will see
+that your program crashes with a bus error or maybe an illegal
+instruction.  The latter is easy to understand if you remember that
+even the program assembler instructions may be overwritten by its own
+stack.
+
+   If you think now, that such stack overflows are usually due to
+unclean or lazy programming you are wrong.  Many applications (notably
+compilers or programs that make use of regular expressions or other
+pattern matching algorithms) will always need a large stack.  There is
+no way to avoid this.
+
+   Once convinced of that fact, you should also say good-bye to the
+idea that a programmer is always able to pre-calculate the required
+stack size for a program.  It is often possible to calculate an
+absolute minimum for the stack but it is seldom possible to foresee a
+maximum stack size.  The maximum stack size highly depends on the use
+you make of a particular piece of software.  If you use for example
+very deeply-nested regular expressions, or if you compiler has to deal
+with a very complicated source file this may result in extra-ordinarily
+high requirements for the stack size.
+
+   Often times, also a trade-off between runtime stability and memory
+consumption has to be made.  If you assign an extremely large stack to
+a program you will also increase the memory consumption of that program
+by the same degree.  It is sometimes advisable to increase the stack
+size only temporarily for a specific task and then change it back to a
+reasonable size after the task is performed.
+
+
+File: mintbin.info,  Node: The stack size,  Prev: What is the stack,  Up: The program stack
+
+The stack size
+==============
+
+   The SIZE argument give to `stack -S' is not always straight-forward.
+Some special values are actually treated in a special way.  As a matter
+of fact, the stack program and its interpretation of the stack size
+follows the MiNTlib conventions.  But you should not forget that this
+is only a convention which is very likely to apply to most programs but
+as with all conventions this is not really mandatory.
+
+   The MiNTlib treats this stack size values special:
+
+   * A stack size of zero (which is also the default stack size) will
+     cause the program to establish a stack of 8192 bytes.  This default
+      stack size will be alright for most purposes.
+
+   * A stack size of one, two or three will cause the program to
+     establish a stack of one-quarter, two-quarters or three-quarters
+     of the available memory respectively.  For most applications this
+     is simply overkill, but for others (especially compilers) one
+     of these settings may be the recommended one.
+
+   * A stack size of minus one signifies that all memory except a bare
+     minimum is reserved for the stack.  This makes it almost
+     impossible   to start new concurrent processes while this process
+     is running.    However this maybe the only choice if you need to
+     run a really   stack-intensive application (probably a compiler).
+
+   * Other negative stack sizes will cause the program to actually use
+     the corresponding positive value for the stack size.  The negative
+      value is used to change the way that other memory allocations are
+      done.  With a "negative" stack size such allocations are
+     satisfied   from the program heap.
+
+   * All other positive values are interpreted verbatim.  The resulting
+      stack will have exactly the size you specified.
+
+   When speaking of the available memory in terms of stack size this is
+actually wrong.  At program start-up the kernel will actually load the
+program image into the largest available block of free memory which is
+typically smaller than the overall sum of free memory you have.  This
+largest block is called the "transient program area" or "TPA".
+Calculations for the stack size are performed on the base of the TPA
+size and not of the actual amount of free memory.  Thus a less
+fragmented memory may result in more memory available to your program's
+stack.
+
+   Please note that the negative stack sizes (except minus one) should
+be considered somewhat dubious and error-prone.  If you encounter a
+program with such a negative stack size you should probably trust that
+the programmer knew what she was doing but you should not apply such
+negative stack sizes to other programs unless you really know what you
+are doing or you are really familiar with the original program sources.
+
+
+File: mintbin.info,  Node: The program runtime flags,  Next: Managing libraries,  Prev: The program stack,  Up: Top
+
+The program runtime flags
+*************************
+
+   Still waits to be written.
+
+
+File: mintbin.info,  Node: Managing libraries,  Next: The linker,  Prev: The program runtime flags,  Up: Top
+
+Managing libraries
+******************
+
+   With the GNU binutils version 2.9.1 or later library management for
+FreeMiNT has changed in many ways.  Libraries are still created and
+updated with the ar resp. the ranlib program, you can still list
+symbols with the nm program, but the internals differ from older
+versions.
+
+* Menue:
+
+* The ar library format::       Format of runtime libraries as produced
+                                by the GNU archiver.
+* Invoking arconv::             Invoking the arconv program
+* Library names::               Library naming schemes
+
+
+File: mintbin.info,  Node: The ar library format,  Next: Invoking arconv,  Prev: Managing libraries,  Up: Managing libraries
+
+The ar library format
+=====================
+
+   The ar program can create archive files for many purposes.  However
+this manual focuses on the use as a library archiver for runtime
+libraries.
+
+   An ar archive integrates an arbitrary number of individual files
+into one large file.  For runtime libraries a special archive member
+"__.SYMDEF" is also included most of the time.  This special member
+contains a table of symbols that are defined in the various object
+files contained in the library.  The linkage process is significantly
+faster if this member is present as it allows the linker to randomly
+access the archive members that satisfy references to a particular
+symbol (*note ar: (Binutils)ar.  for details).
+
+   The layout of a library archive on disk is as follows (also see the
+C header file `ar.h' included in the mintbin distribution):
+
+   The first eight bytes of a library archive contain the string
+"!<arch>\012" (where "\012" represent the decimal ASCII character 10 or
+octal 012), also known as line-feed.
+
+   These eight bytes are optionally followed by pairs of ar headers and
+archive members.
+
+   - Data type: struct ar_hdr
+
+     This data type precedes each individual archive (file) member in
+     an archive file.  It has the following members:
+
+    `char ar_name[16]'
+          The file name of the member as found when inserted into the
+          archive.
+
+    `char ar_date[12]'
+          The time the file was last modified.  The date is printed as
+          the number of seconds elapsed since Jan, 1, 1970 GMT (also
+          known as the epoch).
+
+    `char ar_uid[6]'
+          The user id of the owner of the original file.
+
+    `char ar_gid[6]'
+          The group id of the owner of the original file.
+
+    `char ar_mode[8]'
+          The file permission bits of the original file printed in
+          standard octal notation.
+
+    `char ar_size[10]'
+          The file size in bytes (printed as decimal).
+
+    `char ar_fmag[2]'
+          Always "`\012", i. e. decimal ASCII 96 followed by decimal
+          ASCII 10.
+
+   Please note that all members in this header are printed in "clear
+text" and that all members are padded with space (ASCII 32) to fill the
+required length.
+
+
+File: mintbin.info,  Node: Invoking arconv,  Next: Library names,  Prev: The ar library format,  Up: Managing libraries
+
+Invoking arconv
+===============
+
+   If you migrate to the GNU binutils from older FreeMiNT development
+tools or you download older libraries from the Internet or other
+sources these libraries may still be archived in the old format which
+is different from the new one.  You can convert them with the arconv
+program.
+
+   The arconv program is normally invoked as
+
+     Usage: arconv [ OPTIONS ] -o OUTPUT-FILE INPUT-FILE
+
+   The arconv program understands a couple of options which control its
+behavior.  Note that arguments that are mandatory to long options, are
+mandatory to short options too.
+
+`-o OUTPUT-FILE'
+`--output OUTPUT-FILE'
+     Write output into OUTPUT-FILE.  This option is mandatory.
+
+`-v'
+`--verbose'
+     The program will verbosely list the archive members while they are
+     processed.
+
+`-h'
+`--help'
+     If this option is encountered a short usage summary is printed and
+     the program exits immediately.
+
+`-V'
+`--version'
+     The program will output some version and copyright information and
+     exit immediately.
+
+   The program currently does not copy the __.SYMDEF member.  Please
+note that you will have to run the ranlib program on the output file in
+order to create it.
+
+
+File: mintbin.info,  Node: Library names,  Prev: Invoking arconv,  Up: Managing libraries
+
+Library names
+=============
+
+   Actually neither the GNU binutils nor the mintbin utilities care
+about the filename of a particular library.  But there is one single
+(and very commonly used) exception:  If you invoke the linker with the
+`-lLIB' option (*note Overview: (Ld)Overview. for details) the linker
+expects that the abbreviated library name expands to a file name in the
+library search path according to certain rules.
+
+   Example:
+     	ld crt0.o hello.o -L/usr/local/lib -lfoo -lc
+
+   The GNU linker (which absolutely follows the standard here) will
+actually look for two libraries called `libfoo.a' and `libc.a' in the
+library search path (`/usr/local/lib').
+
+   Older versions of the linker available for FreeMiNT (not all of
+them) did look instead for the files `foo.olb' and `c.olb'.  The reason
+for this strange behavior was obscure.  One argument was that it
+allowed to easily distinguish between libraries for the GNU tools and
+libraries for other development systems.  This is not very strong as
+(at least with the GNU linker) it is no problem to keep libraries in
+other directories.
+
+   Another argument was that the olb-scheme saved space, especially for
+file-systems that were not able to handle long filenames.  Nowadays it
+can be assumed that practically every system (at least those of program
+developers) supports long file names.
+
+   As a consequence this strange naming scheme is abandoned.
+
+
+File: mintbin.info,  Node: The linker,  Next: Object files,  Prev: Managing libraries,  Up: Top
+
+The linker
+**********
+
+   For a full description of the GNU linker please refer to the linker
+documentation that comes along with the GNU binutils (*note Overview:
+(Ld)Overview.).  For a brief overview you should type `ld --help'.
+This manual only covers some FreeMiNT-specific aspects.
+
+* Menue:
+
+* Changes::                     What has changed with respect to older
+                                linkers.
+* New features::                Features that are new to the linker.
+* Invoking ld::                 Invoking ld.
+
+
+File: mintbin.info,  Node: Changes,  Next: New features,  Prev: The linker,  Up: The linker
+
+Changes
+=======
+
+   If you are an experienced developer you may notice some differences
+between older linkers you used and the GNU linker version 2.9.1 or
+later.
+
+   The most important change is the meaning of the `-n' option.  This
+option actually always caused the linker to produce so-called "NMAGIC"
+executables (i. e. pure executables which are not page-aligned).  Since
+memory paging is currently no issue for FreeMiNT this option was
+"abused" for FreeMiNT's shared text feature (which is produced by
+giving gcc the "-mbaserel" option).  The linker option "-n" (resp.
+"-nmagic" or "-nmagic") is now the default option for the linker and
+does -- nothing!  See the description of the program format later in
+this manual for details (*note Layout of program files::.).  To make
+the linker create executables with a sharable text section you should
+now use the linker options "-mbaserel" (resp. "-mshared-text" or
+"-msharable-text" which have the same effect).
+
+   Other options which used to be supported (only sometimes) are not
+supported any longer or their meaning has changed.  Among these are for
+example "-H" for 16-bit libraries.
+
+   Only those options that are either documented in the "official"
+documentation of the GNU linker (that comes along with the GNU
+binutils) or here should be used.
+
+   Older versions of the linker available for FreeMiNT also changed the
+naming scheme for library archive files depending on the command-line
+options you used (*note Managing libraries::.).  These undocumented
+features have also vanished.  For example, if you want to create an
+executable with a sharable text section you have to explicitly specify
+the modified versions of the standard C start-up module and the C
+library:
+
+     	ld --mbaserel bcrt0.o hello.o -L/usr/local/lib -lbc
+
+   The linker will no longer automatically change the naming scheme, i.
+e. you have to explicitly link against `bcrt0.o' and `libbc.a'.  The
+same applies to the compiler option "-mshort".  This option is really
+of no importance for the linker and the linker will not automatically
+look for 16-bit start-up modules or 16-bit libraries.
+
+   For the standard start-up module (`*crt0*.o') and the standard
+runtime library (`lib*c*.a') you can achieve the same behavior by
+modifications of your gcc specs file.  But this is deprecated for
+compilations with 16 bit integers (first of all 16 bit integers should
+now really be considered obsolete and second it is not very
+transparent).  It may be used for executables with a sharable text
+section.  If you prefer you may modify your gcc specs file as follows:
+
+     ...
+     *link:
+     %{mbaserel:--mbaserel}
+     ...
+     
+     *lib:
+     -l%{mbaserel:b}c
+     
+     ...
+     *startfile:
+     %{mbaserel:b}%{mint:m}%{pg:g}%{p:m}crt0.o%s
+
+   This is all you have to modify in your specs file to gain full
+support for shared text executables.  The gcc option "-mbaserel" will
+be passed as "-mbaserel" to the linker (you may also specify
+"-mshared-text" or "-msharable-text" here).  Executables with sharable
+text section will be linked against `libbc.a' instead of `libc.a' and
+the start-up module will be `bcrt0.o' instead of `crt0.o'.  That is all
+you need.
+
+
+File: mintbin.info,  Node: New features,  Next: Invoking ld,  Prev: Changes,  Up: The linker
+
+New features
+============
+
+   The GNU linker version 2.9.1 or later for FreeMiNT now supports some
+features which are new to FreeMiNT developers.
+
+   The most important ones are:
+
+   * Weak symbols Weak symbols are actually an ELF feature.  In the GNU
+     system the a.out format has been extended to support this feature.
+     In brief weak symbols allow to write multi-standard libraries
+     with a clean name space.  Name conflicts with weak symbols will
+     not result in a link error but will be more or less ignored.  See
+     related documentation for details.
+
+   * Wrapper symbols It is possible to "wrap" a user-defined function
+     around other functions now.  For example you may write a wrapper
+     function around all calls to malloc() which allows you to keep
+     track of memory leaks or the like.  See the linker documentation
+     for details.
+
+   * Different entry points Even older linker versions supported the
+     option `-e'.  With the GNU linker 2.9.1 or later it works!
+
+     Example:
+
+          #include <stdio.h>
+          #include <mintbind.h>
+          
+          void backdoor ()
+          {
+            Cconws ("Sneaking in thru\' the backdoor ...\n");
+            Pterm (0);
+          }
+          
+          int main (int argc, char* argv[])
+          {
+            printf ("Hello world!\n");
+          }
+
+     If you simply compile and link this program you will get the famous
+     program you know for years now.  However, if you invoke ld with
+     the option "-e backdoor"  resp. "-entry=backdoor" the result is
+     different:  The usual program start-up code is completely bypassed
+     and instead the program directly jumps into the function
+     "backdoor".
+
+     This feature is probably not very useful unless you are a very
+     playful mind.  But it is a standard feature of the linker and,
+     well, now it is supported for FreeMiNT.  Note that you do not need
+     a special kernel version to achieve this behavior.  Executables
+     with non-standard entry-points will also run under plain TOS.
+
+
+File: mintbin.info,  Node: Invoking ld,  Prev: New features,  Up: The linker
+
+Invoking ld
+===========
+
+   The GNU linker will by default use the built-in linker emulation
+script "m68kmint".  When linking on other platforms you may have to
+explicitly choose this emulation.
+
+   The GNU linker understands some FreeMiNT-specific options. The
+purpose of these options is mainly to set the appropriate runtime
+program flags in the program header (*note The program runtime
+flags::.).
+
+`--mfastload'
+     Sets the fastload flag in the program header (this is the
+     default).  Usually the kernel will set the program's heap to zero
+     before the program image gets executed.  If the fastload flag is
+     set this time consuming task is omitted.  In this case your
+     program should never make assumptions about heap variables being
+     initialized to zero.
+
+`--mno-fastload'
+     Do not set the fastload flag.
+
+`--mfastram'
+`--maltram'
+     This flag causes the kernel to try to load the program image into
+     the alternate ram (also know as fast ram).  This flag is set by
+     default.
+
+`--mno-fastram'
+`--mno-altram'
+     Inhibits the program being loaded into the alternate ram.
+
+`--mfastalloc'
+`--maltalloc'
+     This flag causes the kernel to satisfy mallocs from the alternate
+     ram.  This flag is set by default.
+
+`--mno-fastalloc'
+`--mno-altalloc'
+     Inhibits mallocs being satisfied from the alternate ram by the
+     kernel.
+
+`--mbest-fit'
+     If the kernel supports this feature the program image will not be
+     loaded into the largest free memory block.  Instead the required
+     amount of memory will be calculated and a free memory block with
+     an optimum size will be chosen.  If you set this flag you should
+     make sure that the program reserves memory for the stack in the
+     program's BSS.
+
+`--mno-best-fit'
+     Turns of the best-fit program flag (this is the default).
+
+`--mbaserel'
+`--mshared-text'
+`--msharable-text'
+     If the kernel supports this feature multiple instances of a
+     process image will share a common text section.  In order to make
+     this work a program may not contain any references from the text
+     section into other program sections.  The linker will issue a
+     "dangerous relocation" error whenever it encounters such an
+     illegal reference while relocating the executable.
+
+     As an exception to this rule the linker will accept references to
+     the first byte after the text section but only if this is a
+     relocation against the symbol "_etext" (this symbol will be
+     created by the linker itself).
+
+     You can also set the sharable text flag manually later.  This may
+     be useful if the linker complains about a dangerous relocation and
+     you are sure that this relocation is not really dangerous.  Of
+     course you should really know what you are doing if you set the
+     flag by hand.
+
+`--mno-baserel'
+`--mno-shared-text'
+`--mno-sharable-text'
+     Marks the program's text section as non-sharable to the kernel
+     (this is the default).
+
+   The following four flags indicate to the kernel to what degree memory
+protection should be performed.  The use of these options is mutually
+exclusive.
+
+`--mprivate-memory'
+     Treat all of the program's memory as private (this is the
+     default).  All accesses from other processes to this program's
+     memory will trigger a segmentation fault.
+
+`--mglobal-memory'
+     Treat the program's memory as global (deprecated).  Access to the
+     program's memory is allowed unconditionally.  If your own program
+     needs this flag you should consider to redesign it.
+
+`--msuper-memory'
+     Allow memory access in supervisor-mode (deprecated).  Access to
+     the program's memory is then allowed unconditionally.  If your own
+     program needs this flag you should consider to redesign it.
+
+`--mreadable-memory'
+`--mreadonly-memory'
+     Allow read access to the program's memory (deprecated).  If your
+     own program needs this flag you should consider to redesign it.
+
+This last option allows to set multiple flags at once.
+
+`--mprg-flags=FLAGWORD'
+     Set program runtime flags to FLAGWORD.  FLAGWORD must be a 32 bit
+     unsigned integer value and may be specified either in decimal,
+     octal (with a leading digit zero) or hexadecimal form (in standard
+     C notation i. e. 0xabcd).
+
+   You may give any of these options multiple times in arbitrary order.
+Options given later on the command line will overwrite earlier settings
+without warning.
+
+`--traditional-format'
+     This is actually a standard option.  For the FreeMiNT target it
+     causes the linker to create an executable with a symbol table in
+     DRI format.  This format is still expected by older disassemblers
+     or other binary tools.  However, the use of this option is
+     deprecated.  Program files with non-standard symbol table are not
+     recognized by any BFD back end as the GNU binutils.
+
+
+File: mintbin.info,  Node: Object files,  Next: Program files,  Prev: The linker,  Up: Top
+
+Object files
+************
+
+   Object files (as used as relocatable input to the linker),
+stand-alone or as library members are in a.out format.  For details of
+the a.out format please see the C header file `a.out.h'.  Please note
+that the types `unsigned long' and `unsigned' are 32 bits wide.  Of
+course all numeric data types store the most significant byte first.
+
+   - Data Type: struct exec Normally you should never access the
+     members of this structure directly.  Use the appropriate macros
+     from `a.out.h' instead.
+
+    `unsigned long a_info'
+          This member contains a magic number in the lower two bytes.
+          For object files this magic number is always OMAGIC (octal
+          0407).  The upper two bytes contain the appropriate machine
+          type.  Relevant values are zero (m68000 resp. unknown), one
+          (m68010) and two (m68020).
+
+          You should use the macros N_MAGIC, N_BADMAGIC and N_MACHTYPE
+          for access to this field.
+
+    `unsigned a_text'
+          Length of the text section in bytes.
+
+    `unsigned a_data'
+          Length of data section in bytes.
+
+    `unsigned a_bss'
+          Length of uninitialized data area for file in bytes.
+
+    `unsigned a_syms'
+          Length of symbol table data in file in bytes.  Please note
+          that this member only denotes the length of the pure symbol
+          table not including the string table.  The first four bytes
+          following the string table contain a 32 bit integer value that
+          denotes the length of the string table (including this length
+          field).
+
+    `unsigned a_entry'
+          Program start address.  This field is unused for object files.
+
+    `unsigned a_trsize'
+          Length of relocation info for text in bytes.
+
+    `unsigned a_drsize'
+          Length of relocation info for data in bytes.
+
+
+File: mintbin.info,  Node: Program files,  Next: The GNU binutils,  Prev: Object files,  Up: Top
+
+Program files
+*************
+
+   The format of program files produced by the GNU linker 2.9.1 or later
+is a compatible extension of the standard GEMDOS program format.
+
+* Menue:
+
+* History::                     The GEMDOS program format.
+* Layout of program files::     Layout of program files on disk.
+* The TPA relocation info::     The TPA relocation info.
+* The symbol table::            The format of a GNU symbol table.
+
+
+File: mintbin.info,  Node: History,  Next: Layout of program files,  Prev: Program files,  Up: Program files
+
+History
+=======
+
+   A standard GEMDOS program on disk contains of a 28 byte header,
+followed by the text section, data section, the section for unitialized
+data, optionally followed by a symbol table and a table containing the
+TPA relocation data.
+
+   The kernel does not hold the program header in memory when loading a
+program image from disk.  Instead the text section immediately follows
+a 256 bytes data structure called BASEPAGE.
+
+   The design of a program header used to be as follows:
+
+   - Data type struct aexec (obsolete)
+
+    `short a_info'
+          Always 0x601a.  This magic number happens to be a branch
+          instruction to the first instruction in the text section.
+          Note that some operating systems refuse to run a program
+          image unless the file name ends in `.prg', `.tos', `.ttp',
+          `.app' or `.gtp'.
+
+    `unsigned long a_text'
+          Length of the text section in bytes.
+
+    `unsigned long a_data'
+          Length of data section in bytes.
+
+    `unsigned long a_bss'
+          Length of section for unitialized data in bytes.
+
+    `unsigned long a_syms'
+          Length of the symbol table in bytes.  Note that this member
+          specifies the length of the symbol table including a possible
+          string table.  This restriction made it almost impossible to
+          employ symbol table formats with a separate string table.
+
+    `unsigned long a_AZero1'
+          Reserved, should be zero.
+
+    `unsigned long a_ldflags'
+          The program runtime flags.  From the days where this field
+          was still unused the alternate name a_AZero2 is also known.
+
+    `unsigned long a_isreloc'
+          If non-zero, the program image contains no tpa relocation
+          info.
+
+
+File: mintbin.info,  Node: Layout of program files,  Next: The TPA relocation info,  Prev: History,  Up: Program files
+
+Layout of program files
+=======================
+
+   The layout of program files on disk has been changed to allow for
+some extensions.  The new program header now contains 256 bytes.  The
+first 28 bytes are compatible to the traditional GEMDOS header.  As a
+consequence, for kernels that don't know about the extensions the
+remaining 228 header bytes already belong to the text section:
+
+     Offset 	  Old                 New
+           0 +-------------------+-------------------+
+             | GEMDOS Header     | PRG Header        |
+          28 +-------------------+                   |
+             | Text              |                   |
+             | Section           |                   |
+         256 | - - - - - - - - - +-------------------+
+             |                   | Text              |
+             |                   | Section           |
+             |                   |                   |
+             |                   |                   |
+             +-------------------+-------------------+
+             | Data              | Data              |
+             | Section           | Section           |
+             +-------------------+-------------------+
+             | BSS               | BSS               |
+             +-------------------+-------------------+
+             | Symbol            | Symbol table      |
+             | table             + - - - - - - - - - +
+             |                   | String table      |
+             +-------------------+-------------------+
+             | TPA relocation    | TPA relocation    |
+             +-------------------+-------------------+
+
+   Two differences are significant:  Older kernels see the size of the
+text segment larger than it is and the new symbol table allows for a
+separately attached string table.
+
+   - Data type: struct prg_exec
+
+     This data type describes the layout of the header of a program
+     file on disk.
+
+     The first 28 bytes are identical to the traditional GEMDOS program
+     header.
+
+    `unsigned short g_branch'
+          For pure executables this is PRG_NMAGIC (0x601a).  For
+          relocatable files that may serve as input to the linker this
+          is PRG_OMAGIC (0xdeaf).
+
+          Note that some operating systems refuse to run a program
+          image unless the file ends in .PRG, .TOS, .TTP, .APP or .GTP.
+
+    `unsigned long g_text'
+          Length of the text section including the 228 bytes of the
+          extension header.  This allows old kernels to load the image
+          without having to know about the extensions.
+
+    `unsigned long g_data'
+          Length of the data section in bytes.
+
+    `unsigned long g_bss'
+          Length of the section for uninitialized data in bytes.
+
+    `unsigned long g_extmagic'
+          Always PRG_MINT_MAGIC (0x4d6964e54).  This magic number is
+          used to distinguish between executables in the extended format
+          and executables in traditional GEMDOS format.
+
+    `unsigned long g_flags'
+          Program runtime flags.
+
+    `unsigned long g_abs'
+          Non-zero if no tpa relocation info is present in the program
+          file.
+
+     The next 228 bytes are an extension.  For old kernels they are
+     already part of the text section.
+
+    `unsigned char g_jump_entry[8]'
+          These eight bytes should be treated as opaque.  They are
+          always filled with the 64 bit integer value
+          0x283a001a4efb48fa.  In a disassembler you will see that this
+          is really a far jump instruction to the entry point.
+
+     The following 32 bytes are a standard a.out header.
+
+    `unsigned long a_info'
+          This member contains a magic number in the lower two bytes.
+          Currently this magic number is always NMAGIC (octal 0410).
+          The upper two bytes contain the appropriate machine type.
+          Relevant values are zero (m68000 resp. unknown), one (m68010)
+          and two (m68020).
+
+          You should use the macros N_MAGIC, N_BADMAGIC and N_MACHTYPE
+          for access to this field.
+
+    `unsigned a_text'
+          Length of the text section in bytes.  Note that this is always
+          228 bytes less than the member g_text.
+
+    `unsigned a_data'
+          Length of data section in bytes.  This member is actually
+          redundant as it always contains the same value as g_data.
+
+    `unsigned a_bss'
+          Length of uninitialized data area for file in bytes.  This
+          member is actually redundant as it always contains the same
+          value as g_bss.
+
+    `unsigned a_syms'
+          Length of symbol table data in file in bytes.  Please note
+          that this member only denotes the length of the pure symbol
+          table not including the string table.  The first four bytes
+          following the string table contain a 32 bit integer value that
+          denotes the length of the string table (including this length
+          field).
+
+    `unsigned a_entry'
+          Program start address.  By default this will have a value of
+          0xe4 (decimal 228).
+
+    `unsigned a_trsize'
+          Length of relocation info for text in bytes.  This field is
+          always zero for pure executables.
+
+    `unsigned a_drsize'
+          Length of relocation info for data in bytes.  This field is
+          always zero for pure executables.
+
+    `unsigned long g_tparel_pos'
+          File offset of the TPA relocation info.  Strictly speaking
+          this field is redundant.  Its value could also be calculated
+          as 28 + g_text + g_data + g_syms.
+
+    `unsigned long t_tparel_size'
+          Length of TPA relocation info in bytes.
+
+    `unsigned long g_stkpos'
+          If non-zero this member denotes the file offset where the
+          stack size is hardcoded into the file.  Thus you do not have
+          to scan the symbol table for special symbols.  You can
+          directly seek to that position to read/write the stack size.
+
+    `unsigned long g_symbol_format'
+          Usually zero.  Any non-zero value denotes a non-standard
+          symbol table.  The value 1 signifies a symbol table in DRI
+          format which is still expected by some disassembler or other
+          binary tools.  This symbol table format is created by the GNU
+          linker if invoked with the `-traditional-format' option.
+
+    `unsigned char g_pad0[172]'
+          Reserved for future extensions.  Currently always zero.
+
+
+File: mintbin.info,  Node: The TPA relocation info,  Next: The symbol table,  Prev: Layout of program files,  Up: Program files
+
+The TPA relocation info
+=======================
+
+   The kernel may load a program image at any location in memory.  The
+memory area where the program image is actually loaded is called the
+transient program area TPA.  Since FreeMiNT currently does not support
+a virtual memory model the image has to be relocated against the
+address of the TPA before execution.
+
+   The TPA relocation table is an array of 32 bit addresses that have
+to be relocated (i. e. the TPA address will be added to the addresses
+found in the table).  The first four bytes of this table contain the
+address of the first address to be relocated (as an offset into the
+program file on disk).  Subsequent addresses are calculated by adding
+the following 8 bit offsets to the current address.  If the special
+value 1 (which is actually impossible for m68k processors) is
+encountered, 254 is added and the next 8 bit value is taken instead.
+
+   The table is finished by a zero entry.
+
+
+File: mintbin.info,  Node: The symbol table,  Prev: The TPA relocation info,  Up: Program files
+
+The symbol table
+================
+
+   The standard symbol table format is the GNU a.out format as described
+in the header file `a.out.h'.   There is sufficient documentation for
+this format available on the Internet or from various other documents.
+Please refer to these external sources for further information.
+
+
+File: mintbin.info,  Node: The GNU binutils,  Prev: Program files,  Up: Top
+
+The GNU binutils
+****************
+
+   Program development for FreeMiNT is based on the GNU binutils 2.9.1
+or later.  The documentation for the GNU binutils is the primary source
+of information.
+
+* Menue:
+
+* Internals::                   Some internals of the GNU binutils.
+* Building the GNU binutils::   Building the GNU binutils.
+
+
+File: mintbin.info,  Node: Internals,  Next: Building the GNU binutils,  Prev: The GNU binutils,  Up: The GNU binutils
+
+Internals
+=========
+
+   The GNU binutils use an abstraction for managing all kinds of binary
+files like object files, libraries or executables.  The abstraction is
+done via the binary file descriptor (BFD) library.  If you install the
+GNU binutils on your system the BFD library will automatically be
+installed too.
+
+   When dealing with binary files it is strongly recommended that you
+use the application programmer's interface of BFD.  This allows you to
+manage all relevant information without having to know about the
+internals of a particular binary format.  You may even handle binary
+formats for different platforms at once.
+
+   The BFD target name for FreeMiNT object files is "a.out-mint" whereas
+the BFD target name for FreeMiNT executables and FreeMiNT relocatable
+object files (for recursive linking) is called "a.out-mintprg".
+
+   Please refer to the BFD documentation for details on how to write
+BFD front end programs.
+
+
+File: mintbin.info,  Node: Building the GNU binutils,  Prev: Internals,  Up: The GNU binutils
+
+Building the GNU binutils
+=========================
+
+   If the binutils are already installed on your system building is
+really straight-forward, the usual `configure && make install' should be
+enough.  When building cross-development tools on another platform you
+have to specify the target with `configure --target=m68k-atari-mint'
+although `configure --target=mint' is probably enough.
+
+   When bootstrapping you may encounter difficulties due to deficiencies
+in older versions of the binary utilities available for FreeMiNT.
+
+   First you should check for a working nm program on your system.
+Type `nm -V' into your shell.  If your nm complains about an illegal
+option in an endless loop you should rename your nm program to `nm-old'
+and then install the script `nm-wrapper' as your nm program.  This
+script will catch the option -V, react appropriately in this case and
+will else simply call your old nm program.  The script `nm-wrapper' can
+be found in the subdirectory `misc' of the mintbin distribution.  It is
+not installed by default!
+
+   Second you should make sure that you have a working ranlib program
+or shell script.  If you don't have ranlib on your system please
+install the `ranlib' script that you find in the `misc' subdirectory of
+the mintbin distribution.
+
+   With these precautions bootstrapping should also be straight-forward.
+If you have successfully build the binutils you should install them and
+then type `make clean' in the top level directory of the binutils
+source tree.  Then configure and make install again.  This will rebuild
+all tools with the new binutils.
+
+   Please note that building the binutils is a time-consuming, memory
+consuming and hard-disk-space-intensive task.  If your system is not
+powerful enough you will have to grab a pre-compiled binary
+distribution.
+
+
+
+Tag Table:
+Node: Top1789
+Node: Introduction3577
+Node: Managing program files5498
+Node: The program stack7052
+Node: Invoking stack7706
+Node: What is the stack9263
+Node: The stack size12771
+Node: The program runtime flags15656
+Node: Managing libraries15859
+Node: The ar library format16540
+Node: Invoking arconv18881
+Node: Library names20209
+Node: The linker21721
+Node: Changes22344
+Node: New features25633
+Node: Invoking ld27782
+Node: Object files32725
+Node: Program files34676
+Node: History35201
+Node: Layout of program files37059
+Node: The TPA relocation info43618
+Node: The symbol table44702
+Node: The GNU binutils45115
+Node: Internals45526
+Node: Building the GNU binutils46584
+
+End Tag Table

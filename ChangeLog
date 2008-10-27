@@ -1,0 +1,84 @@
+1999-06-28  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* configure.in: Bumped version number to 0.3.
+	Added check for sbrk and utimes.
+	Added check for good utimbuf struct.
+	Fixed cross-include-directory path.
+
+	* README: Removed comments on mo files in AtariST codeset (not included
+	any longer).
+
+	* acconfig.h: Added macro for HAVE_GOOD_UTIME.
+
+1999-06-06  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: Removed mintbin.spec from distribution (confuses).
+
+	* configure.in: Removed AC_CANONICAL_HOST.
+
+1999-06-06  Guido Flohr  <guido@zowee.localnet>
+
+	* configure.in: Removed AC_CANONICAL_HOST.
+
+1999-06-02  Guido Flohr  <guido@zowee.localnet>
+
+	* configure.in: - Bumped version number to 0.2.3.
+	- Check host system.
+	- Removed de.atarist from list of available translations.
+	- Check for size of various data types.
+	- New macros AC_HEADER_STDC and AC_FUNC_ALLOCA.
+	- Better support for building cross-development tools.
+	- Configure subdirectory misc.
+
+	* README: Added hints for using i18n.
+
+1999-05-18  Guido Flohr  <guido@zowee.localnet>
+
+	* Makefile.am: Added mintbin.spec to EXTRA_DIST (for rpm).
+
+1999-03-16  Guido Flohr  <guido@zowee.localnet>
+
+	* system.h: Moved prototypes for x... functions to lib/libmb.h.
+
+1999-02-11  Guido Flohr  <guido@zowee.localnet>
+
+	* Makefile.am: Added subdirectory misc.
+
+1999-02-06  Guido Flohr  <guido@zowee.localnet>
+
+	* README: New file.
+
+	* configure.in: Bumped version number to 0.2.2 and added i18n support.
+
+	* acconfig.h, Makefile.am, system.h: Added i18n support.
+
+1999-01-31  Guido Flohr  <guido@zowee.localnet>
+
+	* Makefile.am: Added subdirectory doc.
+
+	* configure.in: Bumped version number to 0.2.1.
+	Added subdirectory doc.
+
+1999-01-31  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: Added subdirectory doc.
+
+	* configure.in: Bumped version number to 0.2.1.
+	Added subdirectory doc.
+
+1999-01-29  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* configure.in: Bumped version number to 0.2.
+
+1999-01-10  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* configure.in: Added AC_OUTPUT directories include and include/mint.
+
+	* Makefile.am: Added subdirectory include.
+
+	* TODO, README-alpha: New file.
+
+1999-01-09  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* system.h, configure.in, acconfig.h, README, Makefile.am, AUTHORS:
+	New file.

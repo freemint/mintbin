@@ -1,0 +1,6 @@
+* Documentation is still missing.
+
+* Add a program that converts symbol tables in executables.
+
+* Write a converter for a.out to DR binaries.
+

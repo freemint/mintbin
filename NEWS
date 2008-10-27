@@ -1,0 +1,32 @@
+Version 0.3, 28 June 1999 by Guido Flohr.
+
+	* New programs cnm, csize and cstrip.
+	* Bugfixes.
+	* Completed German translations.
+	* Will now install in $(prefix)/m68k-atari-mint on non-native
+	  platforms.
+
+Version 0.2.3, 03 June 1999 by Guido Flohr.
+
+	* New program `flags'.
+	* Some bugfixes, some new bugs.
+
+Version 0.2.2, 06 February 1999 by Guido Flohr.
+
+	* The package is now completely internationalized.
+	* German message catalogues included.
+
+Version 0.2.1, 01 February 1999 by Guido Flohr.
+
+	* New program arconv to convert libraries.
+	* Documentation added.
+
+Version 0.2, 29 January 1999 by Guido Flohr.
+
+	* New program symex to create symbol files for Atari gdb.
+
+Version 0.1.1, 10 January 1999 by Guido Flohr.
+
+	* The first "unofficial" release.
+	* Currently contains only the programs mintbin and stack.
+

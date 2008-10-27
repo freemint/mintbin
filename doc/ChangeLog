@@ -1,0 +1,8 @@
+1999-02-01  Guido Flohr  <guido@zowee.localnet>
+
+	* mintbin.texi: Changed subdirectory etc to subdirectory misc.
+
+1999-01-31  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am, mintbin.texi: New file.
+

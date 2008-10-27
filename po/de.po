@@ -1,0 +1,1069 @@
+# German translations for the mintbin package.
+# Copyright (C) 1999 Guido Flohr <gufl0000@stud.uni-sb.de>.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mintbin 0.2.4\n"
+"POT-Creation-Date: 1999-06-28 16:37+0200\n"
+"PO-Revision-Date: 1999-06-28 16:10+0200\n"
+"Last-Translator: Guido Flohr <gufl0000@stud.uni-sb.de>\n"
+"Language-Team: German <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: lib/error.c:91
+msgid "Unknown system error"
+msgstr "unbekannter Systemfehler"
+
+#: lib/getopt.c:678
+#, c-format
+msgid "%s: option `%s' is ambiguous\n"
+msgstr "%s: Option »%s« ist mehrdeutig\n"
+
+#: lib/getopt.c:702
+#, c-format
+msgid "%s: option `--%s' doesn't allow an argument\n"
+msgstr "%s: Option »--%s« erwartet kein Argument\n"
+
+#: lib/getopt.c:707
+#, c-format
+msgid "%s: option `%c%s' doesn't allow an argument\n"
+msgstr "%s: Option »%c%s« erwartet kein Argument\n"
+
+#: lib/getopt.c:724 lib/getopt.c:897
+#, c-format
+msgid "%s: option `%s' requires an argument\n"
+msgstr "%s: Option »%s« erwartet ein Argument\n"
+
+#. --option
+#: lib/getopt.c:753
+#, c-format
+msgid "%s: unrecognized option `--%s'\n"
+msgstr "%s: unbekannte Option »--%s«\n"
+
+#. +option or -option
+#: lib/getopt.c:757
+#, c-format
+msgid "%s: unrecognized option `%c%s'\n"
+msgstr "%s: unbekannte Option »%c%s«\n"
+
+#. 1003.2 specifies the format of this message.
+#: lib/getopt.c:783
+#, c-format
+msgid "%s: illegal option -- %c\n"
+msgstr "%s: unzulässige Option -- %c\n"
+
+#: lib/getopt.c:786
+#, c-format
+msgid "%s: invalid option -- %c\n"
+msgstr "%s: ungültige Option -- %c\n"
+
+#. 1003.2 specifies the format of this message.
+#: lib/getopt.c:816 lib/getopt.c:946
+#, c-format
+msgid "%s: option requires an argument -- %c\n"
+msgstr "%s: Option erwartet ein Argument -- %c\n"
+
+#: lib/getopt.c:863
+#, c-format
+msgid "%s: option `-W %s' is ambiguous\n"
+msgstr "%s: Option »-W %s« ist mehrdeutig\n"
+
+#: lib/getopt.c:881
+#, c-format
+msgid "%s: option `-W %s' doesn't allow an argument\n"
+msgstr "%s: Option »-W %s« erwartet kein Argument\n"
+
+#: lib/xmalloc.c:82
+msgid "Memory exhausted"
+msgstr "virtueller Speicher erschöpft"
+
+#. No input files.
+#: src/arconv.c:162
+msgid "no input files"
+msgstr "keine Eingabedateien gegeben"
+
+#: src/arconv.c:166
+msgid "no output file"
+msgstr "Ausgabedatei fehlt"
+
+#: src/arconv.c:186 src/cnm.c:173 src/csize.c:331 src/cstrip.c:186
+#: src/flags.c:535 src/mintbin.c:148 src/stack.c:197 src/symex.c:176
+#, c-format
+msgid "Usage: %s [OPTIONS] INPUTFILE ...\n"
+msgstr "Benutzung: %s [OPTIONEN] EINGABEDATEI ...\n"
+
+#: src/arconv.c:187
+msgid "Convert old-style libraries to new format.\n"
+msgstr "Konvertiere Bibliotheken im alten Stil in das neue Format.\n"
+
+#: src/arconv.c:189 src/cnm.c:176 src/csize.c:334 src/cstrip.c:189
+#: src/flags.c:538 src/mintbin.c:151 src/stack.c:200 src/symex.c:179
+msgid ""
+"\n"
+"Mandatory arguments to long options are mandatory to short options too.\n"
+msgstr ""
+"\n"
+"Argumente, die für lange Optionen notwendig sind, sind auch für kurze\n"
+"Optionen zwingend.\n"
+
+#: src/arconv.c:192
+msgid ""
+"  -o, --output=FILENAME          set output FILENAME\n"
+"  -v, --verbose                  list modules while processing\n"
+msgstr ""
+"  -o, --output=DATEINAME          ändere Ausgabe-DATEINAMEn\\n\n"
+"  -v, --verbose                   liste Module während der Bearbeitung\\n\n"
+
+#: src/arconv.c:196 src/cnm.c:184 src/csize.c:348 src/cstrip.c:202
+#: src/flags.c:570 src/mintbin.c:154 src/stack.c:212 src/symex.c:185
+msgid ""
+"  -h, --help                     display this help and exit\n"
+"  -V, --version                  output version information and exit\n"
+msgstr ""
+"  -h, --help                     Zeige diese Hilfe und beende\n"
+"  -V, --version                  Zeige Versionsinformation und beende\n"
+
+#: src/arconv.c:200 src/mintbin.c:161
+msgid ""
+"\n"
+"Report bugs to <gufl0000@stud.uni-sb.de>\n"
+msgstr ""
+"\n"
+"Melde Fehler an <gufl0000@stud.uni-sb.de>\n"
+
+#: src/arconv.c:224
+#, c-format
+msgid "%s: not an old-style ar archive"
+msgstr "%s: Kein ar-Archiv im alten Format"
+
+#. We use this to report failure.
+#: src/arconv.c:232 src/cstrip.c:342 src/cstrip.c:391 src/cstrip.c:414
+#: src/cstrip.c:426 src/flags.c:448 src/stack.c:272 src/stack.c:367
+#: src/symbols.c:127 src/symex.c:279
+#, c-format
+msgid "%s: seek error"
+msgstr "%s: Dateipositionierungsfehler"
+
+#: src/arconv.c:244 src/symex.c:252 src/targets.c:99
+#, c-format
+msgid "%s: open error"
+msgstr "%s: Fehler beim Öffnen"
+
+#. We use this to report failure.
+#: src/arconv.c:251 src/arconv.c:374 src/arconv.c:393 src/cstrip.c:376
+#: src/cstrip.c:457 src/flags.c:455 src/stack.c:381 src/symex.c:270
+#: src/symex.c:295
+#, c-format
+msgid "%s: write error"
+msgstr "%s: Schreibfehler"
+
+#: src/arconv.c:261 src/csize.c:313 src/flags.c:461
+#, c-format
+msgid "%s: close error"
+msgstr "%s: Schreibfehler"
+
+#: src/arconv.c:267 src/cnm.c:362 src/mintbin.c:237 src/stack.c:393
+#: src/symex.c:303
+#, c-format
+msgid "%s: warning: close error"
+msgstr "%s: Warnung: Fehler beim Schließen"
+
+#. We use this to report failure.
+#: src/arconv.c:331 src/arconv.c:387 src/cstrip.c:449 src/stack.c:284
+#: src/symbols.c:218 src/symex.c:288
+#, c-format
+msgid "%s: read error"
+msgstr "%s: Lesefehler"
+
+#: src/arconv.c:356
+#, c-format
+msgid "invalid module size ``%s'' for module %s"
+msgstr "Unzulässige Modulgröße »%s« für Modul »%s«"
+
+#: src/arconv.c:390 src/stack.c:287 src/symbols.c:221 src/targets.c:237
+#: src/targets.c:321 src/targets.c:372 src/targets.c:400
+#, c-format
+msgid "%s: file truncated"
+msgstr "%s: Datei ist verstümmelt"
+
+#: src/mintbin.c:149
+msgid "Display information about given binary input files.\n"
+msgstr "Zeige Informationen über gegebene binäre Eingabedateien.\n"
+
+#: src/cnm.c:188 src/csize.c:352 src/flags.c:574 src/mintbin.c:158
+#: src/stack.c:216
+msgid ""
+"\n"
+"If INPUTFILE is missing, `a.out' is assumed.\n"
+msgstr ""
+"\n"
+"Falls EINGABEDATEI fehlt, wird »a.out« angenommen.\n"
+
+#: src/mintbin.c:185
+msgid "GNU style a.out object file.\n"
+msgstr "GNU a.out Objektdatei.\n"
+
+#: src/mintbin.c:188
+msgid "GNU style ar library.\n"
+msgstr "GNU ar-Bibliothek.\n"
+
+#: src/mintbin.c:191
+msgid "Old-style GNU ar library.\n"
+msgstr "GNU ar-Bibliothek im alten Format.\n"
+
+#: src/mintbin.c:198
+msgid "MiNT impure executable.\n"
+msgstr "Unvollständig gelinkte ausführbare MiNT-Datei.\n"
+
+#: src/mintbin.c:201
+msgid "MiNT pure executable.\n"
+msgstr "Reine, ausführbare MiNT-Datei.\n"
+
+#: src/mintbin.c:204
+msgid "MiNT demand-paged executable.\n"
+msgstr "Seitenweise ausgerichtete, ausführbare MiNT-Datei.\n"
+
+#: src/mintbin.c:212
+msgid "MiNT impure executable with traditional symbol table.\n"
+msgstr ""
+"Unvollständig gelinkte ausführbare MiNT-Datei mit traditioneller "
+"Symboltabelle.\n"
+
+#: src/mintbin.c:216
+msgid "MiNT pure executable with traditional symbol table.\n"
+msgstr "Reine ausführbare MiNT-Datei mit traditioneller Symboltabelle.\n"
+
+#: src/mintbin.c:220
+msgid "MiNT demand-paged executable with traditional symbol table.\n"
+msgstr ""
+"Seitenweise ausgerichtete ausführbare MiNT-Datei mit traditioneller "
+"Symboltabelle.\n"
+
+#: src/mintbin.c:228
+msgid "Old-style GEMDOS executable.\n"
+msgstr "Ausführbare GEMDOS-Datei im alten Format.\n"
+
+#: src/mintbin.c:231
+msgid "Unrecognized file format.\n"
+msgstr "Unbekanntes Dateiformat.\n"
+
+#: src/stack.c:163
+msgid "Nothing to do if silent and not fixing stack size"
+msgstr "Nichts zu tun, wenn still und Stackgröße nicht geändert wird"
+
+#: src/stack.c:198
+msgid "Display and manipulate stack setting of MiNT executables.\n"
+msgstr "Zeige und manipuliere Stackgröße ausführbarer MiNT-Dateien.\n"
+
+#: src/stack.c:203
+msgid ""
+"  -P, --print                    just print stack size\n"
+"  -S, --fix=SIZE, --size=SIZE    change stack size to SIZE bytes\n"
+msgstr ""
+"  -P, --print                    drucke Stack-Größe nur\n"
+"  -S, --fix=GRÖSSE, --size=GRÖSSE\n"
+"                                 ändere Stack-Größe auf GRÖSSE Bytes\n"
+
+#: src/flags.c:565 src/stack.c:207
+msgid ""
+"  -s, --silent                   print only error messages\n"
+"  -q, --quiet                    same as -s, --silent\n"
+"  -v, --verbose                  enable verbose diagnostic output\n"
+msgstr ""
+"  -s, --silent                    zeige nur Fehlermeldungen (still)\n"
+"  -q, --quiet                     wie -q, --quiet\n"
+"  -v, --verbose                   aktiviere ausführliche Meldungen\n"
+
+#: src/stack.c:219
+msgid ""
+"\n"
+"The stacksize is only modified when option -S is given.  The SIZE\n"
+"argument may optionally be followed by one of the modifiers `k'\n"
+"(kilo bytes) or `M' (mega bytes).\n"
+msgstr ""
+"\n"
+"Die Stackgröße wird nur geändert, wenn die Option -S angegeben wurde.\n"
+"Dem GRÖSSE-Argument kann optional einer der Modifiziere »k« (Kilobytes)\n"
+"oder »M« (Megabytes) folgen.\n"
+
+#: src/cnm.c:195 src/cstrip.c:222 src/stack.c:223
+msgid "Report bugs to <gufl0000@stud.uni-sb.de>.\n"
+msgstr "Melde Fehler an <gufl0000@stud.uni-sb.de>.\n"
+
+#: src/stack.c:246 src/symex.c:219 src/targets.c:138 src/targets.c:198
+#: src/targets.c:379 src/targets.c:407
+#, c-format
+msgid "%s: file format not recognized"
+msgstr "%s: Unbekanntes Dateiformat"
+
+#: src/stack.c:257
+#, c-format
+msgid "%s: no stack information available."
+msgstr "%s: Keine Stackinformation verfügbar."
+
+#: src/stack.c:261
+#, c-format
+msgid "%s: invalid file position (%lu) for stack size"
+msgstr "%s: Unzulässige Dateipositionsangabe (%lu) für Stackgröße"
+
+#: src/stack.c:295
+#, c-format
+msgid "%s: stack size: %ld bytes (%ld kilo bytes).\n"
+msgstr "%s: Stackgröße: %ld Bytes (%ld Kilobytes).\n"
+
+#: src/stack.c:298
+#, c-format
+msgid "stack size: %ld bytes (%ld kilo bytes).\n"
+msgstr "Stackgröße: %ld Bytes (%ld Kilobytes).\n"
+
+#: src/stack.c:306
+msgid ""
+"(This means really that almost all of the available memory will\n"
+"be used for the stack.  If you run the image you will not be\n"
+"able to run any other process until the current one finishes.\n"
+msgstr ""
+"(Dies bedeutet, dass fast der gesamte verfügbare Speicher für den\n"
+"Stack benutzt wird. Wird die Programmdatei ausgeführt, ist es unmöglich,\n"
+"andere Prozesse zu starten, bevor der aktuelle beendet ist.\n"
+
+#: src/stack.c:312
+msgid ""
+"(This means really that only a minimum amount of memory will\n"
+"be reserved for the stack.  This minimum will usually be 8192\n"
+"bytes and is sufficient for most purposes.  However, if your\n"
+"program is ``stack-intensive'' such as programs with support\n"
+"for regular expressions it is probably not enough.\n"
+msgstr ""
+"Dies bedeutet, das nur die minimale Speichermenge für den Stack\n"
+"reserviert wird. Diese Minimum beträgt in der Regel 8192 Bytes und\n"
+"ist für die meisten Zwecke ausreichend. Für »stack-intensive« Anwendungen\n"
+"wie Programme, die reguläre Ausdrücke unterstützen, ist diese Größe\n"
+"hingegen oft nicht ausreichend.\n"
+
+#: src/stack.c:320
+msgid ""
+"(This means really that one quarter of the available memory will\n"
+"be reserved for the stack.  This may be necessary for very\n"
+"``stack-intensive'' applications such as compilers.  In most cases\n"
+"however it is simply too much.\n"
+msgstr ""
+"(Dies bedeutet, dass ein Viertel des verfügbaren Speichers für den\n"
+"Stack reserviert wird. Dies kann für sehr »stack-intensive« Anwendungen\n"
+"wie Compiler notwendig sein. In den meisten Fällen ist es allerdings\n"
+"schlichtweg zuviel.\n"
+
+#: src/stack.c:327
+msgid ""
+"(This means really that one half of the available memory will\n"
+"be reserved for the stack.  This may be necessary for extremely\n"
+"``stack-intensive'' applications such as compilers.  In most cases\n"
+"however it is simply too much.\n"
+msgstr ""
+"(Dies bedeutet, dass die Hälfte des verfügbaren Speichers für den\n"
+"Stack reserviert wird. Dies kann für sehr »stack-intensive« Anwendungen\n"
+"wie Compiler notwendig sein. In den meisten Fällen ist es allerdings\n"
+"schlichtweg zuviel.\n"
+
+#: src/stack.c:334
+msgid ""
+"(This means really that three quarters of the available memory will\n"
+"be reserved for the stack.  This may be necessary for extremely\n"
+"``stack-intensive'' applications such as compilers.  In most cases\n"
+"however this is overkill and waste of RAM.\n"
+msgstr ""
+"(Dies bedeutet, dass drei Viertel des verfügbaren Speichers für den\n"
+"Stack reserviert werden. Dies kann für sehr »stack-intensive« Anwendungen\n"
+"wie Compiler notwendig sein. In den meisten Fällen ist es allerdings\n"
+"pure Übertreibung und Speicherverschwendung.\n"
+
+#: src/stack.c:342
+#, c-format
+msgid ""
+"(This means really that %ld bytes will be reserved for the stack.\n"
+"The negative value signifies that the heap will be used for dynamic\n"
+"memory allocation."
+msgstr ""
+"(Dies bedeutet, dass %ld Bytes für den Stack reserviert werden. Der\n"
+"negative Wert zeigt an, dass weitere Speicheranforderungen aus dem \n"
+"Haufenspeicher (Heap) befriedigt werden."
+
+#. Note for translators:  The open parantheses
+#. will be continued on the line talking about
+#. the bus error resulting from invalid stack
+#. sizes.
+#: src/stack.c:351
+msgid "("
+msgstr "("
+
+#: src/stack.c:354
+msgid ""
+"An invalid resp. insufficient setting for the program stack size\n"
+"may result in a bus error, sometimes only in special cases.)\n"
+msgstr ""
+"Ein unzulässige bzw. nicht ausreichende Stackgröße kann sich in\n"
+"Busfehlern, teilweise allerdings nur in besonderen Fällen, äußern.)\n"
+
+#: src/stack.c:386
+#, c-format
+msgid "Fixed stack to %ld bytes (%ld kilo bytes).\n"
+msgstr "Stackgröße auf %ld Bytes (%ld Kilobytes) geändert.\n"
+
+#: src/stack.c:416
+#, c-format
+msgid "not a valid stack size: ``%s''"
+msgstr "keine gültige Stackgröße: »%s«"
+
+#: src/stack.c:425 src/stack.c:436 src/stack.c:448
+#, c-format
+msgid "stack size ``%s'' out of range: overflow in number"
+msgstr ""
+"Stackgröße »%s« außerhalb des zulässigen Bereichs: Numerischer Überlauf"
+
+#: src/stack.c:471
+#, c-format
+msgid "%s: file position of stack size not found"
+msgstr "%s: Dateiposition für Stackgröße nicht gefunden"
+
+#: src/stack.c:502
+#, c-format
+msgid "%s: cannot find symbol ``__stksize''"
+msgstr "%s: Kann Symbol »__stksize« nicht finden"
+
+#: src/stack.c:505
+msgid "cannot find symbol ``__stksize''"
+msgstr "Kann Symbol »__stksize« nicht finden"
+
+#: src/symbols.c:111
+#, c-format
+msgid "%s: cannot lookup symbols in archives"
+msgstr "%s: Kann Symbol in Archiven nicht finden"
+
+#: src/symbols.c:119
+#, c-format
+msgid "%s: no symbol table in file"
+msgstr "%s: Keine Symboltabelle in Datei enthalten"
+
+#: src/symbols.c:142
+#, c-format
+msgid "%s: format of symbol table not recognized"
+msgstr "%s: Format der Symboltabelle nicht unterstützt"
+
+#: src/symbols.c:163
+#, c-format
+msgid "%s: cannot read GNU symbol table yet"
+msgstr "%s: Kann noch keine GNU-Symboltabelle lesen"
+
+#: src/symbols.c:290
+#, c-format
+msgid "%s: warning: null-byte in symbol-name ``%s'' encountered"
+msgstr "%s: Warnung: Null-Byte in Symbolnamen »%s« gefunden"
+
+#: src/symex.c:177
+msgid "Extract symbol table from MiNT executables.\n"
+msgstr "Extrahiere Symboltabelle aus ausführbaren MiNT-Dateien.\n"
+
+#: src/symex.c:182
+msgid "  -o, --output=FILENAME          set output FILENAME\n"
+msgstr "  -o, --output=DATEINAME              setze Ausgabe-DATEINAMEn\n"
+
+#: src/symex.c:189
+msgid ""
+"If INPUTFILE is missing, ``a.out'' is assumed.  If output filename\n"
+"is missing output is written to standard output.\n"
+msgstr ""
+"Falls Eingabedatei fehlt, wird»a.out« angenommen. Falls der Name der\n"
+"Ausgabedatei fehlt, wird auf die Standard-Ausgabe (stdout) geschrieben.\n"
+
+#: src/csize.c:370 src/flags.c:591 src/symex.c:193
+msgid "Report bugs to <gufl0000@stud.uni-sb.de>\n"
+msgstr "Melde Fehler an <gufl0000@stud.uni-sb.de>.\n"
+
+#: src/symex.c:226
+#, c-format
+msgid "%s: file contains no valid symbol table"
+msgstr "%s: Datei enthält keine gültige Symboltabelle"
+
+#: src/symex.c:232
+#, c-format
+msgid "%s: file contains no symbols"
+msgstr "%s: Datei enthält keine Symbole"
+
+#: src/symex.c:239
+msgid "standard output"
+msgstr "Standard-Ausgabe"
+
+#: src/cstrip.c:813 src/targets.c:90
+#, c-format
+msgid "%s: stat error"
+msgstr "%s: Dateipositionierungsfehler"
+
+#: src/targets.c:111
+#, c-format
+msgid "read error on ``%s''"
+msgstr "Lesefehler bei »%s«"
+
+#: src/targets.c:247
+#, c-format
+msgid "%s: inconsistent text segment size in header"
+msgstr "%s: Inkonsistente Textsegmentgröße in Dateikopf"
+
+#: src/targets.c:255
+#, c-format
+msgid "%s: inconsistent data segment size in header"
+msgstr "%s: Inkonsistente Data-Segmentgröße in Dateikopf"
+
+#: src/targets.c:262
+#, c-format
+msgid "%s: inconsistent bss size in header"
+msgstr "%s: Inkonsistente BSS-Größe in Dateikopf"
+
+#: src/targets.c:275 src/targets.c:285
+#, c-format
+msgid "%s: error: relocation against text segment found in program image"
+msgstr "%s: Fehler: Relozierung gegen Textsegment in Programmdatei gefunden"
+
+#: src/targets.c:348
+#, c-format
+msgid "%s: bad magic number"
+msgstr "%s: Falscher Magic-Wert"
+
+#. This output is intended to follow the GNU standards document.
+#: src/version.c:38
+#, c-format
+msgid "%s (%s - FreeMiNT binary utilities) %s\n"
+msgstr "%s (%s - FreeMiNT Binär-Werkzeuge) %s\n"
+
+#. Note to translators:  Please do either not translate the following
+#. copyright notice at all or at least include the original english
+#. version!
+#: src/version.c:43
+msgid "Copyright (C) 1999 Guido Flohr (gufl0000@stud.uni-sb.de)\n"
+msgstr "Copyright (C) 1999 Guido Flohr (gufl0000@stud.uni-sb.de)\n"
+
+#: src/version.c:44
+msgid ""
+"This program is free software; you may redistribute it under the terms of\n"
+"the GNU General Public License.  This program has absolutely no warranty.\n"
+msgstr ""
+"This program is free software; you may redistribute it under the terms of\n"
+"the GNU General Public License. This program has absolutely no warranty.\n"
+"[Inoffizielle deutsche Übersetzung: Dieses Programm ist freie Software;\n"
+"es kann unter den Bedingungen der GNU General Public License "
+"weitervertrieben\n"
+"werden. Dieses Programm ist frei von jeder Gewährleistungspflicht.]\n"
+
+#: src/flags.c:199
+#, c-format
+msgid "value `%s' no valid flag setting"
+msgstr "Unzulässiger Wert »%s« für Programm-Flags."
+
+#: src/flags.c:310
+msgid "can't set individual flags with option `-f'"
+msgstr "Kann keine einzelnen Flags setzen, wenn Option »-f« benutzt wird."
+
+#: src/flags.c:326
+msgid "confliction memory protection flags"
+msgstr "Widersprüchliche Speicherschutz-Flags."
+
+#: src/flags.c:332
+msgid "warning: changing the shared text flag is dangerous"
+msgstr "Warnung: Es ist gefährlich, das Shared-Text-Flag zu ändern"
+
+#: src/flags.c:334
+msgid "(it normally requires recompilation)."
+msgstr "(erfordert in der Regel Neu-Kompilierung)."
+
+#: src/flags.c:339
+msgid "warning: changing the bestfit flag is dangerous"
+msgstr "Warnung: Es ist gefährlich, das Bestfit-Flag zu ändern"
+
+#: src/flags.c:424
+#, c-format
+msgid "%s: not a MiNT executable"
+msgstr "%s: Keine ausführbare MiNT-Datei."
+
+#: src/flags.c:473
+#, c-format
+msgid "Current flags: 0x%08x"
+msgstr "Derzeitige Flags: 0x%08x"
+
+#: src/flags.c:476
+#, c-format
+msgid " (were 0x%08lx)"
+msgstr "(war 0x%08lx)"
+
+#: src/flags.c:477
+msgid ".\n"
+msgstr ".\n"
+
+#: src/flags.c:483
+msgid "  Fastload flag is set (heap doesn't get cleared).\n"
+msgstr "  Fastload-Flag ist gesetzt (Heap wird nicht ausgenullt).\n"
+
+#: src/flags.c:486
+msgid "  Altload flag is set (load into alternate RAM).\n"
+msgstr "  Altload-Flag ist gesetzt (lade in alternatives RAM).\n"
+
+#: src/flags.c:489
+msgid "  Altalloc flag is set (allocate memory from alternate RAM).\n"
+msgstr "  Altalloc-Flag ist gesetzt (alloziere aus alternativem RAM).\n"
+
+#: src/flags.c:492
+msgid "  Bestfit flag is set (space for stack reserved in BSS).\n"
+msgstr "  Bestfit-Flag ist gesetzt (reserviere Stack-Speicher in BSS).\n"
+
+#: src/flags.c:495
+msgid "  Shared text flag is set (programs text segment is sharable).\n"
+msgstr ""
+"  Shared-Text-Flag ist gesetzt (Text-Segment kann gemeinsam genutzt "
+"werden).\n"
+
+#: src/flags.c:500
+msgid "  Program's memory is fully protected.\n"
+msgstr "  Speicher des Programms ist voll geschützt.\n"
+
+#: src/flags.c:504
+msgid "  Program's memory is not protected at all (globally accessible).\n"
+msgstr ""
+"  Speicher des Programms ist nicht geschützt (globaler Zugriff möglich).\n"
+
+#: src/flags.c:508
+msgid "  Program's memory may be accessed in supervisor mode.\n"
+msgstr "  Im Supervisor-Modus kann auf Programmspeicher zugegriffen werden.\n"
+
+#: src/flags.c:512
+msgid "  Program's memory is readable.\n"
+msgstr "  Speicher des Programms ist lesbar.\n"
+
+#: src/flags.c:536
+msgid "Display and manipulate program flags of MiNT executables.\n"
+msgstr "Zeige und manipuliere Programm-Flags ausführbarer MiNT-Dateien.\n"
+
+#: src/flags.c:541
+msgid ""
+"  -f, --flags=NEWFLAGS           set flags to hexadecimal, decimal or octal "
+"\n"
+"                                 value NEWFLAGS\n"
+"  -P, --print, --just-print      only print current flags\n"
+"  -l, --mfastload                set the fastload flag\n"
+"  -r, --mfastram, --maltram      set the fast ram (alternate or TT ram) "
+"flag\n"
+"  -a, --mfastalloc, --maltalloc  set the fast ram allocation flag\n"
+"  -B, --mbest-fit                set the best fit flag (stack in heap)\n"
+"  -b, --mbaserel, --mshared-text, --msharable-text\n"
+"                                 set the shared text flag\n"
+"  -p, --mprotected, --mfull-protection, --mmemory-protected\n"
+"      --mprivate-memory          turn full memory protection on\n"
+"  -g, --mglobal-memory           turn memory protection completely off\n"
+"  -S, --msuper-memory            allow memory access in supervisor mode\n"
+"  -R, --mreadable-memory, --mreadonly-memory\n"
+"                                 allow read access to memory\n"
+"  --mno-fastload                 unset the fastload flag\n"
+"  --mno-fastram, --mno-altram    unset the fast ram flags\n"
+"  --mno-fastalloc, --mno-altalloc\n"
+"                                 unset the fast ram allocation flag\n"
+"  --mno-best-fit                 unset the best fit flag (stack in heap)\n"
+"  --mno-baserel, --mno-shared-text, --mno-sharable-text\n"
+"                                 unset the shared text flag\n"
+msgstr ""
+"  -f, --flags=NEUEFLAGS          setze Flags auf hexadezimalen, dezimalen\n"
+"                                 oder oktalen Wert NEUEFLAGS\n"
+"  -P, --print, --just-print      zeige derzeitige Flags nur an\n"
+"  -l, --mfastload                setze Fastload-Flag\n"
+"  -r, --mfastram, --maltram      setze Fastram-Flag (Altram-Flag bzw.\n"
+"                                 TT-RAM-Flag)\n"
+"  -a, --mfastalloc, --maltalloc  setze Fastram-Allozierungs-Flag\n"
+"  -B, --mbest-fit                setze Bestfit-Flag (Stack in Heap)\n"
+"  -b, --mbaserel, --mshared-text, --msharable-text\n"
+"                                 setze das Shared-Text-Flag\n"
+"  -p, --mprotected, --mfull-protection, --mmemory-protected\n"
+"  -g, --mglobal-memory           schalte Speicherschutz völlig ab\n"
+"  -S, --msuper-memory            erlaube Speicherzugriff im "
+"Supervisor-Modus\n"
+"   -R, --mreadable-memory, --mreadonly-memory\n"
+"                                 erlaube Lesezugriff auf Speicher\n"
+"  --mno-fastload                 setze Fastload-Flag auf Null\n"
+"  --mno-fastram, --mno-altram    setze Fastram-Flag auf Null\n"
+"  --mno-fastalloc, --mno-altalloc\n"
+"                                 setze Fastram-Allozierungs-Flag auf Null\n"
+" --mno-best-fit                  setze Bestfit-Flag (Stack in Heap) auf "
+"Null\n"
+" --mno-baserel, --mno-shared-text, --mno-sharable-text\n"
+"                                 setze Shared-Text-Flag auf Null\n"
+
+#: src/flags.c:577
+msgid ""
+"Arguments are cumulative.  An option that is contradictory to a previous\n"
+"one will override the previous setting.  Using the `--flags' resp. the `-f'\n"
+"or `--prg-flags' option is mutually exclusive with using one of the single\n"
+"flag arguments.  All options that change the memory protection flags are\n"
+"also mutually exclusive.  If you instruct the program to just print the \n"
+"current flags (option `--print' resp. `--just-print' or `-P'it is illegal\n"
+"specify any options that would change flags in order to avoid unintentional\n"
+"modifications.\n"
+"\n"
+"Flags that are not mentioned are left untouched in the executable.  The\n"
+"default action is to print out the current flags both in hexadecimal and\n"
+"decimal notation; in verbose all known flags, their current setting and\n"
+"a short description of their meaning are printed out.\n"
+msgstr ""
+"Argumente können gehäuft (kumuliert) werden. Eine Option, die einer vorher-\n"
+"gehenden Option widerspricht, gewinnt über die vorherige. Die Verwendung von "
+"\n"
+"»--flags« bzw. »-f« oder »--prg-flags« schließt die Verwendung von Einzel-\n"
+"Flag-Option aus. Alle Optionen, welche die Speicherschutz-Flags verändern,\n"
+"schließen sich ebenfalls gegenseitig aus. Wird das Programm instruiert, nur\n"
+"die derzeitigen Flags auszugeben (Option »--print«, bzw. »--just-print« "
+"oder\n"
+"»-P«) ist es nicht erlaubt, Optionen zu verwenden, die die Flags verändern\n"
+"würden (um versehentliche Modifikationen auszuschließen).\n"
+"\n"
+"Flags, für die keine Optionen verwendet wurden, bleiben unangetastet. Die\n"
+"Standard-Aktion des Programmes ist die reine Ausgabe der derzeitigen Flags\n"
+"sowohl in hexadezimaler als auch in dezimaler Notation.  Im geschwätzigen\n"
+"(»--verbose«) Modus wird eine Kurzbeschreibung aller gesetzten Flags\n"
+"ausgegeben.\n"
+
+#: src/csize.c:378 src/flags.c:599
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Versuche »%s --help« für weitere Informationen.\n"
+
+#: src/csize.c:136
+msgid "invalid argument to `--format'"
+msgstr "Ungültiges Argument für »--format«."
+
+#: src/csize.c:166
+msgid "invalid radix"
+msgstr "Ungültige Zahlenbasis"
+
+#: src/csize.c:236
+#, c-format
+msgid "%s: not a MiNT executable file"
+msgstr "%s: Keine ausführbare MiNT-Datei"
+
+#: src/csize.c:238
+msgid "(use `size' instead)"
+msgstr "(verwende stattdessen »size«)"
+
+#: src/csize.c:252
+msgid "filename"
+msgstr "Dateiname"
+
+#: src/csize.c:262
+msgid "section     size       addr\n"
+msgstr "Sektion     Grösse    Addresse\n"
+
+#. Sum.
+#: src/csize.c:289
+msgid "Total "
+msgstr "Gesamt"
+
+#: src/csize.c:332
+msgid "Display section sizes of old-style GEMDOS executables.\n"
+msgstr "Zeige Sektionsgrößen von ausführbaren Dateien.\n"
+
+#: src/csize.c:337
+msgid ""
+"  -A                             output in SysV format\n"
+"  -B                             output in Berkeley (BSD) format\n"
+"  --format=FORMAT                output in FORMAT\n"
+"  -d                             output in decimal format (default)\n"
+"  -o                             output in octal format\n"
+"  -x                             output in hexadecimal format\n"
+"  --radix=RADIX                  output with RADIX as numerical radix\n"
+"  --target=TARGET                input files are in format TARGET\n"
+msgstr ""
+" -A                              Ausgabe in SysV-Format\n"
+" -B                              Ausgabe in Berkeley- (BSD-)Format\n"
+" --format=FORMAT                 Ausgabe in FORMAT\n"
+" -d                              Ausgabe in dezimaler Notation (Vorgabe)\n"
+" -o                              Ausgabe in oktaler Notation\n"
+" -x                              Ausgabe in hexadezimaler Notation\n"
+" --radix=BASIS                   Ausgabe mit BASIS als numerischer Basis\n"
+" --target=ZIELFORMAT             Eingabedateien sind im Format ZIELFORMAT\n"
+
+#: src/csize.c:355
+msgid ""
+"The default output format is `format=berkeley'.  The output format\n"
+"`bsd' is a synonyme for `berkeley', the other choice is `sysv'.  Case is\n"
+"always irrelevant.\n"
+"The numerical radix must be one of 10 (decimal, default), 8 (octal) or\n"
+"16 (hexadecimal).\n"
+"Note that the output for executables in the extended MiNT format can\n"
+"differ from the size reported by the `size' program because `size'\n"
+"always reports the real section sizes whereas this program reports the\n"
+"kernel's notion of the segment sizes.\n"
+msgstr ""
+"Vorgabe für das Ausgabeformat ist »--format=berkeley«. Das Ausgabeformat\n"
+"»bsd« ist ein Synonym für »berkeley«, die andere Möglichkeit ist »sysv«.\n"
+"Groß-/Kleinschreibung spielt keine Rolle.\n"
+"Die numerische Basis muss entweder 10 (dezimal, Vorgabe), 8 (oktal) oder\n"
+"16 (hexadezimal) sein.\n"
+"Es ist zu beachten, dass die Ausgabe für Programme im erweiterten "
+"MiNT-Format\n"
+"von der Größe, die das Programm »size« ausgibt, abweicht, weil »size« die \n"
+"tatsächlichen Segment-Größen angibt, während dieses Programm die Segment-\n"
+"Größen, die der Kernel sieht, ausgibt.\n"
+
+#: src/csize.c:366
+#, c-format
+msgid "%s: supported target: a.out-mintprg gemdos\n"
+msgstr "%s: Unterstützte Zielformate: a.out-mintprg gemdos\n"
+
+#: src/cstrip.c:187
+msgid "Strip old-style GEMDOS executables.\n"
+msgstr "Entferne Symbole ausführbarer GEMDOS-Datei im alten Format.\n"
+
+#: src/cstrip.c:192
+msgid ""
+"  -s, --strip-all                remove all symbols\n"
+"  -u, --strip-unneded            remove all unneeded symbols\n"
+"  -K, --keep-symbol=SYMBOLNAME   do not strip SYMBOLNAME\n"
+"  -N, --strip-symbol=SYMBOLNAME  remove SYMBOLNAME\n"
+"  -o, --output-file=OUTPUTFILE   put stripped output into OUTPUTFILE\n"
+"  -p, --preserve-dates           preserve the access and modification\n"
+"                                 dates of the file\n"
+"  -v, --verbose                  verbose: list all files modified\n"
+msgstr ""
+"  -s, --strip-all                  entferne alle Symbole\n"
+"  -u, --strip-unneeded             entferne überflüssige Symbole\n"
+"  -K, --keep-symbol=SYMBOLNAME     entferne Symbol »SYMBOLNAME« nicht\n"
+"  -N, --strip-symbol=SYMBOLNAME    entferne Symbol »SYMBOLNAME«\n"
+"  -o, --output-file=AUSGABEDATE    Ausgabe in AUSGABEDATEI\n"
+"  -p, --preserve-dates             bewahre Zugriffs- und Änderungszeiten\n"
+"                                   der Datei\n"
+"  -v, --verbose                    geschwätzig: Liste alle modifizierten\n"
+"                                   Dateien\n"
+
+#: src/cstrip.c:207
+msgid ""
+"\n"
+"By default the program strips all unneeded symbols, that are all symbols\n"
+"except `__stksize' and `__inital_stack' which may be needed by programs\n"
+"that manipulate the stack size like the program `stack' from MiNTBin.\n"
+"If the object to be stripped is an executable in the extended MiNT\n"
+"format linked with the option `--traditional' it is not necessary to keep\n"
+"the above mentioned special symbols.\n"
+"\n"
+"The options `--keep-symbol' and `--strip-symbol' override all internal\n"
+"assumptions about which symbols to keep and which to strip.  If a symbol\n"
+"is specified both as being to keep and to strip, it is kept.\n"
+"\n"
+"Only old-style GEMDOS executables or MiNT executables with a DRI\n"
+"symbol-table (linked with the option `--traditional-format') are "
+"recognized.\n"
+"Use the program `strip' for all other formats.\n"
+msgstr ""
+"\n"
+"Als Vorgabe entfernt das Programm alle überflüssigen Symbole, also alle\n"
+"Symbole außer »__stksize« und »__initial_stack«, die möglicherweise von \n"
+"Programmen wie »stack« aus dem MiNTBin-Paket benötigt werden, umd die\n"
+"Stack-Größe zu manipulieren.\n"
+"\n"
+"Die Optionen »--keep-symbol« und »--strip-symbol« verhindern sämtliche \n"
+"internen Mutmaßungen darüber, welche Symbole entfernt und welche bewahrt\n"
+"werden sollten. Wird ein Symbol sowohl als zu entfernend als auch als zu\n"
+"bewahrend angegeben, wird es nicht entfernt.\n"
+"\n"
+"Es werden alle GEMDOS-Programmdateien im alten Format oder \n"
+"MiNT-Programmdateien mit einer DRI-Symboltabelle (mit der Option \n"
+"»--traditional-format« gelinkt) erkannt.\n"
+"\n"
+"Für alle anderen Binärformate ist »strip« zu verwenden.\n"
+
+#: src/cstrip.c:320
+#, c-format
+msgid "copy from %s(%s) to %s(%s)\n"
+msgstr "kopiere von %s(%s) nach %s(%s)\n"
+
+#. Bogus header data.
+#: src/cstrip.c:401
+#, c-format
+msgid "%s: header corrupted"
+msgstr "%s: Dateikopf beschädigt"
+
+#: src/cstrip.c:491
+#, c-format
+msgid "%s: file format not recognized, use `strip' instead"
+msgstr "%s: Unbekanntes Dateiformat, benutze »strip«"
+
+#: src/cstrip.c:502
+#, c-format
+msgid "%s: error reading symbol table, use `%s --strip-all' to force stripping"
+msgstr ""
+"%s: beschädigte Symboltabelle, benutze »%s --strip-all« um Entfernung zu "
+"erzwingen"
+
+#: src/cstrip.c:517
+#, c-format
+msgid "can't create output file `%s'"
+msgstr "kann Ausgabedatei »%s« nicht erzeugen"
+
+#: src/cstrip.c:540
+#, c-format
+msgid "can't close output file `%s'"
+msgstr "kann Ausgabedatei »%s« nicht schließen"
+
+#: src/cstrip.c:628 src/cstrip.c:659
+#, c-format
+msgid "error renaming `%s' to `%s'"
+msgstr "Fehler beim Umbenennen von »%s« nach »%s«"
+
+#: src/cstrip.c:671
+#, c-format
+msgid "error copying `%s' to `%s'"
+msgstr "Fehler beim Kopieren von »%s« nach »%s«"
+
+#: src/cstrip.c:720
+#, c-format
+msgid "error setting timestamp of `%s'"
+msgstr "Fehler beim Setzen des Zeitstempels für »%s«"
+
+#: src/cnm.c:174
+msgid "List symbols of old-style GEMDOS executables.\n"
+msgstr "Liste Symbole von GEMDOS-Programmdateien im alten Format.\n"
+
+#: src/cnm.c:179
+msgid ""
+"  -g, --globals-only, --extern-only\n"
+"                                 display only global symbols\n"
+"  -u, --unsorted                 do not sort symbols by value\n"
+msgstr ""
+"  -g, --globals-only --extern-only\n"
+"                                liste nur globale Symbole\n"
+"  -u, --unsorted                sortiere nicht nach Symbolwert\n"
+
+#: src/cnm.c:191
+msgid ""
+"\n"
+"The output format is non-standard (but traditionally used with this\n"
+"program).\n"
+msgstr ""
+"\n"
+"Das Ausgabeformat ist nicht-standardmäßig (aber wird traditionellerweise "
+"mit\n"
+"diesem Programm verwendet).\n"
+
+#: src/cnm.c:218
+#, c-format
+msgid "%s: file format not recognized, use `nm' instead"
+msgstr "%s: Unbekanntes Dateiformat, benutze stattdessen »nm«."
+
+#: src/cnm.c:242
+#, c-format
+msgid "no slots mem %lu\n"
+msgstr "Keine Schächte, Speicher %lu.\n"
+
+#: src/cnm.c:244
+#, c-format
+msgid "one slot mem %lu\n"
+msgstr "Ein Schacht, Speicher %lu.\n"
+
+#. Note for translators: Use this string for numbers whose
+#. last digit is not 2, 3, or 4.
+#: src/cnm.c:248
+#, c-format
+msgid "%lu slots mem %lu\n"
+msgstr "%lu Schächte, Speicher %lu\n"
+
+#. Note for translators: Use this string for numbers whose
+#. last digit is 2, 3, or 4.
+#: src/cnm.c:252
+#, c-format
+msgid "%lu slots mem %lu \n"
+msgstr "%lu Schächte, Speicher %lu\n"
+
+#: src/cnm.c:268
+msgid "no global symbols\n"
+msgstr "keine globalen Symbole\n"
+
+#: src/cnm.c:270
+msgid "one global symbol\n"
+msgstr "ein globales Symbol\n"
+
+#. Note for translators: Use this string for numbers whose
+#. last digit is not 2, 3, or 4.
+#: src/cnm.c:274
+#, c-format
+msgid "%lu global symbols\n"
+msgstr "%lu globale Symbole\n"
+
+#. Note for translators: Use this string for numbers whose
+#. last digit is 2, 3, or 4.
+#: src/cnm.c:278
+#, c-format
+msgid "%lu global symbols \n"
+msgstr "%lu globale Symbole\n"
+
+#: src/cnm.c:285
+msgid "no symbols\n"
+msgstr "keine Symbole\n"
+
+#: src/cnm.c:287
+msgid "one symbol\n"
+msgstr "ein Symbol\n"
+
+#. Note for translators: Use this string for numbers whose
+#. last digit is 2, 3, or 4.
+#: src/cnm.c:291
+#, c-format
+msgid "%lu symbols\n"
+msgstr "%lu Symbole\n"
+
+#. Note for translators: Use this string for numbers whose
+#. last digit is not 2, 3, or 4.
+#: src/cnm.c:295
+#, c-format
+msgid "%lu symbols \n"
+msgstr "%lu Symbole\n"
+
+#: src/cnm.c:316
+msgid "text file "
+msgstr "Text-Datei "
+
+#: src/cnm.c:325
+msgid "external "
+msgstr "extern "
+
+#: src/cnm.c:327
+msgid "equated register "
+msgstr "gleichgesetztes (»equated«) Register "
+
+#: src/cnm.c:329
+msgid "global "
+msgstr "global "
+
+#: src/cnm.c:331
+msgid "equated "
+msgstr "gleichgesetzt (»equated«) "
+
+#: src/cnm.c:333
+msgid "defined "
+msgstr "definiert "
+
+#: src/cnm.c:337
+msgid "Bss "
+msgstr "Bss "
+
+#: src/cnm.c:339
+msgid "bss "
+msgstr "bss "
+
+#: src/cnm.c:344
+msgid "Text "
+msgstr "Text "
+
+#: src/cnm.c:346
+msgid "text "
+msgstr "text "
+
+#: src/cnm.c:351
+msgid "Data "
+msgstr "Daten "
+
+#: src/cnm.c:353
+msgid "data "
+msgstr "daten "

@@ -1,0 +1,195 @@
+1999-06-28  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* tempname.c: New file.
+
+	* targets.h: Remember file size, removed unused inclusion of <hash.h>.
+
+	* targets.c: Remember file size.
+
+	* symex.c: Split up usage message to simplify translator's job.
+
+	* symbols.h:
+	Introduced new argument to swap_symtab_in() to allow to preserve the
+	original symbol type when reading Digital Research symbol tables.
+
+	* symbols.c:
+	Introduced new argument to swap_symtab_in() to allow to preserve the
+	symbol types when reading Digital Research symbol tables.
+
+	* mintbin.c: Split up usage message to simplify translator's job.
+
+	* flags.c: Removed extra newlines from warnings about dangerous flags.
+	Split up usage message to simplify translator's job.
+
+	* cstrip.c: New file.
+
+	* csize.c: Fixed crash: Removed extra parameter in call to error().
+
+	* cnm.c: New file.
+
+	* arconv.c: Split up usage message to simplify translations.
+
+	* Makefile.am: New programs cnm, csize and cstrip.
+
+1999-06-19  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* stack.c: Beautified output.
+
+	* csize.c: New file.
+
+1999-06-07  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* flags.c: Fixed typo in verbose output.
+
+	* flags.c:
+	Handle memory protection flags correctly, removed debug output.
+	Corrected help page (option `super-memory' must read `msuper-memory').
+
+1999-06-06  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* flags.c: Fixed compiler warning about printf format.
+
+1999-06-02  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* targets.c: Added RCS id.
+
+	* Makefile.am: Removed unused header file symseg.h.
+
+	* stack.c: - Removed stupid joke.
+	- Optimized a little for i18n support.
+
+	* flags.c: New file.
+
+	* Makefile.am: - Fixed include path.
+	- New header symseg.h.
+	- New program flags with source file flags.c.
+	- Install in $prefix/m68k-atari-mint.  On the native (MiNT) platform
+	  hardlinks into the bindir get created.
+
+1999-06-02  Guido Flohr  <guido@zowee.localnet>
+
+	* targets.c: Added RCS id.
+
+	* Makefile.am: Removed unused header file symseg.h.
+
+	* stack.c: - Removed stupid joke.
+	- Optimized a little for i18n support.
+
+	* flags.c: New file.
+
+	* Makefile.am: - Fixed include path.
+	- New header symseg.h.
+	- New program flags with source file flags.c.
+	- Install in $prefix/m68k-atari-mint.  On the native (MiNT) platform
+	  hardlinks into the bindir get created.
+
+1999-06-02  Guido Flohr  <guido@zowee.localnet>
+
+	* targets.c: Added RCS id.
+
+	* Makefile.am: Removed unused header file symseg.h.
+
+	* stack.c: - Removed stupid joke.
+	- Optimized a little for i18n support.
+
+	* flags.c: New file.
+
+	* Makefile.am: - Fixed include path.
+	- New header symseg.h.
+	- New program flags with source file flags.c.
+	- Install in $prefix/m68k-atari-mint.  On the native (MiNT) platform
+	  hardlinks into the bindir get created.
+
+1999-05-19  Guido Flohr  <guido@zowee.localnet>
+
+	* version.c: Made version string more descriptive.
+
+1999-05-18  Guido Flohr  <guido@zowee.localnet>
+
+	* symex.c, symbols.c: Include <libmb.h> for xmalloc.
+
+1999-03-16  Guido Flohr  <guido@zowee.localnet>
+
+	* targets.c: Include <libmb.h>.
+
+1999-02-06  Guido Flohr  <guido@zowee.localnet>
+
+	* stack.c, mintbin.c, symex.c, arconv.c, Makefile.am:
+	Added i18n support.
+
+	* symex.c: Missing newline added in usage message.
+
+1999-02-06  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* stack.c, mintbin.c, symex.c, arconv.c, Makefile.am:
+	Added i18n support.
+
+	* symex.c: Missing newline added in usage message.
+
+1999-01-31  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: New program arconv.
+
+	* targets.c:
+	BUGFIX:  swap_ar_header_in and swap_old_ar_header_in always returned
+	an error.
+
+	* symex.c: Include string.h or strings.h.
+	Create files with correct permissions.
+
+	* stack.c: Size argument may now be hexadecimal, octal or decimal.
+	Diagnostic output, default stack size is really 8k not 4k.
+	Usage message, also negative stack size values may have m or k
+	qualifiers.
+
+	* arconv.c: New file.
+
+1999-01-31  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: New program arconv.
+
+	* targets.c:
+	BUGFIX:  swap_ar_header_in and swap_old_ar_header_in always returned
+	an error.
+
+	* symex.c: Include string.h or strings.h.
+	Create files with correct permissions.
+
+	* stack.c: Size argument may now be hexadecimal, octal or decimal.
+	Diagnostic output, default stack size is really 8k not 4k.
+	Usage message, also negative stack size values may have m or k
+	qualifiers.
+
+	* arconv.c: New file.
+
+1999-01-29  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: New program symex.
+
+	* symex.c: New file.
+
+	* targets.c: Renamed baserel to tparel.
+
+	* version.c: Changed year to 1999.
+
+	* exec.h: Renamed baserel to tparel.
+
+1999-01-10  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* Makefile.am: Correct include path to work with build directory.
+
+1999-01-09  Guido Flohr  <gufl0000@stud.uni-sb.de>
+
+	* version.c, targets.h, targets.c, symbols.h, symbols.c, stack.c, mintbin.c, exec.h, Makefile.am:
+	New file.
+
+
+
+
+
+
+
+
+
+
+	

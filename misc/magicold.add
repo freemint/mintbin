@@ -1,0 +1,22 @@
+#------------------------------------------------------------------------------
+# mintprg:  file(1) magic for Atari/MiNT executables.
+#
+# From Guido Flohr <gufl0000@stud.uni-sb.de>
+# These are the /etc/magic entries to decode standard Atari executables
+# with possible MiNT extensions.
+#
+# This file is intended for old versions of the file program that don't
+# understand the beshort and belong keywords.  You can only use it
+# on big-endian hosts like the Atari.
+0	short		0xdeaf		MiNT relocateable object file
+0	short		0x601a		Atari
+>18	long		0		old-style GEMDOS executable
+>18	long		0x4d694e54	(MiNT)
+>>36	long&0x00ff0000 1		mc68010
+>>36	long&0x00ff0000 2		mc68020
+>>36	long&0x0000ffff 0407		object file
+>>36	long&0x0000ffff 0410		pure executable
+>>36	long&0x0000ffff 0413		demand-paged executable
+>>14	long		>0		not stripped
+>>26	short		>0		absolute
+>80	long		1		with DRI symbol table

@@ -1,0 +1,17 @@
+The files in this subdirectory are here because they don't fit
+into another.
+
+The shell script nm-wrapper is a wrapper script around broken
+nm programs.  If your nm responds to the option -V with an
+endless loop saying ``illegal option -- -V'' you will need
+it.  Rename your nm to ``nm-old'' and install ``nm-wrapper''
+as ``nm''.
+
+If you don't have a working ranlib program or script installed
+you can install the script provided here.
+
+Both nm-wrapper and ranlib are used when you want to bootstrap
+the GNU binutils.
+
+You may add the file magic.add to your /etc/magic in case your
+file command fails to detect MiNT executables.

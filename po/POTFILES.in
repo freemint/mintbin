@@ -1,0 +1,23 @@
+# List of source files containing translatable strings.
+# Copyright (C) 1999 Guido Flohr.
+
+# $Id$
+
+# Common library files.
+lib/error.c
+lib/getopt.c
+lib/getopt1.c
+lib/xmalloc.c
+
+# Package source files.
+src/arconv.c
+src/mintbin.c
+src/stack.c
+src/symbols.c
+src/symex.c
+src/targets.c
+src/version.c
+src/flags.c
+src/csize.c
+src/cstrip.c
+src/cnm.c
