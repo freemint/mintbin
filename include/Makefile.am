@@ -6,7 +6,7 @@ AUTOMAKE_OPTIONS = gnits
 
 SUBDIRS = mint
 
-include_HEADERS = a.out.h ar.h stab.h stab.def
+include_HEADERS = a.out.h stab.h stab.def
 
 install-data-local:
 	@$(NORMAL_INSTALL)

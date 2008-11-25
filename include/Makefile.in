@@ -100,7 +100,7 @@ AUTOMAKE_OPTIONS = gnits
 
 SUBDIRS = mint
 
-include_HEADERS = a.out.h ar.h stab.h stab.def
+include_HEADERS = a.out.h stab.h stab.def
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = ../config.h
 CONFIG_CLEAN_FILES = 

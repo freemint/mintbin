@@ -306,7 +306,7 @@ distdir: $(DISTFILES)
 	  fi; \
 	done
 arconv.o: arconv.c ../config.h ../lib/getopt.h ../lib/error.h \
-	../include/ar.h targets.h ../include/mint/a.out.h exec.h \
+	targets.h ../include/mint/a.out.h exec.h \
 	../include/mint/prg-out.h ../system.h symbols.h
 cnm.o: cnm.c ../config.h ../lib/getopt.h ../lib/error.h targets.h \
 	../include/mint/a.out.h exec.h ../include/mint/prg-out.h \
@@ -338,7 +338,7 @@ symex.o: symex.c ../config.h ../lib/getopt.h ../lib/error.h \
 	symbols.h
 targets.o: targets.c ../config.h ../lib/error.h \
 	../include/mint/prg-out.h ../include/mint/a.out.h \
-	../include/a.out.h ../include/ar.h ../lib/libmb.h ../system.h \
+	../include/a.out.h ../lib/libmb.h ../system.h \
 	targets.h exec.h
 tempname.o: tempname.c ../config.h ../lib/libmb.h ../system.h
 version.o: version.c ../system.h ../config.h
