@@ -38,7 +38,7 @@ struct prg_exec {
   unsigned long  g_extmagic;    /* Always PRG_MINT_MAGIC.
 				   (in ASCII: ``MiNT'').  */
   unsigned long  g_flags;       /* Atari special flags.  */
-  unsigned long  g_abs;         /* Non-zero if absolute (no relocation
+  unsigned short g_abs;         /* Non-zero if absolute (no relocation
                                    info).  Should therefore always be
 				   zero.  */
   
