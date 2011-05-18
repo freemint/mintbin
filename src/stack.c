@@ -443,7 +443,7 @@ stack size ``%s'' out of range: overflow in number"), optarg);
   /* Sanity check for 64-bit machines.  */
   if (sizeof (long) > 4
       && ((*size) > 0x7fffffff
-	  || (*size) < 0xffffffff))
+	  || (*size) < -0x80000000L))
     {
       error (EXIT_SUCCESS, 0, _("\
 stack size ``%s'' out of range: overflow in number"), optarg);
