@@ -510,7 +510,7 @@ copy_file (input_filename, output_filename)
   otarget = xmalloc (sizeof *otarget);
   (void) memset (otarget, 0, sizeof *otarget);
   otarget->filename = output_filename;
-  otarget->desc = open (output_filename, O_WRONLY | O_CREAT);
+  otarget->desc = creat (output_filename, S_IRWXU | S_IRWXG | S_IRWXO);
   if (otarget->desc < 0)
     {
       status = EXIT_FAILURE;
