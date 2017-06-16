@@ -53,8 +53,14 @@ Boston, MA 02111-1307, USA.  */
 #ifdef HAVE_LOCALE_H
 # include <locale.h>
 #endif
+#ifdef ENABLE_NLS
 #include <libintl.h>
-#define _(String) gettext(String)
+# define _(String) gettext(String)
+#else
+# define _(String) String
+# define bindtextdomain(Domainname, Dirname)
+# define textdomain(Domainname)
+#endif
 
 #ifndef N_
 # define N_(String) (String)

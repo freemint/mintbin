@@ -167,8 +167,8 @@ the GNU General Public License.  This program has absolutely no warranty.\n", 91
   {"  Program's memory is readable.\n", 110},
   {"Display and manipulate program flags of MiNT executables.\n", 111},
   {"\
-  -f, --flags=NEWFLAGS           set flags to hexadecimal, decimal or octal \
-\n\
+  -f, --flags=NEWFLAGS           set flags to hexadecimal, decimal or \
+octal \n\
                                  value NEWFLAGS\n\
   -P, --print, --just-print      only print current flags\n\
   -l, --mfastload                set the fastload flag\n\

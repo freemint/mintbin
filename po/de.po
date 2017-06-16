@@ -4,10 +4,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mintbin 0.2.4\n"
-"POT-Creation-Date: 1999-06-28 16:37+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-16 08:58+0200\n"
 "PO-Revision-Date: 1999-06-28 16:10+0200\n"
 "Last-Translator: Guido Flohr <gufl0000@stud.uni-sb.de>\n"
 "Language-Team: German <de@li.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8-bit\n"
@@ -16,61 +18,61 @@ msgstr ""
 msgid "Unknown system error"
 msgstr "unbekannter Systemfehler"
 
-#: lib/getopt.c:678
+#: lib/getopt.c:679
 #, c-format
 msgid "%s: option `%s' is ambiguous\n"
 msgstr "%s: Option »%s« ist mehrdeutig\n"
 
-#: lib/getopt.c:702
+#: lib/getopt.c:703
 #, c-format
 msgid "%s: option `--%s' doesn't allow an argument\n"
 msgstr "%s: Option »--%s« erwartet kein Argument\n"
 
-#: lib/getopt.c:707
+#: lib/getopt.c:708
 #, c-format
 msgid "%s: option `%c%s' doesn't allow an argument\n"
 msgstr "%s: Option »%c%s« erwartet kein Argument\n"
 
-#: lib/getopt.c:724 lib/getopt.c:897
+#: lib/getopt.c:725 lib/getopt.c:898
 #, c-format
 msgid "%s: option `%s' requires an argument\n"
 msgstr "%s: Option »%s« erwartet ein Argument\n"
 
 #. --option
-#: lib/getopt.c:753
+#: lib/getopt.c:754
 #, c-format
 msgid "%s: unrecognized option `--%s'\n"
 msgstr "%s: unbekannte Option »--%s«\n"
 
 #. +option or -option
-#: lib/getopt.c:757
+#: lib/getopt.c:758
 #, c-format
 msgid "%s: unrecognized option `%c%s'\n"
 msgstr "%s: unbekannte Option »%c%s«\n"
 
 #. 1003.2 specifies the format of this message.
-#: lib/getopt.c:783
+#: lib/getopt.c:784
 #, c-format
 msgid "%s: illegal option -- %c\n"
 msgstr "%s: unzulässige Option -- %c\n"
 
-#: lib/getopt.c:786
+#: lib/getopt.c:787
 #, c-format
 msgid "%s: invalid option -- %c\n"
 msgstr "%s: ungültige Option -- %c\n"
 
 #. 1003.2 specifies the format of this message.
-#: lib/getopt.c:816 lib/getopt.c:946
+#: lib/getopt.c:817 lib/getopt.c:947
 #, c-format
 msgid "%s: option requires an argument -- %c\n"
 msgstr "%s: Option erwartet ein Argument -- %c\n"
 
-#: lib/getopt.c:863
+#: lib/getopt.c:864
 #, c-format
 msgid "%s: option `-W %s' is ambiguous\n"
 msgstr "%s: Option »-W %s« ist mehrdeutig\n"
 
-#: lib/getopt.c:881
+#: lib/getopt.c:882
 #, c-format
 msgid "%s: option `-W %s' doesn't allow an argument\n"
 msgstr "%s: Option »-W %s« erwartet kein Argument\n"
@@ -88,8 +90,8 @@ msgstr "keine Eingabedateien gegeben"
 msgid "no output file"
 msgstr "Ausgabedatei fehlt"
 
-#: src/arconv.c:186 src/cnm.c:173 src/csize.c:331 src/cstrip.c:186
-#: src/flags.c:535 src/mintbin.c:148 src/stack.c:197 src/symex.c:176
+#: src/arconv.c:186 src/mintbin.c:148 src/stack.c:197 src/symex.c:176
+#: src/flags.c:535 src/csize.c:331 src/cstrip.c:186 src/cnm.c:173
 #, c-format
 msgid "Usage: %s [OPTIONS] INPUTFILE ...\n"
 msgstr "Benutzung: %s [OPTIONEN] EINGABEDATEI ...\n"
@@ -98,8 +100,8 @@ msgstr "Benutzung: %s [OPTIONEN] EINGABEDATEI ...\n"
 msgid "Convert old-style libraries to new format.\n"
 msgstr "Konvertiere Bibliotheken im alten Stil in das neue Format.\n"
 
-#: src/arconv.c:189 src/cnm.c:176 src/csize.c:334 src/cstrip.c:189
-#: src/flags.c:538 src/mintbin.c:151 src/stack.c:200 src/symex.c:179
+#: src/arconv.c:189 src/mintbin.c:151 src/stack.c:200 src/symex.c:179
+#: src/flags.c:538 src/csize.c:334 src/cstrip.c:189 src/cnm.c:176
 msgid ""
 "\n"
 "Mandatory arguments to long options are mandatory to short options too.\n"
@@ -116,8 +118,8 @@ msgstr ""
 "  -o, --output=DATEINAME          ändere Ausgabe-DATEINAMEn\\n\n"
 "  -v, --verbose                   liste Module während der Bearbeitung\\n\n"
 
-#: src/arconv.c:196 src/cnm.c:184 src/csize.c:348 src/cstrip.c:202
-#: src/flags.c:570 src/mintbin.c:154 src/stack.c:212 src/symex.c:185
+#: src/arconv.c:196 src/mintbin.c:154 src/stack.c:212 src/symex.c:185
+#: src/flags.c:570 src/csize.c:348 src/cstrip.c:202 src/cnm.c:184
 msgid ""
 "  -h, --help                     display this help and exit\n"
 "  -V, --version                  output version information and exit\n"
@@ -139,9 +141,9 @@ msgid "%s: not an old-style ar archive"
 msgstr "%s: Kein ar-Archiv im alten Format"
 
 #. We use this to report failure.
-#: src/arconv.c:232 src/cstrip.c:342 src/cstrip.c:391 src/cstrip.c:414
-#: src/cstrip.c:426 src/flags.c:448 src/stack.c:272 src/stack.c:367
-#: src/symbols.c:127 src/symex.c:279
+#: src/arconv.c:232 src/stack.c:272 src/stack.c:367 src/symbols.c:127
+#: src/symex.c:279 src/flags.c:448 src/cstrip.c:342 src/cstrip.c:391
+#: src/cstrip.c:414 src/cstrip.c:426
 #, c-format
 msgid "%s: seek error"
 msgstr "%s: Dateipositionierungsfehler"
@@ -152,27 +154,27 @@ msgid "%s: open error"
 msgstr "%s: Fehler beim Öffnen"
 
 #. We use this to report failure.
-#: src/arconv.c:251 src/arconv.c:374 src/arconv.c:393 src/cstrip.c:376
-#: src/cstrip.c:457 src/flags.c:455 src/stack.c:381 src/symex.c:270
-#: src/symex.c:295
+#: src/arconv.c:251 src/arconv.c:374 src/arconv.c:393 src/stack.c:381
+#: src/symex.c:270 src/symex.c:295 src/flags.c:455 src/cstrip.c:376
+#: src/cstrip.c:457
 #, c-format
 msgid "%s: write error"
 msgstr "%s: Schreibfehler"
 
-#: src/arconv.c:261 src/csize.c:313 src/flags.c:461
+#: src/arconv.c:261 src/flags.c:461 src/csize.c:313
 #, c-format
 msgid "%s: close error"
 msgstr "%s: Schreibfehler"
 
-#: src/arconv.c:267 src/cnm.c:362 src/mintbin.c:237 src/stack.c:393
-#: src/symex.c:303
+#: src/arconv.c:267 src/mintbin.c:237 src/stack.c:393 src/symex.c:303
+#: src/cnm.c:362
 #, c-format
 msgid "%s: warning: close error"
 msgstr "%s: Warnung: Fehler beim Schließen"
 
 #. We use this to report failure.
-#: src/arconv.c:331 src/arconv.c:387 src/cstrip.c:449 src/stack.c:284
-#: src/symbols.c:218 src/symex.c:288
+#: src/arconv.c:331 src/arconv.c:387 src/stack.c:284 src/symbols.c:218
+#: src/symex.c:288 src/cstrip.c:449
 #, c-format
 msgid "%s: read error"
 msgstr "%s: Lesefehler"
@@ -192,8 +194,8 @@ msgstr "%s: Datei ist verstümmelt"
 msgid "Display information about given binary input files.\n"
 msgstr "Zeige Informationen über gegebene binäre Eingabedateien.\n"
 
-#: src/cnm.c:188 src/csize.c:352 src/flags.c:574 src/mintbin.c:158
-#: src/stack.c:216
+#: src/mintbin.c:158 src/stack.c:216 src/flags.c:574 src/csize.c:352
+#: src/cnm.c:188
 msgid ""
 "\n"
 "If INPUTFILE is missing, `a.out' is assumed.\n"
@@ -266,7 +268,7 @@ msgstr ""
 "  -S, --fix=GRÖSSE, --size=GRÖSSE\n"
 "                                 ändere Stack-Größe auf GRÖSSE Bytes\n"
 
-#: src/flags.c:565 src/stack.c:207
+#: src/stack.c:207 src/flags.c:565
 msgid ""
 "  -s, --silent                   print only error messages\n"
 "  -q, --quiet                    same as -s, --silent\n"
@@ -288,7 +290,7 @@ msgstr ""
 "Dem GRÖSSE-Argument kann optional einer der Modifiziere »k« (Kilobytes)\n"
 "oder »M« (Megabytes) folgen.\n"
 
-#: src/cnm.c:195 src/cstrip.c:222 src/stack.c:223
+#: src/stack.c:223 src/cstrip.c:222 src/cnm.c:195
 msgid "Report bugs to <gufl0000@stud.uni-sb.de>.\n"
 msgstr "Melde Fehler an <gufl0000@stud.uni-sb.de>.\n"
 
@@ -319,6 +321,7 @@ msgid "stack size: %ld bytes (%ld kilo bytes).\n"
 msgstr "Stackgröße: %ld Bytes (%ld Kilobytes).\n"
 
 #: src/stack.c:306
+#, c-format
 msgid ""
 "(This means really that almost all of the available memory will\n"
 "be used for the stack.  If you run the image you will not be\n"
@@ -329,6 +332,7 @@ msgstr ""
 "andere Prozesse zu starten, bevor der aktuelle beendet ist.\n"
 
 #: src/stack.c:312
+#, c-format
 msgid ""
 "(This means really that only a minimum amount of memory will\n"
 "be reserved for the stack.  This minimum will usually be 8192\n"
@@ -343,6 +347,7 @@ msgstr ""
 "hingegen oft nicht ausreichend.\n"
 
 #: src/stack.c:320
+#, c-format
 msgid ""
 "(This means really that one quarter of the available memory will\n"
 "be reserved for the stack.  This may be necessary for very\n"
@@ -355,6 +360,7 @@ msgstr ""
 "schlichtweg zuviel.\n"
 
 #: src/stack.c:327
+#, c-format
 msgid ""
 "(This means really that one half of the available memory will\n"
 "be reserved for the stack.  This may be necessary for extremely\n"
@@ -367,6 +373,7 @@ msgstr ""
 "schlichtweg zuviel.\n"
 
 #: src/stack.c:334
+#, c-format
 msgid ""
 "(This means really that three quarters of the available memory will\n"
 "be reserved for the stack.  This may be necessary for extremely\n"
@@ -394,10 +401,12 @@ msgstr ""
 #. the bus error resulting from invalid stack
 #. sizes.
 #: src/stack.c:351
+#, c-format
 msgid "("
 msgstr "("
 
 #: src/stack.c:354
+#, c-format
 msgid ""
 "An invalid resp. insufficient setting for the program stack size\n"
 "may result in a bus error, sometimes only in special cases.)\n"
@@ -476,7 +485,7 @@ msgstr ""
 "Falls Eingabedatei fehlt, wird»a.out« angenommen. Falls der Name der\n"
 "Ausgabedatei fehlt, wird auf die Standard-Ausgabe (stdout) geschrieben.\n"
 
-#: src/csize.c:370 src/flags.c:591 src/symex.c:193
+#: src/symex.c:193 src/flags.c:591 src/csize.c:370
 msgid "Report bugs to <gufl0000@stud.uni-sb.de>\n"
 msgstr "Melde Fehler an <gufl0000@stud.uni-sb.de>.\n"
 
@@ -494,7 +503,7 @@ msgstr "%s: Datei enthält keine Symbole"
 msgid "standard output"
 msgstr "Standard-Ausgabe"
 
-#: src/cstrip.c:813 src/targets.c:90
+#: src/targets.c:90 src/cstrip.c:813
 #, c-format
 msgid "%s: stat error"
 msgstr "%s: Dateipositionierungsfehler"
@@ -539,10 +548,12 @@ msgstr "%s (%s - FreeMiNT Binär-Werkzeuge) %s\n"
 #. copyright notice at all or at least include the original english
 #. version!
 #: src/version.c:43
+#, c-format
 msgid "Copyright (C) 1999 Guido Flohr (gufl0000@stud.uni-sb.de)\n"
 msgstr "Copyright (C) 1999 Guido Flohr (gufl0000@stud.uni-sb.de)\n"
 
 #: src/version.c:44
+#, c-format
 msgid ""
 "This program is free software; you may redistribute it under the terms of\n"
 "the GNU General Public License.  This program has absolutely no warranty.\n"
@@ -595,45 +606,55 @@ msgid " (were 0x%08lx)"
 msgstr "(war 0x%08lx)"
 
 #: src/flags.c:477
+#, c-format
 msgid ".\n"
 msgstr ".\n"
 
 #: src/flags.c:483
+#, c-format
 msgid "  Fastload flag is set (heap doesn't get cleared).\n"
 msgstr "  Fastload-Flag ist gesetzt (Heap wird nicht ausgenullt).\n"
 
 #: src/flags.c:486
+#, c-format
 msgid "  Altload flag is set (load into alternate RAM).\n"
 msgstr "  Altload-Flag ist gesetzt (lade in alternatives RAM).\n"
 
 #: src/flags.c:489
+#, c-format
 msgid "  Altalloc flag is set (allocate memory from alternate RAM).\n"
 msgstr "  Altalloc-Flag ist gesetzt (alloziere aus alternativem RAM).\n"
 
 #: src/flags.c:492
+#, c-format
 msgid "  Bestfit flag is set (space for stack reserved in BSS).\n"
 msgstr "  Bestfit-Flag ist gesetzt (reserviere Stack-Speicher in BSS).\n"
 
 #: src/flags.c:495
+#, c-format
 msgid "  Shared text flag is set (programs text segment is sharable).\n"
 msgstr ""
 "  Shared-Text-Flag ist gesetzt (Text-Segment kann gemeinsam genutzt "
 "werden).\n"
 
 #: src/flags.c:500
+#, c-format
 msgid "  Program's memory is fully protected.\n"
 msgstr "  Speicher des Programms ist voll geschützt.\n"
 
 #: src/flags.c:504
+#, c-format
 msgid "  Program's memory is not protected at all (globally accessible).\n"
 msgstr ""
 "  Speicher des Programms ist nicht geschützt (globaler Zugriff möglich).\n"
 
 #: src/flags.c:508
+#, c-format
 msgid "  Program's memory may be accessed in supervisor mode.\n"
 msgstr "  Im Supervisor-Modus kann auf Programmspeicher zugegriffen werden.\n"
 
 #: src/flags.c:512
+#, c-format
 msgid "  Program's memory is readable.\n"
 msgstr "  Speicher des Programms ist lesbar.\n"
 
@@ -643,8 +664,8 @@ msgstr "Zeige und manipuliere Programm-Flags ausführbarer MiNT-Dateien.\n"
 
 #: src/flags.c:541
 msgid ""
-"  -f, --flags=NEWFLAGS           set flags to hexadecimal, decimal or octal "
-"\n"
+"  -f, --flags=NEWFLAGS           set flags to hexadecimal, decimal or "
+"octal \n"
 "                                 value NEWFLAGS\n"
 "  -P, --print, --just-print      only print current flags\n"
 "  -l, --mfastload                set the fastload flag\n"
@@ -680,8 +701,8 @@ msgstr ""
 "                                 setze das Shared-Text-Flag\n"
 "  -p, --mprotected, --mfull-protection, --mmemory-protected\n"
 "  -g, --mglobal-memory           schalte Speicherschutz völlig ab\n"
-"  -S, --msuper-memory            erlaube Speicherzugriff im "
-"Supervisor-Modus\n"
+"  -S, --msuper-memory            erlaube Speicherzugriff im Supervisor-"
+"Modus\n"
 "   -R, --mreadable-memory, --mreadonly-memory\n"
 "                                 erlaube Lesezugriff auf Speicher\n"
 "  --mno-fastload                 setze Fastload-Flag auf Null\n"
@@ -710,8 +731,8 @@ msgid ""
 "a short description of their meaning are printed out.\n"
 msgstr ""
 "Argumente können gehäuft (kumuliert) werden. Eine Option, die einer vorher-\n"
-"gehenden Option widerspricht, gewinnt über die vorherige. Die Verwendung von "
-"\n"
+"gehenden Option widerspricht, gewinnt über die vorherige. Die Verwendung "
+"von \n"
 "»--flags« bzw. »-f« oder »--prg-flags« schließt die Verwendung von Einzel-\n"
 "Flag-Option aus. Alle Optionen, welche die Speicherschutz-Flags verändern,\n"
 "schließen sich ebenfalls gegenseitig aus. Wird das Programm instruiert, nur\n"
@@ -726,7 +747,7 @@ msgstr ""
 "(»--verbose«) Modus wird eine Kurzbeschreibung aller gesetzten Flags\n"
 "ausgegeben.\n"
 
-#: src/csize.c:378 src/flags.c:599
+#: src/flags.c:599 src/csize.c:378
 #, c-format
 msgid "Try `%s --help' for more information.\n"
 msgstr "Versuche »%s --help« für weitere Informationen.\n"
@@ -753,11 +774,13 @@ msgid "filename"
 msgstr "Dateiname"
 
 #: src/csize.c:262
+#, c-format
 msgid "section     size       addr\n"
 msgstr "Sektion     Grösse    Addresse\n"
 
 #. Sum.
 #: src/csize.c:289
+#, c-format
 msgid "Total "
 msgstr "Gesamt"
 
@@ -802,8 +825,8 @@ msgstr ""
 "Groß-/Kleinschreibung spielt keine Rolle.\n"
 "Die numerische Basis muss entweder 10 (dezimal, Vorgabe), 8 (oktal) oder\n"
 "16 (hexadezimal) sein.\n"
-"Es ist zu beachten, dass die Ausgabe für Programme im erweiterten "
-"MiNT-Format\n"
+"Es ist zu beachten, dass die Ausgabe für Programme im erweiterten MiNT-"
+"Format\n"
 "von der Größe, die das Programm »size« ausgibt, abweicht, weil »size« die \n"
 "tatsächlichen Segment-Größen angibt, während dieses Programm die Segment-\n"
 "Größen, die der Kernel sieht, ausgibt.\n"
@@ -977,10 +1000,12 @@ msgid "%lu slots mem %lu \n"
 msgstr "%lu Schächte, Speicher %lu\n"
 
 #: src/cnm.c:268
+#, c-format
 msgid "no global symbols\n"
 msgstr "keine globalen Symbole\n"
 
 #: src/cnm.c:270
+#, c-format
 msgid "one global symbol\n"
 msgstr "ein globales Symbol\n"
 
@@ -999,10 +1024,12 @@ msgid "%lu global symbols \n"
 msgstr "%lu globale Symbole\n"
 
 #: src/cnm.c:285
+#, c-format
 msgid "no symbols\n"
 msgstr "keine Symbole\n"
 
 #: src/cnm.c:287
+#, c-format
 msgid "one symbol\n"
 msgstr "ein Symbol\n"
 
@@ -1021,49 +1048,61 @@ msgid "%lu symbols \n"
 msgstr "%lu Symbole\n"
 
 #: src/cnm.c:316
+#, c-format
 msgid "text file "
 msgstr "Text-Datei "
 
 #: src/cnm.c:325
+#, c-format
 msgid "external "
 msgstr "extern "
 
 #: src/cnm.c:327
+#, c-format
 msgid "equated register "
 msgstr "gleichgesetztes (»equated«) Register "
 
 #: src/cnm.c:329
+#, c-format
 msgid "global "
 msgstr "global "
 
 #: src/cnm.c:331
+#, c-format
 msgid "equated "
 msgstr "gleichgesetzt (»equated«) "
 
 #: src/cnm.c:333
+#, c-format
 msgid "defined "
 msgstr "definiert "
 
 #: src/cnm.c:337
+#, c-format
 msgid "Bss "
 msgstr "Bss "
 
 #: src/cnm.c:339
+#, c-format
 msgid "bss "
 msgstr "bss "
 
 #: src/cnm.c:344
+#, c-format
 msgid "Text "
 msgstr "Text "
 
 #: src/cnm.c:346
+#, c-format
 msgid "text "
 msgstr "text "
 
 #: src/cnm.c:351
+#, c-format
 msgid "Data "
 msgstr "Daten "
 
 #: src/cnm.c:353
+#, c-format
 msgid "data "
 msgstr "daten "
