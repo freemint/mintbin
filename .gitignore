@@ -1,5 +1,8 @@
+aclocal.m4
+autom4te.cache
 config.cache
 config.h
+config.h.in.orig
 config.log
 config.status
 Makefile
@@ -15,7 +18,8 @@ src/flags
 src/mintbin
 src/stack
 src/symex
-stamp-h
+stamp-*
+.deps
 *.o
 *.a
 *~

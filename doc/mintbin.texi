@@ -759,7 +759,7 @@ purpose of these options is mainly to set the appropriate runtime
 program flags in the program header (@pxref{The program runtime flags}).
 
 @table @samp
-@itemx --mfastload
+@item --mfastload
 Sets the fastload flag in the program header (this is the
 default).  Usually the kernel will set the program's heap
 to zero before the program image gets executed.  If the
@@ -767,31 +767,31 @@ fastload flag is set this time consuming task is omitted.
 In this case your program should never make assumptions
 about heap variables being initialized to zero.
 
-@itemx --mno-fastload
+@item --mno-fastload
 Do not set the fastload flag.
 
-@itemx --mfastram
-@itemx --maltram
+@item --mfastram
+@item --maltram
 This flag causes the kernel to try to load the program image
 into the alternate ram (also know as fast ram).  This flag
 is set by default.
 
-@itemx --mno-fastram
-@itemx --mno-altram
+@item --mno-fastram
+@item --mno-altram
 Inhibits the program being loaded into the alternate ram.
 
 
-@itemx --mfastalloc
-@itemx --maltalloc
+@item --mfastalloc
+@item --maltalloc
 This flag causes the kernel to satisfy mallocs from the alternate
 ram.  This flag is set by default.
 
-@itemx --mno-fastalloc
-@itemx --mno-altalloc
+@item --mno-fastalloc
+@item --mno-altalloc
 Inhibits mallocs being satisfied from the alternate ram by
 the kernel.
 
-@itemx --mbest-fit
+@item --mbest-fit
 If the kernel supports this feature the program image will
 not be loaded into the largest free memory block.  Instead
 the required amount of memory will be calculated and a free
@@ -799,12 +799,12 @@ memory block with an optimum size will be chosen.  If you
 set this flag you should make sure that the program reserves
 memory for the stack in the program's BSS.
 
-@itemx --mno-best-fit
+@item --mno-best-fit
 Turns of the best-fit program flag (this is the default).
 
-@itemx --mbaserel
-@itemx --mshared-text
-@itemx --msharable-text
+@item --mbaserel
+@item --mshared-text
+@item --msharable-text
 If the kernel supports this feature multiple instances of 
 a process image will share a common text section.  In order
 to make this work a program may not contain any references
@@ -823,9 +823,9 @@ and you are sure that this relocation is not really dangerous.
 Of course you should really know what you are doing if you
 set the flag by hand.
 
-@itemx --mno-baserel
-@itemx --mno-shared-text
-@itemx --mno-sharable-text
+@item --mno-baserel
+@item --mno-shared-text
+@item --mno-sharable-text
 Marks the program's text section as non-sharable to the kernel
 (this is the default).
 
@@ -837,24 +837,24 @@ exclusive.
 
 @table @samp
 
-@itemx --mprivate-memory
+@item --mprivate-memory
 Treat all of the program's memory as private (this is the
 default).  All accesses from other processes to this program's 
 memory will trigger a segmentation fault.
 
-@itemx --mglobal-memory
+@item --mglobal-memory
 Treat the program's memory as global (deprecated).  Access to 
 the program's memory is allowed unconditionally.  If your own 
 program needs this flag you should consider to redesign it.
 
 
-@itemx --msuper-memory
+@item --msuper-memory
 Allow memory access in supervisor-mode (deprecated).  Access to 
 the program's memory is then allowed unconditionally.  If your own 
 program needs this flag you should consider to redesign it.
 
-@itemx --mreadable-memory
-@itemx --mreadonly-memory
+@item --mreadable-memory
+@item --mreadonly-memory
 Allow read access to the program's memory (deprecated).  If your
 own program needs this flag you should consider to redesign it.
 
@@ -863,7 +863,7 @@ own program needs this flag you should consider to redesign it.
 @noindent This last option allows to set multiple flags at once.
 
 @table @samp
-@itemx --mprg-flags=@var{FLAGWORD}
+@item --mprg-flags=@var{FLAGWORD}
 Set program runtime flags to @var{FLAGWORD}.  @var{FLAGWORD} must be a 32
 bit unsigned integer value and may be specified either in
 decimal, octal (with a leading digit zero) or hexadecimal
@@ -876,7 +876,7 @@ without warning.
 
 @table @samp
 
-@itemx --traditional-format
+@item --traditional-format
 This is actually a standard option.  For the FreeMiNT target
 it causes the linker to create an executable with a symbol
 table in DRI format.  This format is still expected by older

@@ -2,7 +2,7 @@
 
 # $Id$
 
-CFLAGS = -Wall @CFLAGS@
+AM_CFLAGS = -Wall
 
 datadir = $(prefix)/@DATADIRNAME@
 localedir = $(datadir)/locale
@@ -13,7 +13,7 @@ DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
 
 LDADD = ../lib/libmb.a
 
-LIBS = @INTLLIBS@ @LIBS@
+LIBS = $(INTLLIBS) @LIBS@
 
 noinst_HEADERS = exec.h symbols.h targets.h
 
@@ -34,8 +34,8 @@ install-exec-local:
 	  $(mkinstalldirs) $(DESTDIR)$(nativebindir) || exit 1; \
 	  for prog in $(bin_PROGRAMS); do \
 	    iprog=`echo $$prog | sed '$(transform)'`; \
-            ln $(DESTDIR)$(bindir)/$$iprog $(DESTDIR)$(nativebindir)/$$iprog >/dev/null 2>/dev/null \
-	      || $(INSTALL_PROGRAM) $$prog $(DESTDIR)$(nativebindir)/$$iprog ; \
+            ln $(DESTDIR)$(bindir)/$$iprog $(DESTDIR)$(nativebindir)/m68k-atari-mint-$$iprog >/dev/null 2>/dev/null \
+	      || $(INSTALL_PROGRAM) $$prog $(DESTDIR)$(nativebindir)/m68k-atari-mint-$$iprog ; \
 	  done; \
         fi
 
@@ -43,6 +43,6 @@ uninstall-local:
 	if test x$(nativebindir) != x; then \
 	  for prog in $(bin_PROGRAMS); do \
 	    iprog=`echo $$prog | sed '$(transform)'`; \
-            rm -f $(DESTDIR)$(nativebindir)/$$iprog; \
+            rm -f $(DESTDIR)$(nativebindir)/m68k-atari-mint-$$iprog; \
 	  done; \
         fi

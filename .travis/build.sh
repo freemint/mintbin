@@ -3,6 +3,8 @@
 TMP="$1"
 OUT="$2"
 
+export ACLOCAL=aclocal
+export AUTOMAKE=automake
 CC=m68k-atari-mint-gcc RANLIB=m68k-atari-mint-ranlib ./configure --prefix=/ --disable-nls --host=m68k-atari-mint --target=m68k-atari-mint && make
 
 make DESTDIR="${TMP}" install
