@@ -55,7 +55,7 @@ extern int errno;
 
 #include <mint/prg-out.h>
 #include <a.out.h>
-#include <ar.h>
+#include "ar.h"
 
 #include <libmb.h>
 

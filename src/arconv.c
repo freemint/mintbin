@@ -60,7 +60,7 @@ extern int errno;
 #include <getopt.h>
 #include <error.h>
 
-#include <ar.h>
+#include "ar.h"
 
 #include "targets.h"
 #include "symbols.h"

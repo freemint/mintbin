@@ -15,7 +15,7 @@ LDADD = ../lib/libmb.a
 
 LIBS = $(INTLLIBS) @LIBS@
 
-noinst_HEADERS = exec.h symbols.h targets.h
+noinst_HEADERS = exec.h symbols.h targets.h ar.h
 
 bin_PROGRAMS = arconv cnm csize cstrip flags mintbin stack symex
 

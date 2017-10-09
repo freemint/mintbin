@@ -334,7 +334,7 @@ INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir) -I$(srcdir) \
 -I$(top_srcdir)/lib -I../intl -I$(top_srcdir)/intl -I..
 
 LDADD = ../lib/libmb.a
-noinst_HEADERS = exec.h symbols.h targets.h
+noinst_HEADERS = exec.h symbols.h targets.h ar.h
 arconv_SOURCES = arconv.c targets.c version.c
 cnm_SOURCES = cnm.c symbols.c targets.c version.c
 csize_SOURCES = csize.c targets.c version.c
