@@ -59,6 +59,8 @@ void (*error_print_progname) (
 #endif
 			      );
 
+#ifdef __MINGW32__
+
 /* This variable is incremented each time `error' is called.  */
 unsigned int error_message_count;
 
@@ -211,3 +213,5 @@ error_at_line (status, errnum, file_name, line_number, message, va_alist)
   if (status)
     exit (status);
 }
+
+#endif
