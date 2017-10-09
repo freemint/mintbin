@@ -72,10 +72,10 @@ dnl This is just a kludge, should be removed.
 AC_CHECK_LIB(intl, bindtextdomain)
 
 dnl Now try not to mess up the cross-user's directories.
-crossincludedir=`echo $includedir | sed -e 's,/include$,,g' -e 's,/m68k-atari-mint,,g'`
-crossbindir=`echo $bindir | sed -e 's,/bin$,,g' -e 's,/m68k-atari-mint,,g'`
-crossincludedir=$crossincludedir/m68k-atari-mint/include
-crossbindir=$crossbindir/m68k-atari-mint/bin
+crossincludedir=`echo $includedir | sed -e 's,/include$,,g' -e 's,/'$target',,g'`
+crossbindir=`echo $bindir | sed -e 's,/bin$,,g' -e 's,/'$target',,g'`
+crossincludedir=$crossincludedir/$target/include
+crossbindir=$crossbindir/$target/bin
 nativeincludedir=""
 nativebindir=""
 if test x$host_os != xmint; then
