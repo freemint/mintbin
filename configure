@@ -2599,7 +2599,7 @@ case $as_dir/ in #((
 	      test -s conftest.dir/conftest.one &&
 	      test -s conftest.dir/conftest.two
 	    then
-	      ac_cv_path_install="$as_dir/$ac_prog$ac_exec_ext -c -p"
+	      ac_cv_path_install="$as_dir/$ac_prog$ac_exec_ext -c"
 	      break 3
 	    fi
 	  fi
@@ -4011,7 +4011,9 @@ am__include="#"
 am__quote=
 _am_result=none
 # First try GNU make style include.
-echo "include confinc" > confmf
+cat <<EOF > confmf
+-include confinc
+EOF
 # Ignore all kinds of additional output from 'make'.
 case `$am_make -s -f confmf 2> /dev/null` in #(
 *the\ am__doit\ target*)
@@ -4020,6 +4022,17 @@ case `$am_make -s -f confmf 2> /dev/null` in #(
   _am_result=GNU
   ;;
 esac
+if test "$am__include" = "#"; then
+echo "include confinc" > confmf
+# Ignore all kinds of additional output from 'make'.
+case `$am_make -s -f confmf 2> /dev/null` in #(
+*the\ am__doit\ target*)
+  am__include=include
+  am__quote=
+  _am_result=GNU
+  ;;
+esac
+fi
 # Now try BSD make style include.
 if test "$am__include" = "#"; then
    echo '.include "confinc"' > confmf
@@ -5978,10 +5991,10 @@ _ACEOF
 fi
 
 
-crossincludedir=`echo $includedir | sed -e 's,/include$,,g' -e 's,/m68k-atari-mint,,g'`
-crossbindir=`echo $bindir | sed -e 's,/bin$,,g' -e 's,/m68k-atari-mint,,g'`
-crossincludedir=$crossincludedir/m68k-atari-mint/include
-crossbindir=$crossbindir/m68k-atari-mint/bin
+crossincludedir=`echo $includedir | sed -e 's,/include$,,g' -e 's,/'$target',,g'`
+crossbindir=`echo $bindir | sed -e 's,/bin$,,g' -e 's,/'$target',,g'`
+crossincludedir=$crossincludedir/$target/include
+crossbindir=$crossbindir/$target/bin
 nativeincludedir=""
 nativebindir=""
 if test x$host_os != xmint; then
