@@ -113,7 +113,8 @@ am__v_AR_0 = @echo "  AR      " $@;
 am__v_AR_1 = 
 libmb_a_AR = $(AR) $(ARFLAGS)
 am_libmb_a_OBJECTS = cplus-dem.$(OBJEXT) getopt.$(OBJEXT) \
-	getopt1.$(OBJEXT) xmalloc.$(OBJEXT) xstrdup.$(OBJEXT)
+	getopt1.$(OBJEXT) xmalloc.$(OBJEXT) xstrdup.$(OBJEXT) \
+	error.$(OBJEXT)
 libmb_a_OBJECTS = $(am_libmb_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -297,9 +298,9 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 noinst_LIBRARIES = libmb.a
-EXTRA_DIST = alloca.c error.c
+EXTRA_DIST = alloca.c 
 INCLUDES = -I$(top_srcdir) -I$(srcdir) -I.. -I../intl -I$(top_srcdir)/intl
-libmb_a_SOURCES = cplus-dem.c getopt.c getopt1.c xmalloc.c xstrdup.c
+libmb_a_SOURCES = cplus-dem.c getopt.c getopt1.c xmalloc.c xstrdup.c error.c
 libmb_a_LIBADD = @ALLOCA@ @LIBOBJS@
 libmb_a_DEPENDENCIES = $(libmb_a_LIBADD)
 noinst_HEADERS = ansidecl.h demangle.h error.h getopt.h libmb.h \
@@ -361,6 +362,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/strtoul.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/alloca.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cplus-dem.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/error.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt1.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xmalloc.Po@am__quote@

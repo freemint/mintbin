@@ -153,8 +153,12 @@ main (int argc, char* argv[])
 
   (void) signal (SIGTERM, cleanup);
   (void) signal (SIGINT, cleanup);
+#ifdef SIGQUIT
   (void) signal (SIGQUIT, cleanup);
+#endif
+#ifdef SIGHUP
   (void) signal (SIGHUP, cleanup);
+#endif
 
   if (optind == argc) 
     {

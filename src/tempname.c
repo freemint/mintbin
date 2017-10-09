@@ -55,8 +55,7 @@ make_tempname (filename)
   char *tmpname;
   char *slash = strrchr (filename, '/');
 
-#if defined (__DJGPP__) || defined (__GO32__) || defined (_WIN32)
-  || defined (__MINT__)
+#if defined (__DJGPP__) || defined (__GO32__) || defined (_WIN32) || defined (__MINT__)
   if (slash == NULL)
     slash = strrchr (filename, '\\');
 #endif
