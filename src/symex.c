@@ -212,7 +212,6 @@ extract_symbols (filename, output_filename)
   struct mintbin_target* target = open_target (filename, O_RDONLY);
   int status = 0;
   int output_desc;
-  int close_out = 1;
   unsigned char* buffer = NULL;
 
   if (target == NULL)
@@ -242,7 +241,6 @@ extract_symbols (filename, output_filename)
     {
       output_filename = _("standard output");
       output_desc = fileno (stdout);
-      close_out = 0;
     }
   else
     {
