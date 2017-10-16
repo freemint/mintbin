@@ -345,7 +345,7 @@ convert_module (input_filename, intput_desc,
      is_symdef = 1;
 
    if (verbose) {
-     newhdr.ar_name[16] = '\0';
+     newhdr.ar_date[0] = '\0'; /* terminate ar_name */
      if (is_symdef)
        puts ("skipping module __.SYMDEF");
      else
@@ -356,7 +356,7 @@ convert_module (input_filename, intput_desc,
    module_size = strtoul (newhdr.ar_size, &tail, 10);
    if (tail == newhdr.ar_size)
      {
-       newhdr.ar_size[10] = '\0';
+       newhdr.ar_fmag[0] = '\0'; /* terminate ar_size */
        error (EXIT_FAILURE, 0, _("\
 invalid module size ``%s'' for module %s"),
 	      newhdr.ar_size, newhdr.ar_name);

@@ -206,7 +206,8 @@ swap_dri_symbols_in (target, preserve)
      I rather waste a mere 20 percent instead of getting annoyed
      by a lot of overflow and then being forced to read
      over and over.  */
-  readcrs = writecrs = target->strtab = xmalloc (target->execp.g_syms);
+  target->strtab = xmalloc (target->execp.g_syms);
+  readcrs = writecrs = (unsigned char *)target->strtab;
   target->symtab = xmalloc (slots * sizeof (struct nlist));
   memset (target->symtab, 0, slots * sizeof (struct nlist));
 
@@ -273,7 +274,7 @@ swap_dri_symbols_in (target, preserve)
       /* Move the name to the adequate position.  We cannot use
 	 memcpy here because the blocks will often overlap.  */
       memmove (writecrs, readcrs, 8);
-      sym->n_un.n_name = writecrs;
+      sym->n_un.n_name = (char *)writecrs;
       for (j = 0; j < 8; j++)
 	{
 	  if (readcrs[j] == '\0')
