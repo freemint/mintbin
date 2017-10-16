@@ -467,7 +467,6 @@ get_stackpos (target)
     {
        if (stkpos <= 0)
 	 {
-	   if (filename_per_file)
 	       error (EXIT_SUCCESS, 0, _("\
 %s: file position of stack size not found"),
 		      target->filename);
