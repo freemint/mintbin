@@ -520,7 +520,7 @@ warning: changing the bestfit flag is dangerous"));
 	}
     }
   
-  return EXIT_SUCCESS;
+  return status;
 }
 
 static void
