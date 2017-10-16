@@ -206,7 +206,7 @@ Mandatory arguments to long options are mandatory to short options too.\n"),
 
   fputs (_("\n\
 By default the program strips all unneeded symbols, that are all symbols\n\
-except `__stksize' and `__inital_stack' which may be needed by programs\n\
+except `__stksize' and `__initial_stack' which may be needed by programs\n\
 that manipulate the stack size like the program `stack' from MiNTBin.\n\
 If the object to be stripped is an executable in the extended MiNT\n\
 format linked with the option `--traditional' it is not necessary to keep\n\
@@ -284,14 +284,14 @@ filter_symbols (atarget, otarget, from, to, symcount)
       if (!keep && is_specified_symbol (name, keep_specific_list))
 	keep = 1;
 
-      /* Now for the special symbols __stksize and __initial_stksize.  */
+      /* Now for the special symbols __stksize and __initial_stack.  */
       if (strip_symbols == strip_unneeded
           && keep_specific_list == NULL
           && atarget->format == oldstyle_prg_target)
         {
-          if (strcmp (name, "__stksize") == 0)
+          if (strcmp (name, "__stksize") == 0 || strcmp (name, "_stksize") == 0)
             keep = 1;
-          else if (strcmp (name, "__initial_stksize") == 0)
+          else if (strcmp (name, "__initial_stack") == 0 || strcmp (name, "_initial_stack") == 0)
             keep = 1;
         }
         

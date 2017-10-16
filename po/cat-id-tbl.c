@@ -247,7 +247,7 @@ kernel's notion of the segment sizes.\n", 124},
   {"\
 \n\
 By default the program strips all unneeded symbols, that are all symbols\n\
-except `__stksize' and `__inital_stack' which may be needed by programs\n\
+except `__stksize' and `__initial_stack' which may be needed by programs\n\
 that manipulate the stack size like the program `stack' from MiNTBin.\n\
 If the object to be stripped is an executable in the extended MiNT\n\
 format linked with the option `--traditional' it is not necessary to keep\n\

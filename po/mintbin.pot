@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-16 08:58+0200\n"
+"POT-Creation-Date: 2017-10-16 23:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: lib/error.c:91
+#: lib/error.c:95
 msgid "Unknown system error"
 msgstr ""
 
@@ -85,100 +85,101 @@ msgid "Memory exhausted"
 msgstr ""
 
 #. No input files.
-#: src/arconv.c:162
+#: src/arconv.c:166
 msgid "no input files"
 msgstr ""
 
-#: src/arconv.c:166
+#: src/arconv.c:170
 msgid "no output file"
 msgstr ""
 
-#: src/arconv.c:186 src/mintbin.c:148 src/stack.c:197 src/symex.c:176
+#: src/arconv.c:190 src/mintbin.c:148 src/stack.c:197 src/symex.c:180
 #: src/flags.c:535 src/csize.c:331 src/cstrip.c:186 src/cnm.c:173
 #, c-format
 msgid "Usage: %s [OPTIONS] INPUTFILE ...\n"
 msgstr ""
 
-#: src/arconv.c:187
+#: src/arconv.c:191
 msgid "Convert old-style libraries to new format.\n"
 msgstr ""
 
-#: src/arconv.c:189 src/mintbin.c:151 src/stack.c:200 src/symex.c:179
+#: src/arconv.c:193 src/mintbin.c:151 src/stack.c:200 src/symex.c:183
 #: src/flags.c:538 src/csize.c:334 src/cstrip.c:189 src/cnm.c:176
 msgid ""
 "\n"
 "Mandatory arguments to long options are mandatory to short options too.\n"
 msgstr ""
 
-#: src/arconv.c:192
+#: src/arconv.c:196
 msgid ""
 "  -o, --output=FILENAME          set output FILENAME\n"
 "  -v, --verbose                  list modules while processing\n"
 msgstr ""
 
-#: src/arconv.c:196 src/mintbin.c:154 src/stack.c:212 src/symex.c:185
+#: src/arconv.c:200 src/mintbin.c:154 src/stack.c:212 src/symex.c:189
 #: src/flags.c:570 src/csize.c:348 src/cstrip.c:202 src/cnm.c:184
 msgid ""
 "  -h, --help                     display this help and exit\n"
 "  -V, --version                  output version information and exit\n"
 msgstr ""
 
-#: src/arconv.c:200 src/mintbin.c:161
+#: src/arconv.c:204 src/mintbin.c:161
 msgid ""
 "\n"
 "Report bugs to <gufl0000@stud.uni-sb.de>\n"
 msgstr ""
 
-#: src/arconv.c:224
+#: src/arconv.c:228
 #, c-format
 msgid "%s: not an old-style ar archive"
 msgstr ""
 
 #. We use this to report failure.
-#: src/arconv.c:232 src/stack.c:272 src/stack.c:367 src/symbols.c:127
-#: src/symex.c:279 src/flags.c:448 src/cstrip.c:342 src/cstrip.c:391
+#: src/arconv.c:236 src/stack.c:272 src/stack.c:367 src/symbols.c:127
+#: src/symex.c:281 src/flags.c:448 src/cstrip.c:342 src/cstrip.c:391
 #: src/cstrip.c:414 src/cstrip.c:426
 #, c-format
 msgid "%s: seek error"
 msgstr ""
 
-#: src/arconv.c:244 src/symex.c:252 src/targets.c:99
+#: src/arconv.c:248 src/symex.c:254 src/targets.c:99
 #, c-format
 msgid "%s: open error"
 msgstr ""
 
 #. We use this to report failure.
-#: src/arconv.c:251 src/arconv.c:374 src/arconv.c:393 src/stack.c:381
-#: src/symex.c:270 src/symex.c:295 src/flags.c:455 src/cstrip.c:376
+#: src/arconv.c:255 src/arconv.c:378 src/arconv.c:397 src/stack.c:381
+#: src/symex.c:272 src/symex.c:297 src/flags.c:455 src/cstrip.c:376
 #: src/cstrip.c:457
 #, c-format
 msgid "%s: write error"
 msgstr ""
 
-#: src/arconv.c:261 src/flags.c:461 src/csize.c:313
+#: src/arconv.c:265 src/flags.c:461 src/csize.c:313
 #, c-format
 msgid "%s: close error"
 msgstr ""
 
-#: src/arconv.c:267 src/mintbin.c:237 src/stack.c:393 src/symex.c:303
+#: src/arconv.c:271 src/mintbin.c:237 src/stack.c:393 src/symex.c:305
 #: src/cnm.c:362
 #, c-format
 msgid "%s: warning: close error"
 msgstr ""
 
 #. We use this to report failure.
-#: src/arconv.c:331 src/arconv.c:387 src/stack.c:284 src/symbols.c:218
-#: src/symex.c:288 src/cstrip.c:449
+#: src/arconv.c:335 src/arconv.c:391 src/stack.c:284 src/symbols.c:219
+#: src/symex.c:290 src/cstrip.c:449
 #, c-format
 msgid "%s: read error"
 msgstr ""
 
-#: src/arconv.c:356
+#. terminate ar_size
+#: src/arconv.c:360
 #, c-format
 msgid "invalid module size ``%s'' for module %s"
 msgstr ""
 
-#: src/arconv.c:390 src/stack.c:287 src/symbols.c:221 src/targets.c:237
+#: src/arconv.c:394 src/stack.c:287 src/symbols.c:222 src/targets.c:237
 #: src/targets.c:321 src/targets.c:372 src/targets.c:400
 #, c-format
 msgid "%s: file truncated"
@@ -272,7 +273,7 @@ msgstr ""
 msgid "Report bugs to <gufl0000@stud.uni-sb.de>.\n"
 msgstr ""
 
-#: src/stack.c:246 src/symex.c:219 src/targets.c:138 src/targets.c:198
+#: src/stack.c:246 src/symex.c:222 src/targets.c:138 src/targets.c:198
 #: src/targets.c:379 src/targets.c:407
 #, c-format
 msgid "%s: file format not recognized"
@@ -382,17 +383,17 @@ msgstr ""
 msgid "stack size ``%s'' out of range: overflow in number"
 msgstr ""
 
-#: src/stack.c:471
+#: src/stack.c:470
 #, c-format
 msgid "%s: file position of stack size not found"
 msgstr ""
 
-#: src/stack.c:502
+#: src/stack.c:503
 #, c-format
 msgid "%s: cannot find symbol ``__stksize''"
 msgstr ""
 
-#: src/stack.c:505
+#: src/stack.c:506
 msgid "cannot find symbol ``__stksize''"
 msgstr ""
 
@@ -416,40 +417,40 @@ msgstr ""
 msgid "%s: cannot read GNU symbol table yet"
 msgstr ""
 
-#: src/symbols.c:290
+#: src/symbols.c:291
 #, c-format
 msgid "%s: warning: null-byte in symbol-name ``%s'' encountered"
 msgstr ""
 
-#: src/symex.c:177
+#: src/symex.c:181
 msgid "Extract symbol table from MiNT executables.\n"
 msgstr ""
 
-#: src/symex.c:182
+#: src/symex.c:186
 msgid "  -o, --output=FILENAME          set output FILENAME\n"
 msgstr ""
 
-#: src/symex.c:189
+#: src/symex.c:193
 msgid ""
 "If INPUTFILE is missing, ``a.out'' is assumed.  If output filename\n"
 "is missing output is written to standard output.\n"
 msgstr ""
 
-#: src/symex.c:193 src/flags.c:591 src/csize.c:370
+#: src/symex.c:197 src/flags.c:591 src/csize.c:370
 msgid "Report bugs to <gufl0000@stud.uni-sb.de>\n"
 msgstr ""
 
-#: src/symex.c:226
+#: src/symex.c:229
 #, c-format
 msgid "%s: file contains no valid symbol table"
 msgstr ""
 
-#: src/symex.c:232
+#: src/symex.c:235
 #, c-format
 msgid "%s: file contains no symbols"
 msgstr ""
 
-#: src/symex.c:239
+#: src/symex.c:242
 msgid "standard output"
 msgstr ""
 
@@ -739,7 +740,7 @@ msgstr ""
 msgid ""
 "\n"
 "By default the program strips all unneeded symbols, that are all symbols\n"
-"except `__stksize' and `__inital_stack' which may be needed by programs\n"
+"except `__stksize' and `__initial_stack' which may be needed by programs\n"
 "that manipulate the stack size like the program `stack' from MiNTBin.\n"
 "If the object to be stripped is an executable in the extended MiNT\n"
 "format linked with the option `--traditional' it is not necessary to keep\n"
