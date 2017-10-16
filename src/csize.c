@@ -316,7 +316,7 @@ invalid argument to `--format'"));
 
     }
   
-  return EXIT_SUCCESS;
+  return status;
 }
 
 static void
