@@ -59,7 +59,7 @@ void (*error_print_progname) (
 #endif
 			      );
 
-#ifdef __MINGW32__
+#if defined(__MINGW32__) || defined(__APPLE__)
 
 /* This variable is incremented each time `error' is called.  */
 unsigned int error_message_count;
@@ -85,11 +85,13 @@ static char *
 private_strerror (errnum)
      int errnum;
 {
+#ifndef __APPLE__ /* already declared in stdio.h */
   extern char *sys_errlist[];
   extern int sys_nerr;
+#endif
 
   if (errnum > 0 && errnum <= sys_nerr)
-    return sys_errlist[errnum];
+    return (char *)sys_errlist[errnum];
   return _("Unknown system error");
 }
 #  define strerror private_strerror
