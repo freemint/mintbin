@@ -483,6 +483,8 @@ get_stackpos (target)
 	{
 	  sym = lookup_symbol (target, "__stksize", &lastpos);
 	  if (sym == NULL)
+	    sym = lookup_symbol (target, "_stksize", &lastpos);
+	  if (sym == NULL)
 	    break;
 
 	  /* This is not yet sufficient.  It has to be a text or data
