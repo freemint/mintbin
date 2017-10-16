@@ -356,9 +356,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnits src/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu src/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnits src/Makefile
+	  $(AUTOMAKE) --gnu src/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -418,22 +418,6 @@ uninstall-binPROGRAMS:
 
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
-
-installcheck-binPROGRAMS: $(bin_PROGRAMS)
-	bad=0; pid=$$$$; list="$(bin_PROGRAMS)"; for p in $$list; do \
-	  case ' $(AM_INSTALLCHECK_STD_OPTIONS_EXEMPT) ' in \
-	   *" $$p "* | *" $(srcdir)/$$p "*) continue;; \
-	  esac; \
-	  f=`echo "$$p" | \
-	     sed 's,^.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
-	  for opt in --help --version; do \
-	    if "$(DESTDIR)$(bindir)/$$f" $$opt >c$${pid}_.out \
-	         2>c$${pid}_.err </dev/null \
-		 && test -n "`cat c$${pid}_.out`" \
-		 && test -z "`cat c$${pid}_.err`"; then :; \
-	    else echo "$$f does not support $$opt" 1>&2; bad=1; fi; \
-	  done; \
-	done; rm -f c$${pid}_.???; exit $$bad
 
 arconv$(EXEEXT): $(arconv_OBJECTS) $(arconv_DEPENDENCIES) $(EXTRA_arconv_DEPENDENCIES) 
 	@rm -f arconv$(EXEEXT)
@@ -667,7 +651,7 @@ install-ps: install-ps-am
 
 install-ps-am:
 
-installcheck-am: installcheck-binPROGRAMS
+installcheck-am:
 
 maintainer-clean: maintainer-clean-am
 	-rm -rf ./$(DEPDIR)
@@ -699,11 +683,10 @@ uninstall-am: uninstall-binPROGRAMS uninstall-local
 	install-exec-local install-html install-html-am install-info \
 	install-info-am install-man install-pdf install-pdf-am \
 	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installcheck-binPROGRAMS installdirs \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-compile mostlyclean-generic pdf pdf-am ps ps-am \
-	tags tags-am uninstall uninstall-am uninstall-binPROGRAMS \
-	uninstall-local
+	installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
+	uninstall-am uninstall-binPROGRAMS uninstall-local
 
 .PRECIOUS: Makefile
 
@@ -714,8 +697,8 @@ install-exec-local:
 	  $(mkinstalldirs) $(DESTDIR)$(nativebindir) || exit 1; \
 	  for prog in $(bin_PROGRAMS); do \
 	    iprog=`echo $$prog | sed '$(transform)'`; \
-            ln $(DESTDIR)$(bindir)/$$iprog $(DESTDIR)$(nativebindir)/m68k-atari-mint-$$iprog >/dev/null 2>/dev/null \
-	      || $(INSTALL_PROGRAM) $$prog $(DESTDIR)$(nativebindir)/m68k-atari-mint-$$iprog ; \
+            ln $(DESTDIR)$(bindir)/$$iprog $(DESTDIR)$(nativebindir)/${target_alias}-$$iprog >/dev/null 2>/dev/null \
+	      || $(INSTALL_PROGRAM) $$prog $(DESTDIR)$(nativebindir)/${target_alias}-$$iprog ; \
 	  done; \
         fi
 
@@ -723,7 +706,7 @@ uninstall-local:
 	if test x$(nativebindir) != x; then \
 	  for prog in $(bin_PROGRAMS); do \
 	    iprog=`echo $$prog | sed '$(transform)'`; \
-            rm -f $(DESTDIR)$(nativebindir)/m68k-atari-mint-$$iprog; \
+            rm -f $(DESTDIR)$(nativebindir)/${target_alias}-$$iprog; \
 	  done; \
         fi
 
