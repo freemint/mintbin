@@ -4,15 +4,13 @@
 
    This file is in the public domain.  */
 
-/* $Id$ */
-
 #ifndef __A_OUT_GNU_H__
 # define __A_OUT_GNU_H__  /* Allow multiple inclusion.  */
 
 #define __GNU_EXEC_MACROS__
 
 #ifndef __exec_unsigned
-# ifdef __MSHORT
+# ifdef __MSHORT__
 #  define __exec_unsigned unsigned long
 # else
 #  define __exec_unsigned unsigned
@@ -22,8 +20,7 @@
 #ifndef __STRUCT_EXEC_OVERRIDE__
 struct exec
 {
-  __exec_unsigned long a_info;		/* Use macros N_MAGIC, etc for 
-					   access.  */
+  unsigned long a_info;			/* Use macros N_MAGIC, etc for access.  */
   __exec_unsigned a_text;		/* Length of text, in bytes */
   __exec_unsigned a_data;		/* Length of data, in bytes */
   __exec_unsigned a_bss;		/* Length of uninitialized data area 
@@ -129,18 +126,18 @@ enum machine_type {
  ((exec).a_info&0x00ffffff) | (((flags) & 0xff) << 24))
 
 /* Code indicating object file or impure executable.  */
-#define OMAGIC 0407
+#define OMAGIC 0407 /* 0x0107 */
 /* Code indicating pure executable.  */
-#define NMAGIC 0410
+#define NMAGIC 0410 /* 0x0108 */
 /* Code indicating demand-paged executable.  */
-#define ZMAGIC 0413
+#define ZMAGIC 0413 /* 0x010b */
 /* This indicates a demand-paged executable with the header in the text. 
    The first page is unmapped to help trap NULL pointer references.  They
    are a Linux invention and not used in MiNT.  */
-#define QMAGIC 0314
+#define QMAGIC 0314 /* 0x00cc */
 
 /* Code indicating core file.  */
-#define CMAGIC 0421
+#define CMAGIC 0421 /* 0x0111 */
 
 #if !defined (N_BADMAG)
 #define N_BADMAG(x)	  (N_MAGIC (x) != OMAGIC		\

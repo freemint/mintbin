@@ -5,15 +5,13 @@
 
    This file is in the public domain.  */
 
-/* $Id$ */
-
 #ifndef __MINT_PRG_OUT_H__
 # define __MINT_PRG_OUT_H__  /* Allow multiple inclusion.  */
 
 #include <mint/a.out.h>      /* Grab macro definitions.  */
 
 #ifndef __exec_unsigned
-# ifdef __MSHORT
+# ifdef __MSHORT__
 #  define __exec_unsigned unsigned long
 # else
 #  define __exec_unsigned unsigned
@@ -159,12 +157,3 @@ struct xsym {
 				A_LNAM.  */
 
 #endif /* __MINT_PRG_OUT_H */
-
-
-
-
-
-
-
-
-
