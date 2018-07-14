@@ -492,8 +492,8 @@ get_stackpos (target)
 	  if (((sym->n_type & N_EXT) == 0)
 	      || ((sym->n_type & N_TYPE) != N_TEXT
 		  && (sym->n_type & N_TYPE) != N_DATA
-		  && (sym->n_type & N_TYPE) != N_WEAKT
-		  && (sym->n_type & N_TYPE) != N_WEAKD))
+		  && (sym->n_type & (N_TYPE|N_EXT)) != N_WEAKT
+		  && (sym->n_type & (N_TYPE|N_EXT)) != N_WEAKD))
 	    sym = NULL;  /* I. e. continue the loop.  */
 	}
 
