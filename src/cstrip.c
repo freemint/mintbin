@@ -476,7 +476,7 @@ copy_file (input_filename, output_filename)
   /* To allow us to do "cstrip *" without dying on the first
      non-object file, failures are nonfatal.  */
 
-  itarget = open_target (input_filename, O_RDONLY);
+  itarget = open_target (input_filename, O_RDONLY | O_BINARY);
   
   if (itarget == NULL)
     {
@@ -510,7 +510,7 @@ copy_file (input_filename, output_filename)
   otarget = xmalloc (sizeof *otarget);
   (void) memset (otarget, 0, sizeof *otarget);
   otarget->filename = output_filename;
-  otarget->desc = creat (output_filename, S_IRWXU | S_IRWXG | S_IRWXO);
+  otarget->desc = open (output_filename, O_WRONLY | O_CREAT | O_TRUNC | O_BINARY, S_IRWXU | S_IRWXG | S_IRWXO);
   if (otarget->desc < 0)
     {
       status = EXIT_FAILURE;
@@ -556,10 +556,10 @@ simple_copy (from, to)
   int fromfd, tofd, nread;
   int saved;
 
-  fromfd = open (from, O_RDONLY);
+  fromfd = open (from, O_RDONLY | O_BINARY);
   if (fromfd < 0)
     return -1;
-  tofd = creat (to, S_IRWXU | S_IRWXG | S_IRWXO);
+  tofd = open (to, O_WRONLY | O_CREAT | O_TRUNC | O_BINARY, S_IRWXU | S_IRWXG | S_IRWXO);
   if (tofd < 0)
     {
       saved = errno;

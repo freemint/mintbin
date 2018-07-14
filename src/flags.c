@@ -406,8 +406,8 @@ warning: changing the bestfit flag is dangerous"));
   for (i = fileind; i < lastind; i++)
     {
       struct mintbin_target* target = open_target (files[fileind],
-						   do_print ?
-						   O_RDONLY : O_RDWR);
+						   (do_print ?
+						   O_RDONLY : O_RDWR) | O_BINARY);
       unsigned long new_flags;
       char cflags[4];
       int had_error = 0;

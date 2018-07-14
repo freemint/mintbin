@@ -172,7 +172,7 @@ list_file (filename)
      const char* filename;
 #endif
 {
-  struct mintbin_target* target = open_target (filename, O_RDONLY);
+  struct mintbin_target* target = open_target (filename, O_RDONLY | O_BINARY);
   if (target == NULL)
     return -1;
   

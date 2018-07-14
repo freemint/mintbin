@@ -33,6 +33,18 @@ Boston, MA 02111-1307, USA.  */
 # include <sys/types.h>
 #endif
 
+#ifdef HAVE_FCNTL_H
+# include <fcntl.h>
+#endif
+
+#ifndef O_BINARY
+# ifdef _O_BINARY
+#  define O_BINARY _O_BINARY
+# else
+#  define O_BINARY 0
+# endif
+#endif
+
 /* Note:  In your own programs you should always include
    <a.out.h> and not <mint/a.out.h>.  Here we want to make
    bomb-proof that the a.out.h supplied with the package

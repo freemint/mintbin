@@ -223,7 +223,7 @@ invalid argument to `--format'"));
   for (i = fileind; i < lastind; i++)
     {
       struct mintbin_target* target = open_target (files[i],
-						   O_RDONLY);
+						   O_RDONLY | O_BINARY);
       if (target == NULL)
 	{
 	  status = EXIT_FAILURE;

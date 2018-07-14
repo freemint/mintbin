@@ -35,6 +35,14 @@
 # include <sys/mman.h>
 #endif
 
+#ifndef O_BINARY
+# ifdef _O_BINARY
+#  define O_BINARY _O_BINARY
+# else
+#  define O_BINARY 0
+# endif
+#endif
+
 #include "gettext.h"
 #include "gettextP.h"
 
@@ -85,7 +93,7 @@ _nl_load_domain (domain_file)
     return;
 
   /* Try to open the addressed file.  */
-  fd = open (domain_file->filename, O_RDONLY);
+  fd = open (domain_file->filename, O_RDONLY | O_BINARY);
   if (fd == -1)
     return;
 

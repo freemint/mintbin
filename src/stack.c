@@ -233,8 +233,8 @@ print_stack (filename)
      const char* filename;
 #endif
 {
-  struct mintbin_target* target = open_target (filename, fix_stack
-					       ? O_RDWR : O_RDONLY);
+  struct mintbin_target* target = open_target (filename, (fix_stack
+					       ? O_RDWR : O_RDONLY) | O_BINARY);
   int status = 0;
 
   if (target == NULL)

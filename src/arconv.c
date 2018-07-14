@@ -216,7 +216,7 @@ arconv (filename, output_filename)
      const char* output_filename;
 #endif
 {
-  struct mintbin_target* target = open_target (filename, O_RDONLY);
+  struct mintbin_target* target = open_target (filename, O_RDONLY | O_BINARY);
   int status = 0;
   int output_desc;
   
@@ -239,7 +239,7 @@ arconv (filename, output_filename)
 
   killfile = (char*) output_filename;
   (void) atexit (kill_file);
-  output_desc = open (output_filename, O_WRONLY | O_CREAT | O_TRUNC,
+  output_desc = open (output_filename, O_WRONLY | O_CREAT | O_TRUNC | O_BINARY,
 		      S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP
 		      | S_IROTH | S_IWOTH);
 
