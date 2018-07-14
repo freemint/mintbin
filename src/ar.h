@@ -19,8 +19,6 @@
 #ifndef _AR_H
 #define _AR_H 1
 
-#include <sys/cdefs.h>
-
 /* Archive files start with the ARMAG identifying string.  Then follows a
    `struct ar_hdr', and as many bytes of member file data as its `ar_size'
    member indicates, for each member file.  */
@@ -30,7 +28,9 @@
 
 #define ARFMAG	"`\n"		/* String in ar_fmag at end of each header.  */
 
-__BEGIN_DECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 struct ar_hdr
   {
@@ -42,6 +42,8 @@ struct ar_hdr
     char ar_fmag[2];		/* Always contains ARFMAG.  */
   };
 
-__END_DECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* ar.h */
