@@ -405,7 +405,8 @@ warning: changing the bestfit flag is dangerous"));
 
   for (i = fileind; i < lastind; i++)
     {
-      struct mintbin_target* target = open_target (files[fileind],
+      const char *filename = files[i];
+      struct mintbin_target* target = open_target (filename,
 						   (do_print ?
 						   O_RDONLY : O_RDWR) | O_BINARY);
       unsigned long new_flags;
@@ -422,7 +423,7 @@ warning: changing the bestfit flag is dangerous"));
 	{
 	  status = EXIT_FAILURE;
 	  error (EXIT_SUCCESS, 0, _("%s: not a MiNT executable"),
-		 files[fileind]);
+		 filename);
 	  close_target (target);
 	  continue;
 	}
@@ -446,27 +447,27 @@ warning: changing the bestfit flag is dangerous"));
 	  if (lseek (target->desc, 22, SEEK_SET) != 22)
 	    {
 	      error (EXIT_SUCCESS, errno, _("%s: seek error"),
-		     files[fileind]);
+		     filename);
 	      had_error = 1;
 	    }
 	  if (!had_error && write (target->desc, cflags, 4) != 4)
 	    {
 	      error (EXIT_SUCCESS, errno,
-		     _("%s: write error"), files[fileind]);
+		     _("%s: write error"), filename);
 	      had_error = 1;
 	    }
 	}
       if (close_target (target) != 0)
 	{
 	  error (EXIT_SUCCESS, errno, _("%s: close error"),
-		 files[fileind]);
+		 filename);
 	  had_error = 1;
 	}
 
       if (!had_error && (do_print || verbosity > BE_SILENT))
 	{
 	  if (filename_per_file)
-	    printf ("%s: ", files[fileind]);
+	    printf ("%s: ", filename);
 
 	  if (verbosity >= BE_NORMAL)
 	    {
