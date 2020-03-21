@@ -1,3 +1,1 @@
-[![Build Status](https://travis-ci.org/freemint/mintbin.svg?branch=master)](https://travis-ci.org/freemint/mintbin)
-
-# MiNTbin
+[![Build Status](https://travis-ci.org/freemint/mintbin.svg?branch=master)](https://travis-ci.org/freemint/mintbin) [ ![Download](https://api.bintray.com/packages/freemint/freemint/mintbin/images/download.svg) ](https://bintray.com/freemint/freemint/mintbin/_latestVersion)
