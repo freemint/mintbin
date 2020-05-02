@@ -245,11 +245,11 @@ print_symbols (filename)
       else if (slots % 10 < 2 || slots % 10 > 4)
 	/* Note for translators: Use this string for numbers whose
 	   last digit is not 2, 3, or 4.  */
-	printf (_("%lu slots mem %lu\n"), slots, target->execp.g_syms);
+	printf (_("%lu slots mem %lu\n"), (unsigned long)slots, target->execp.g_syms);
       else 
 	/* Note for translators: Use this string for numbers whose
 	   last digit is 2, 3, or 4.  */
-	printf (_("%lu slots mem %lu \n"), slots, target->execp.g_syms);
+	printf (_("%lu slots mem %lu \n"), (unsigned long)slots, target->execp.g_syms);
 
       if (globals_only)
 	{
@@ -271,11 +271,11 @@ print_symbols (filename)
 	  else if (global_symbols % 10 < 2 || global_symbols % 10 > 4)
 	    /* Note for translators: Use this string for numbers whose
 	       last digit is not 2, 3, or 4.  */
-	    printf (_("%lu global symbols\n"), global_symbols);
+	    printf (_("%lu global symbols\n"), (unsigned long)global_symbols);
 	  else 
 	    /* Note for translators: Use this string for numbers whose
 	       last digit is 2, 3, or 4.  */
-	    printf (_("%lu global symbols \n"), global_symbols);
+	    printf (_("%lu global symbols \n"), (unsigned long)global_symbols);
 	}
       else
 	{
@@ -288,11 +288,11 @@ print_symbols (filename)
 	  else if (symbols % 10 == 2 || symbols % 10 == 3 || symbols % 10 == 4)
 	    /* Note for translators: Use this string for numbers whose
 	       last digit is 2, 3, or 4.  */
-	    printf (_("%lu symbols\n"), target->symcount);
+	    printf (_("%lu symbols\n"), (unsigned long)target->symcount);
 	  else 
 	    /* Note for translators: Use this string for numbers whose
 	       last digit is not 2, 3, or 4.  */
-	    printf (_("%lu symbols \n"), target->symcount);
+	    printf (_("%lu symbols\n"), (unsigned long)target->symcount);
 	}
 
       if (!unsorted)
