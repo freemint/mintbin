@@ -8,7 +8,7 @@ msgid  ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-02 18:18+0200\n"
+"POT-Creation-Date: 2020-05-02 13:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,7 +99,7 @@ msgstr ""
 #: src/mintbin.c:148
 #: src/stack.c:197
 #: src/symex.c:180
-#: src/flags.c:535
+#: src/flags.c:536
 #: src/csize.c:331
 #: src/cstrip.c:186
 #: src/cnm.c:173
@@ -115,7 +115,7 @@ msgstr ""
 #: src/mintbin.c:151
 #: src/stack.c:200
 #: src/symex.c:183
-#: src/flags.c:538
+#: src/flags.c:539
 #: src/csize.c:334
 #: src/cstrip.c:189
 #: src/cnm.c:176
@@ -134,7 +134,7 @@ msgstr ""
 #: src/mintbin.c:154
 #: src/stack.c:212
 #: src/symex.c:189
-#: src/flags.c:570
+#: src/flags.c:571
 #: src/csize.c:348
 #: src/cstrip.c:202
 #: src/cnm.c:184
@@ -161,7 +161,7 @@ msgstr ""
 #: src/stack.c:367
 #: src/symbols.c:127
 #: src/symex.c:281
-#: src/flags.c:448
+#: src/flags.c:449
 #: src/cstrip.c:342
 #: src/cstrip.c:391
 #: src/cstrip.c:414
@@ -184,7 +184,7 @@ msgstr ""
 #: src/stack.c:381
 #: src/symex.c:272
 #: src/symex.c:297
-#: src/flags.c:455
+#: src/flags.c:456
 #: src/cstrip.c:376
 #: src/cstrip.c:457
 #, c-format
@@ -192,7 +192,7 @@ msgid  "%s: write error"
 msgstr ""
 
 #: src/arconv.c:265
-#: src/flags.c:461
+#: src/flags.c:462
 #: src/csize.c:313
 #, c-format
 msgid  "%s: close error"
@@ -241,7 +241,7 @@ msgstr ""
 
 #: src/mintbin.c:158
 #: src/stack.c:216
-#: src/flags.c:574
+#: src/flags.c:575
 #: src/csize.c:352
 #: src/cnm.c:188
 msgid  ""
@@ -308,7 +308,7 @@ msgid  ""
 msgstr ""
 
 #: src/stack.c:207
-#: src/flags.c:565
+#: src/flags.c:566
 msgid  ""
 "  -s, --silent                   print only error messages\n"
 "  -q, --quiet                    same as -s, --silent\n"
@@ -499,7 +499,7 @@ msgid  ""
 msgstr ""
 
 #: src/symex.c:197
-#: src/flags.c:591
+#: src/flags.c:592
 #: src/csize.c:370
 msgid  "Report bugs to <gufl0000@stud.uni-sb.de>\n"
 msgstr ""
@@ -601,76 +601,76 @@ msgstr ""
 msgid  "warning: changing the bestfit flag is dangerous"
 msgstr ""
 
-#: src/flags.c:424
+#: src/flags.c:425
 #, c-format
 msgid  "%s: not a MiNT executable"
 msgstr ""
 
-#: src/flags.c:473
+#: src/flags.c:474
 #, c-format
 msgid  "Current flags: 0x%08x"
 msgstr ""
 
-#: src/flags.c:476
+#: src/flags.c:477
 #, c-format
 msgid  " (were 0x%08lx)"
 msgstr ""
 
-#: src/flags.c:477
+#: src/flags.c:478
 #, c-format
 msgid  ".\n"
 msgstr ""
 
-#: src/flags.c:483
+#: src/flags.c:484
 #, c-format
 msgid  "  Fastload flag is set (heap doesn't get cleared).\n"
 msgstr ""
 
-#: src/flags.c:486
+#: src/flags.c:487
 #, c-format
 msgid  "  Altload flag is set (load into alternate RAM).\n"
 msgstr ""
 
-#: src/flags.c:489
+#: src/flags.c:490
 #, c-format
 msgid  "  Altalloc flag is set (allocate memory from alternate RAM).\n"
 msgstr ""
 
-#: src/flags.c:492
+#: src/flags.c:493
 #, c-format
 msgid  "  Bestfit flag is set (space for stack reserved in BSS).\n"
 msgstr ""
 
-#: src/flags.c:495
+#: src/flags.c:496
 #, c-format
 msgid  "  Shared text flag is set (programs text segment is sharable).\n"
 msgstr ""
 
-#: src/flags.c:500
+#: src/flags.c:501
 #, c-format
 msgid  "  Program's memory is fully protected.\n"
 msgstr ""
 
-#: src/flags.c:504
+#: src/flags.c:505
 #, c-format
 msgid  "  Program's memory is not protected at all (globally accessible).\n"
 msgstr ""
 
-#: src/flags.c:508
+#: src/flags.c:509
 #, c-format
 msgid  "  Program's memory may be accessed in supervisor mode.\n"
 msgstr ""
 
-#: src/flags.c:512
+#: src/flags.c:513
 #, c-format
 msgid  "  Program's memory is readable.\n"
 msgstr ""
 
-#: src/flags.c:536
+#: src/flags.c:537
 msgid  "Display and manipulate program flags of MiNT executables.\n"
 msgstr ""
 
-#: src/flags.c:541
+#: src/flags.c:542
 msgid  ""
 "  -f, --flags=NEWFLAGS           set flags to hexadecimal, decimal or "
 "octal \n"
@@ -698,7 +698,7 @@ msgid  ""
 "                                 unset the shared text flag\n"
 msgstr ""
 
-#: src/flags.c:577
+#: src/flags.c:578
 msgid  ""
 "Arguments are cumulative.  An option that is contradictory to a previous\n"
 "one will override the previous setting.  Using the `--flags' resp. the `-f'\n"
@@ -715,7 +715,7 @@ msgid  ""
 "a short description of their meaning are printed out.\n"
 msgstr ""
 
-#: src/flags.c:599
+#: src/flags.c:600
 #: src/csize.c:378
 #, c-format
 msgid  "Try `%s --help' for more information.\n"
@@ -954,16 +954,12 @@ msgstr ""
 
 #. Note for translators: Use this string for numbers whose
 #. last digit is 2, 3, or 4.
-#: src/cnm.c:291
-#, c-format
-msgid  "%lu symbols\n"
-msgstr ""
-
 #. Note for translators: Use this string for numbers whose
 #. last digit is not 2, 3, or 4.
+#: src/cnm.c:291
 #: src/cnm.c:295
 #, c-format
-msgid  "%lu symbols \n"
+msgid  "%lu symbols\n"
 msgstr ""
 
 #: src/cnm.c:316
