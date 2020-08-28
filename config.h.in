@@ -195,15 +195,6 @@
 /* Define as the return type of signal handlers (`int' or `void'). */
 #undef RETSIGTYPE
 
-/* The size of `int', as computed by sizeof. */
-#undef SIZEOF_INT
-
-/* The size of `long int', as computed by sizeof. */
-#undef SIZEOF_LONG_INT
-
-/* The size of `short', as computed by sizeof. */
-#undef SIZEOF_SHORT
-
 /* If using the C implementation of alloca, define if you know the
    direction of stack growth for your system; otherwise it will be
    automatically deduced at runtime.
