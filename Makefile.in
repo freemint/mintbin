@@ -204,9 +204,9 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-DIST_ARCHIVES = $(distdir).tar.gz
+DIST_ARCHIVES = $(distdir).tar.gz $(distdir).tar.xz
 GZIP_ENV = --best
-DIST_TARGETS = dist-gzip
+DIST_TARGETS = dist-xz dist-gzip
 distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
@@ -332,11 +332,18 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-AUTOMAKE_OPTIONS = gnits
+AUTOMAKE_OPTIONS = gnits dist-xz
 ACLOCAL_AMFLAGS = -I m4
 MAINT_CHARSET = latin1
 SUBDIRS = lib include intl src po doc misc
 EXTRA_DIST = README-alpha system.h
+
+# Makefiles in the po directory are from on
+# older version of gettext and try to move
+# po files around in the source directory,
+# but that is made read-only by newer versions
+# of automake
+DISTCHECK_CONFIGURE_FLAGS = --disable-nls
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
@@ -582,7 +589,6 @@ dist-bzip2: distdir
 dist-lzip: distdir
 	tardir=$(distdir) && $(am__tar) | lzip -c $${LZIP_OPT--9} >$(distdir).tar.lz
 	$(am__post_remove_distdir)
-
 dist-xz: distdir
 	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz
 	$(am__post_remove_distdir)

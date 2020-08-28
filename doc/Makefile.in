@@ -149,11 +149,8 @@ PDFS = mintbin.pdf
 PSS = mintbin.ps
 HTMLS = mintbin.html
 TEXINFOS = mintbin.texi
-TEXI2DVI = texi2dvi
-TEXI2PDF = $(TEXI2DVI) --pdf --batch
 MAKEINFOHTML = $(MAKEINFO) --html
 AM_MAKEINFOHTMLFLAGS = $(AM_MAKEINFOFLAGS)
-DVIPS = dvips
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -314,6 +311,9 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 OPTIONS = gnits
+TEXI2DVI = :
+TEXI2PDF = :
+DVIPS = :
 info_TEXINFOS = mintbin.texi
 mintbin_TEXINFOS = gpl.texinfo
 all: all-am
