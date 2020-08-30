@@ -65,9 +65,6 @@ if test $mb_cv_header_utime_h = yes; then
   AC_DEFINE(HAVE_GOOD_UTIME_H, 1, [Does <utime.h> define struct utimbuf?])
 fi
 
-dnl This is just a kludge, should be removed.
-AC_CHECK_LIB(intl, bindtextdomain)
-
 dnl Now try not to mess up the cross-user's directories.
 crossincludedir=`echo $includedir | sed -e 's,/include$,,g' -e 's,/'$target',,g'`
 crossbindir=`echo $bindir | sed -e 's,/bin$,,g' -e 's,/'$target',,g'`
