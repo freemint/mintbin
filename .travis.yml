@@ -8,6 +8,7 @@ addons:
       - binutils-m68k-atari-mint
       - gcc-m68k-atari-mint
       - mintbin-m68k-atari-mint
+      - texinfo
 
 env:
   global:
