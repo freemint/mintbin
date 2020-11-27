@@ -1,4 +1,4 @@
-This is mintbin.info, produced by makeinfo version 6.7 from
+This is mintbin.info, produced by makeinfo version 5.2 from
 mintbin.texi.
 
 INFO-DIR-SECTION FreeMiNT Binary Utilities
@@ -1220,8 +1220,3 @@ Node: Internals45518
 Node: Building the GNU binutils46580
 
 End Tag Table
-
-
-Local Variables:
-coding: utf-8
-End:
