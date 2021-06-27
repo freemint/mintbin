@@ -5,11 +5,16 @@
 
 export ACLOCAL=aclocal
 export AUTOMAKE=automake
-CC=m68k-atari-mint-gcc RANLIB=m68k-atari-mint-ranlib ./configure --prefix=/usr --disable-nls --host=m68k-atari-mint --target=m68k-atari-mint && make
+# wrong: we need the cross-compiler version here
+# CC=m68k-atari-mint-gcc RANLIB=m68k-atari-mint-ranlib ./configure --prefix=/usr --disable-nls --host=m68k-atari-mint --target=m68k-atari-mint && make
+
+CC=gcc ./configure --prefix=/usr --disable-nls --target=m68k-atari-mint
 
 make DESTDIR="${INSTALL_DIR}" install
 rm -f "${INSTALL_DIR}/usr/share/info/dir"
 rm -rf "${INSTALL_DIR}/usr/include"
 
-find "${INSTALL_DIR}" -type f -perm -a=x -exec m68k-atari-mint-strip -s {} \;
-find "${INSTALL_DIR}" -type f \( -name '*.a' -o -name '*.o' \) -exec m68k-atari-mint-strip -S -X -w -N '.L[0-9]*' {} \;
+# find "${INSTALL_DIR}" -type f -perm -a=x -exec m68k-atari-mint-strip -s {} \;
+# find "${INSTALL_DIR}" -type f \( -name '*.a' -o -name '*.o' \) -exec m68k-atari-mint-strip -S -X -w -N '.L[0-9]*' {} \;
+
+strip ${INSTALL_DIR}/usr/bin/*
