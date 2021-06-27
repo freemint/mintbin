@@ -1,1 +1,3 @@
-[![Build Status](https://travis-ci.org/freemint/mintbin.svg?branch=master)](https://travis-ci.org/freemint/mintbin) [ ![Download](https://api.bintray.com/packages/freemint/freemint/mintbin/images/download.svg) ](https://bintray.com/freemint/freemint/mintbin/_latestVersion)
+[![Build Status](https://github.com/freemint/mintbin/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/freemint/mintbin/actions) 
+
+Latest snapshot: [Download](https://tho-otto.de/snapshots/mintbin/mintbin-latest.tar.bz2)
