@@ -242,7 +242,8 @@ print_stack (filename)
   
   if (target->format != prg_target
       && target->format != oldstyle_prg_target
-      && target->format != aout_target) {
+      && target->format != aout_target
+      && target->format != prgelf_target) {
     error (EXIT_SUCCESS, 0, _("%s: file format not recognized"),
 	   target->filename);
     return -1;

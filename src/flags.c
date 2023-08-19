@@ -419,7 +419,8 @@ warning: changing the bestfit flag is dangerous"));
 	  continue;
 	}
       if (target->format != prg_target
-	  && target->format != oldstyle_prg_target)
+	  && target->format != oldstyle_prg_target
+	  && target->format != prgelf_target)
 	{
 	  status = EXIT_FAILURE;
 	  error (EXIT_SUCCESS, 0, _("%s: not a MiNT executable"),

@@ -8,7 +8,7 @@ msgid  ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-02 13:48+0200\n"
+"POT-Creation-Date: 2023-08-19 12:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,8 +99,8 @@ msgstr ""
 #: src/mintbin.c:148
 #: src/stack.c:197
 #: src/symex.c:180
-#: src/flags.c:536
-#: src/csize.c:331
+#: src/flags.c:537
+#: src/csize.c:332
 #: src/cstrip.c:186
 #: src/cnm.c:173
 #, c-format
@@ -115,8 +115,8 @@ msgstr ""
 #: src/mintbin.c:151
 #: src/stack.c:200
 #: src/symex.c:183
-#: src/flags.c:539
-#: src/csize.c:334
+#: src/flags.c:540
+#: src/csize.c:335
 #: src/cstrip.c:189
 #: src/cnm.c:176
 msgid  ""
@@ -134,8 +134,8 @@ msgstr ""
 #: src/mintbin.c:154
 #: src/stack.c:212
 #: src/symex.c:189
-#: src/flags.c:571
-#: src/csize.c:348
+#: src/flags.c:572
+#: src/csize.c:349
 #: src/cstrip.c:202
 #: src/cnm.c:184
 msgid  ""
@@ -157,11 +157,11 @@ msgstr ""
 
 #. We use this to report failure.
 #: src/arconv.c:236
-#: src/stack.c:272
-#: src/stack.c:367
+#: src/stack.c:273
+#: src/stack.c:368
 #: src/symbols.c:127
 #: src/symex.c:281
-#: src/flags.c:449
+#: src/flags.c:450
 #: src/cstrip.c:342
 #: src/cstrip.c:391
 #: src/cstrip.c:414
@@ -181,10 +181,10 @@ msgstr ""
 #: src/arconv.c:255
 #: src/arconv.c:378
 #: src/arconv.c:397
-#: src/stack.c:381
+#: src/stack.c:382
 #: src/symex.c:272
 #: src/symex.c:297
-#: src/flags.c:456
+#: src/flags.c:457
 #: src/cstrip.c:376
 #: src/cstrip.c:457
 #, c-format
@@ -192,15 +192,15 @@ msgid  "%s: write error"
 msgstr ""
 
 #: src/arconv.c:265
-#: src/flags.c:462
-#: src/csize.c:313
+#: src/flags.c:463
+#: src/csize.c:314
 #, c-format
 msgid  "%s: close error"
 msgstr ""
 
 #: src/arconv.c:271
-#: src/mintbin.c:237
-#: src/stack.c:393
+#: src/mintbin.c:240
+#: src/stack.c:394
 #: src/symex.c:305
 #: src/cnm.c:362
 #, c-format
@@ -210,7 +210,7 @@ msgstr ""
 #. We use this to report failure.
 #: src/arconv.c:335
 #: src/arconv.c:391
-#: src/stack.c:284
+#: src/stack.c:285
 #: src/symbols.c:219
 #: src/symex.c:290
 #: src/cstrip.c:449
@@ -225,12 +225,12 @@ msgid  "invalid module size ``%s'' for module %s"
 msgstr ""
 
 #: src/arconv.c:394
-#: src/stack.c:287
+#: src/stack.c:288
 #: src/symbols.c:222
-#: src/targets.c:237
-#: src/targets.c:321
-#: src/targets.c:372
-#: src/targets.c:400
+#: src/targets.c:252
+#: src/targets.c:336
+#: src/targets.c:387
+#: src/targets.c:415
 #, c-format
 msgid  "%s: file truncated"
 msgstr ""
@@ -241,8 +241,8 @@ msgstr ""
 
 #: src/mintbin.c:158
 #: src/stack.c:216
-#: src/flags.c:575
-#: src/csize.c:352
+#: src/flags.c:576
+#: src/csize.c:353
 #: src/cnm.c:188
 msgid  ""
 "\n"
@@ -290,6 +290,10 @@ msgid  "Old-style GEMDOS executable.\n"
 msgstr ""
 
 #: src/mintbin.c:231
+msgid  "PRG/ELF executable.\n"
+msgstr ""
+
+#: src/mintbin.c:234
 msgid  "Unrecognized file format.\n"
 msgstr ""
 
@@ -308,7 +312,7 @@ msgid  ""
 msgstr ""
 
 #: src/stack.c:207
-#: src/flags.c:566
+#: src/flags.c:567
 msgid  ""
 "  -s, --silent                   print only error messages\n"
 "  -q, --quiet                    same as -s, --silent\n"
@@ -329,37 +333,37 @@ msgstr ""
 msgid  "Report bugs to <gufl0000@stud.uni-sb.de>.\n"
 msgstr ""
 
-#: src/stack.c:246
+#: src/stack.c:247
 #: src/symex.c:222
 #: src/targets.c:138
-#: src/targets.c:198
-#: src/targets.c:379
-#: src/targets.c:407
+#: src/targets.c:199
+#: src/targets.c:394
+#: src/targets.c:422
 #, c-format
 msgid  "%s: file format not recognized"
 msgstr ""
 
-#: src/stack.c:257
+#: src/stack.c:258
 #, c-format
 msgid  "%s: no stack information available."
 msgstr ""
 
-#: src/stack.c:261
+#: src/stack.c:262
 #, c-format
 msgid  "%s: invalid file position (%lu) for stack size"
 msgstr ""
 
-#: src/stack.c:295
+#: src/stack.c:296
 #, c-format
 msgid  "%s: stack size: %ld bytes (%ld kilo bytes).\n"
 msgstr ""
 
-#: src/stack.c:298
+#: src/stack.c:299
 #, c-format
 msgid  "stack size: %ld bytes (%ld kilo bytes).\n"
 msgstr ""
 
-#: src/stack.c:306
+#: src/stack.c:307
 #, c-format
 msgid  ""
 "(This means really that almost all of the available memory will\n"
@@ -367,7 +371,7 @@ msgid  ""
 "able to run any other process until the current one finishes.\n"
 msgstr ""
 
-#: src/stack.c:312
+#: src/stack.c:313
 #, c-format
 msgid  ""
 "(This means really that only a minimum amount of memory will\n"
@@ -377,7 +381,7 @@ msgid  ""
 "for regular expressions it is probably not enough.\n"
 msgstr ""
 
-#: src/stack.c:320
+#: src/stack.c:321
 #, c-format
 msgid  ""
 "(This means really that one quarter of the available memory will\n"
@@ -386,7 +390,7 @@ msgid  ""
 "however it is simply too much.\n"
 msgstr ""
 
-#: src/stack.c:327
+#: src/stack.c:328
 #, c-format
 msgid  ""
 "(This means really that one half of the available memory will\n"
@@ -395,7 +399,7 @@ msgid  ""
 "however it is simply too much.\n"
 msgstr ""
 
-#: src/stack.c:334
+#: src/stack.c:335
 #, c-format
 msgid  ""
 "(This means really that three quarters of the available memory will\n"
@@ -404,7 +408,7 @@ msgid  ""
 "however this is overkill and waste of RAM.\n"
 msgstr ""
 
-#: src/stack.c:342
+#: src/stack.c:343
 #, c-format
 msgid  ""
 "(This means really that %ld bytes will be reserved for the stack.\n"
@@ -416,46 +420,46 @@ msgstr ""
 #. will be continued on the line talking about
 #. the bus error resulting from invalid stack
 #. sizes.
-#: src/stack.c:351
+#: src/stack.c:352
 #, c-format
 msgid  "("
 msgstr ""
 
-#: src/stack.c:354
+#: src/stack.c:355
 #, c-format
 msgid  ""
 "An invalid resp. insufficient setting for the program stack size\n"
 "may result in a bus error, sometimes only in special cases.)\n"
 msgstr ""
 
-#: src/stack.c:386
+#: src/stack.c:387
 #, c-format
 msgid  "Fixed stack to %ld bytes (%ld kilo bytes).\n"
 msgstr ""
 
-#: src/stack.c:416
+#: src/stack.c:417
 #, c-format
 msgid  "not a valid stack size: ``%s''"
 msgstr ""
 
-#: src/stack.c:425
-#: src/stack.c:436
-#: src/stack.c:448
+#: src/stack.c:426
+#: src/stack.c:437
+#: src/stack.c:449
 #, c-format
 msgid  "stack size ``%s'' out of range: overflow in number"
 msgstr ""
 
-#: src/stack.c:470
+#: src/stack.c:471
 #, c-format
 msgid  "%s: file position of stack size not found"
 msgstr ""
 
-#: src/stack.c:503
+#: src/stack.c:504
 #, c-format
 msgid  "%s: cannot find symbol ``__stksize''"
 msgstr ""
 
-#: src/stack.c:506
+#: src/stack.c:507
 msgid  "cannot find symbol ``__stksize''"
 msgstr ""
 
@@ -499,8 +503,8 @@ msgid  ""
 msgstr ""
 
 #: src/symex.c:197
-#: src/flags.c:592
-#: src/csize.c:370
+#: src/flags.c:593
+#: src/csize.c:371
 msgid  "Report bugs to <gufl0000@stud.uni-sb.de>\n"
 msgstr ""
 
@@ -529,28 +533,28 @@ msgstr ""
 msgid  "read error on ``%s''"
 msgstr ""
 
-#: src/targets.c:247
+#: src/targets.c:262
 #, c-format
 msgid  "%s: inconsistent text segment size in header"
 msgstr ""
 
-#: src/targets.c:255
+#: src/targets.c:270
 #, c-format
 msgid  "%s: inconsistent data segment size in header"
 msgstr ""
 
-#: src/targets.c:262
+#: src/targets.c:277
 #, c-format
 msgid  "%s: inconsistent bss size in header"
 msgstr ""
 
-#: src/targets.c:275
-#: src/targets.c:285
+#: src/targets.c:290
+#: src/targets.c:300
 #, c-format
 msgid  "%s: error: relocation against text segment found in program image"
 msgstr ""
 
-#: src/targets.c:348
+#: src/targets.c:363
 #, c-format
 msgid  "%s: bad magic number"
 msgstr ""
@@ -601,76 +605,76 @@ msgstr ""
 msgid  "warning: changing the bestfit flag is dangerous"
 msgstr ""
 
-#: src/flags.c:425
+#: src/flags.c:426
 #, c-format
 msgid  "%s: not a MiNT executable"
 msgstr ""
 
-#: src/flags.c:474
+#: src/flags.c:475
 #, c-format
 msgid  "Current flags: 0x%08x"
 msgstr ""
 
-#: src/flags.c:477
+#: src/flags.c:478
 #, c-format
 msgid  " (were 0x%08lx)"
 msgstr ""
 
-#: src/flags.c:478
+#: src/flags.c:479
 #, c-format
 msgid  ".\n"
 msgstr ""
 
-#: src/flags.c:484
+#: src/flags.c:485
 #, c-format
 msgid  "  Fastload flag is set (heap doesn't get cleared).\n"
 msgstr ""
 
-#: src/flags.c:487
+#: src/flags.c:488
 #, c-format
 msgid  "  Altload flag is set (load into alternate RAM).\n"
 msgstr ""
 
-#: src/flags.c:490
+#: src/flags.c:491
 #, c-format
 msgid  "  Altalloc flag is set (allocate memory from alternate RAM).\n"
 msgstr ""
 
-#: src/flags.c:493
+#: src/flags.c:494
 #, c-format
 msgid  "  Bestfit flag is set (space for stack reserved in BSS).\n"
 msgstr ""
 
-#: src/flags.c:496
+#: src/flags.c:497
 #, c-format
 msgid  "  Shared text flag is set (programs text segment is sharable).\n"
 msgstr ""
 
-#: src/flags.c:501
+#: src/flags.c:502
 #, c-format
 msgid  "  Program's memory is fully protected.\n"
 msgstr ""
 
-#: src/flags.c:505
+#: src/flags.c:506
 #, c-format
 msgid  "  Program's memory is not protected at all (globally accessible).\n"
 msgstr ""
 
-#: src/flags.c:509
+#: src/flags.c:510
 #, c-format
 msgid  "  Program's memory may be accessed in supervisor mode.\n"
 msgstr ""
 
-#: src/flags.c:513
+#: src/flags.c:514
 #, c-format
 msgid  "  Program's memory is readable.\n"
 msgstr ""
 
-#: src/flags.c:537
+#: src/flags.c:538
 msgid  "Display and manipulate program flags of MiNT executables.\n"
 msgstr ""
 
-#: src/flags.c:542
+#: src/flags.c:543
 msgid  ""
 "  -f, --flags=NEWFLAGS           set flags to hexadecimal, decimal or "
 "octal \n"
@@ -698,7 +702,7 @@ msgid  ""
 "                                 unset the shared text flag\n"
 msgstr ""
 
-#: src/flags.c:578
+#: src/flags.c:579
 msgid  ""
 "Arguments are cumulative.  An option that is contradictory to a previous\n"
 "one will override the previous setting.  Using the `--flags' resp. the `-f'\n"
@@ -715,8 +719,8 @@ msgid  ""
 "a short description of their meaning are printed out.\n"
 msgstr ""
 
-#: src/flags.c:600
-#: src/csize.c:378
+#: src/flags.c:601
+#: src/csize.c:379
 #, c-format
 msgid  "Try `%s --help' for more information.\n"
 msgstr ""
@@ -729,35 +733,35 @@ msgstr ""
 msgid  "invalid radix"
 msgstr ""
 
-#: src/csize.c:236
+#: src/csize.c:237
 #, c-format
 msgid  "%s: not a MiNT executable file"
 msgstr ""
 
-#: src/csize.c:238
+#: src/csize.c:239
 msgid  "(use `size' instead)"
 msgstr ""
 
-#: src/csize.c:252
+#: src/csize.c:253
 msgid  "filename"
 msgstr ""
 
-#: src/csize.c:262
+#: src/csize.c:263
 #, c-format
 msgid  "section     size       addr\n"
 msgstr ""
 
 #. Sum.
-#: src/csize.c:289
+#: src/csize.c:290
 #, c-format
 msgid  "Total "
 msgstr ""
 
-#: src/csize.c:332
+#: src/csize.c:333
 msgid  "Display section sizes of old-style GEMDOS executables.\n"
 msgstr ""
 
-#: src/csize.c:337
+#: src/csize.c:338
 msgid  ""
 "  -A                             output in SysV format\n"
 "  -B                             output in Berkeley (BSD) format\n"
@@ -769,7 +773,7 @@ msgid  ""
 "  --target=TARGET                input files are in format TARGET\n"
 msgstr ""
 
-#: src/csize.c:355
+#: src/csize.c:356
 msgid  ""
 "The default output format is `format=berkeley'.  The output format\n"
 "`bsd' is a synonyme for `berkeley', the other choice is `sysv'.  Case is\n"
@@ -782,7 +786,7 @@ msgid  ""
 "kernel's notion of the segment sizes.\n"
 msgstr ""
 
-#: src/csize.c:366
+#: src/csize.c:367
 #, c-format
 msgid  "%s: supported target: a.out-mintprg gemdos\n"
 msgstr ""

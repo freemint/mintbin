@@ -60,112 +60,113 @@ If INPUTFILE is missing, `a.out' is assumed.\n", 33},
   {"MiNT pure executable with traditional symbol table.\n", 41},
   {"MiNT demand-paged executable with traditional symbol table.\n", 42},
   {"Old-style GEMDOS executable.\n", 43},
-  {"Unrecognized file format.\n", 44},
-  {"Nothing to do if silent and not fixing stack size", 45},
-  {"Display and manipulate stack setting of MiNT executables.\n", 46},
+  {"PRG/ELF executable.\n", 44},
+  {"Unrecognized file format.\n", 45},
+  {"Nothing to do if silent and not fixing stack size", 46},
+  {"Display and manipulate stack setting of MiNT executables.\n", 47},
   {"\
   -P, --print                    just print stack size\n\
-  -S, --fix=SIZE, --size=SIZE    change stack size to SIZE bytes\n", 47},
+  -S, --fix=SIZE, --size=SIZE    change stack size to SIZE bytes\n", 48},
   {"\
   -s, --silent                   print only error messages\n\
   -q, --quiet                    same as -s, --silent\n\
-  -v, --verbose                  enable verbose diagnostic output\n", 48},
+  -v, --verbose                  enable verbose diagnostic output\n", 49},
   {"\
 \n\
 The stacksize is only modified when option -S is given.  The SIZE\n\
 argument may optionally be followed by one of the modifiers `k'\n\
-(kilo bytes) or `M' (mega bytes).\n", 49},
-  {"Report bugs to <gufl0000@stud.uni-sb.de>.\n", 50},
-  {"%s: file format not recognized", 51},
-  {"%s: no stack information available.", 52},
-  {"%s: invalid file position (%lu) for stack size", 53},
-  {"%s: stack size: %ld bytes (%ld kilo bytes).\n", 54},
-  {"stack size: %ld bytes (%ld kilo bytes).\n", 55},
+(kilo bytes) or `M' (mega bytes).\n", 50},
+  {"Report bugs to <gufl0000@stud.uni-sb.de>.\n", 51},
+  {"%s: file format not recognized", 52},
+  {"%s: no stack information available.", 53},
+  {"%s: invalid file position (%lu) for stack size", 54},
+  {"%s: stack size: %ld bytes (%ld kilo bytes).\n", 55},
+  {"stack size: %ld bytes (%ld kilo bytes).\n", 56},
   {"\
 (This means really that almost all of the available memory will\n\
 be used for the stack.  If you run the image you will not be\n\
-able to run any other process until the current one finishes.\n", 56},
+able to run any other process until the current one finishes.\n", 57},
   {"\
 (This means really that only a minimum amount of memory will\n\
 be reserved for the stack.  This minimum will usually be 8192\n\
 bytes and is sufficient for most purposes.  However, if your\n\
 program is ``stack-intensive'' such as programs with support\n\
-for regular expressions it is probably not enough.\n", 57},
+for regular expressions it is probably not enough.\n", 58},
   {"\
 (This means really that one quarter of the available memory will\n\
 be reserved for the stack.  This may be necessary for very\n\
 ``stack-intensive'' applications such as compilers.  In most cases\n\
-however it is simply too much.\n", 58},
+however it is simply too much.\n", 59},
   {"\
 (This means really that one half of the available memory will\n\
 be reserved for the stack.  This may be necessary for extremely\n\
 ``stack-intensive'' applications such as compilers.  In most cases\n\
-however it is simply too much.\n", 59},
+however it is simply too much.\n", 60},
   {"\
 (This means really that three quarters of the available memory will\n\
 be reserved for the stack.  This may be necessary for extremely\n\
 ``stack-intensive'' applications such as compilers.  In most cases\n\
-however this is overkill and waste of RAM.\n", 60},
+however this is overkill and waste of RAM.\n", 61},
   {"\
 (This means really that %ld bytes will be reserved for the stack.\n\
 The negative value signifies that the heap will be used for dynamic\n\
-memory allocation.", 61},
-  {"(", 62},
+memory allocation.", 62},
+  {"(", 63},
   {"\
 An invalid resp. insufficient setting for the program stack size\n\
-may result in a bus error, sometimes only in special cases.)\n", 63},
-  {"Fixed stack to %ld bytes (%ld kilo bytes).\n", 64},
-  {"not a valid stack size: ``%s''", 65},
-  {"stack size ``%s'' out of range: overflow in number", 66},
-  {"%s: file position of stack size not found", 67},
-  {"%s: cannot find symbol ``__stksize''", 68},
-  {"cannot find symbol ``__stksize''", 69},
-  {"%s: cannot lookup symbols in archives", 70},
-  {"%s: no symbol table in file", 71},
-  {"%s: format of symbol table not recognized", 72},
-  {"%s: cannot read GNU symbol table yet", 73},
-  {"%s: warning: null-byte in symbol-name ``%s'' encountered", 74},
-  {"Extract symbol table from MiNT executables.\n", 75},
-  {"  -o, --output=FILENAME          set output FILENAME\n", 76},
+may result in a bus error, sometimes only in special cases.)\n", 64},
+  {"Fixed stack to %ld bytes (%ld kilo bytes).\n", 65},
+  {"not a valid stack size: ``%s''", 66},
+  {"stack size ``%s'' out of range: overflow in number", 67},
+  {"%s: file position of stack size not found", 68},
+  {"%s: cannot find symbol ``__stksize''", 69},
+  {"cannot find symbol ``__stksize''", 70},
+  {"%s: cannot lookup symbols in archives", 71},
+  {"%s: no symbol table in file", 72},
+  {"%s: format of symbol table not recognized", 73},
+  {"%s: cannot read GNU symbol table yet", 74},
+  {"%s: warning: null-byte in symbol-name ``%s'' encountered", 75},
+  {"Extract symbol table from MiNT executables.\n", 76},
+  {"  -o, --output=FILENAME          set output FILENAME\n", 77},
   {"\
 If INPUTFILE is missing, ``a.out'' is assumed.  If output filename\n\
-is missing output is written to standard output.\n", 77},
-  {"Report bugs to <gufl0000@stud.uni-sb.de>\n", 78},
-  {"%s: file contains no valid symbol table", 79},
-  {"%s: file contains no symbols", 80},
-  {"standard output", 81},
-  {"%s: stat error", 82},
-  {"read error on ``%s''", 83},
-  {"%s: inconsistent text segment size in header", 84},
-  {"%s: inconsistent data segment size in header", 85},
-  {"%s: inconsistent bss size in header", 86},
-  {"%s: error: relocation against text segment found in program image", 87},
-  {"%s: bad magic number", 88},
-  {"%s (%s - FreeMiNT binary utilities) %s\n", 89},
-  {"Copyright (C) 1999 Guido Flohr (gufl0000@stud.uni-sb.de)\n", 90},
+is missing output is written to standard output.\n", 78},
+  {"Report bugs to <gufl0000@stud.uni-sb.de>\n", 79},
+  {"%s: file contains no valid symbol table", 80},
+  {"%s: file contains no symbols", 81},
+  {"standard output", 82},
+  {"%s: stat error", 83},
+  {"read error on ``%s''", 84},
+  {"%s: inconsistent text segment size in header", 85},
+  {"%s: inconsistent data segment size in header", 86},
+  {"%s: inconsistent bss size in header", 87},
+  {"%s: error: relocation against text segment found in program image", 88},
+  {"%s: bad magic number", 89},
+  {"%s (%s - FreeMiNT binary utilities) %s\n", 90},
+  {"Copyright (C) 1999 Guido Flohr (gufl0000@stud.uni-sb.de)\n", 91},
   {"\
 This program is free software; you may redistribute it under the terms of\n\
-the GNU General Public License.  This program has absolutely no warranty.\n", 91},
-  {"value `%s' no valid flag setting", 92},
-  {"can't set individual flags with option `-f'", 93},
-  {"confliction memory protection flags", 94},
-  {"warning: changing the shared text flag is dangerous", 95},
-  {"(it normally requires recompilation).", 96},
-  {"warning: changing the bestfit flag is dangerous", 97},
-  {"%s: not a MiNT executable", 98},
-  {"Current flags: 0x%08x", 99},
-  {" (were 0x%08lx)", 100},
-  {".\n", 101},
-  {"  Fastload flag is set (heap doesn't get cleared).\n", 102},
-  {"  Altload flag is set (load into alternate RAM).\n", 103},
-  {"  Altalloc flag is set (allocate memory from alternate RAM).\n", 104},
-  {"  Bestfit flag is set (space for stack reserved in BSS).\n", 105},
-  {"  Shared text flag is set (programs text segment is sharable).\n", 106},
-  {"  Program's memory is fully protected.\n", 107},
-  {"  Program's memory is not protected at all (globally accessible).\n", 108},
-  {"  Program's memory may be accessed in supervisor mode.\n", 109},
-  {"  Program's memory is readable.\n", 110},
-  {"Display and manipulate program flags of MiNT executables.\n", 111},
+the GNU General Public License.  This program has absolutely no warranty.\n", 92},
+  {"value `%s' no valid flag setting", 93},
+  {"can't set individual flags with option `-f'", 94},
+  {"confliction memory protection flags", 95},
+  {"warning: changing the shared text flag is dangerous", 96},
+  {"(it normally requires recompilation).", 97},
+  {"warning: changing the bestfit flag is dangerous", 98},
+  {"%s: not a MiNT executable", 99},
+  {"Current flags: 0x%08x", 100},
+  {" (were 0x%08lx)", 101},
+  {".\n", 102},
+  {"  Fastload flag is set (heap doesn't get cleared).\n", 103},
+  {"  Altload flag is set (load into alternate RAM).\n", 104},
+  {"  Altalloc flag is set (allocate memory from alternate RAM).\n", 105},
+  {"  Bestfit flag is set (space for stack reserved in BSS).\n", 106},
+  {"  Shared text flag is set (programs text segment is sharable).\n", 107},
+  {"  Program's memory is fully protected.\n", 108},
+  {"  Program's memory is not protected at all (globally accessible).\n", 109},
+  {"  Program's memory may be accessed in supervisor mode.\n", 110},
+  {"  Program's memory is readable.\n", 111},
+  {"Display and manipulate program flags of MiNT executables.\n", 112},
   {"\
   -f, --flags=NEWFLAGS           set flags to hexadecimal, decimal or \
 octal \n\
@@ -190,7 +191,7 @@ flag\n\
                                  unset the fast ram allocation flag\n\
   --mno-best-fit                 unset the best fit flag (stack in heap)\n\
   --mno-baserel, --mno-shared-text, --mno-sharable-text\n\
-                                 unset the shared text flag\n", 112},
+                                 unset the shared text flag\n", 113},
   {"\
 Arguments are cumulative.  An option that is contradictory to a previous\n\
 one will override the previous setting.  Using the `--flags' resp. the `-f'\n\
@@ -204,16 +205,16 @@ modifications.\n\
 Flags that are not mentioned are left untouched in the executable.  The\n\
 default action is to print out the current flags both in hexadecimal and\n\
 decimal notation; in verbose all known flags, their current setting and\n\
-a short description of their meaning are printed out.\n", 113},
-  {"Try `%s --help' for more information.\n", 114},
-  {"invalid argument to `--format'", 115},
-  {"invalid radix", 116},
-  {"%s: not a MiNT executable file", 117},
-  {"(use `size' instead)", 118},
-  {"filename", 119},
-  {"section     size       addr\n", 120},
-  {"Total ", 121},
-  {"Display section sizes of old-style GEMDOS executables.\n", 122},
+a short description of their meaning are printed out.\n", 114},
+  {"Try `%s --help' for more information.\n", 115},
+  {"invalid argument to `--format'", 116},
+  {"invalid radix", 117},
+  {"%s: not a MiNT executable file", 118},
+  {"(use `size' instead)", 119},
+  {"filename", 120},
+  {"section     size       addr\n", 121},
+  {"Total ", 122},
+  {"Display section sizes of old-style GEMDOS executables.\n", 123},
   {"\
   -A                             output in SysV format\n\
   -B                             output in Berkeley (BSD) format\n\
@@ -222,7 +223,7 @@ a short description of their meaning are printed out.\n", 113},
   -o                             output in octal format\n\
   -x                             output in hexadecimal format\n\
   --radix=RADIX                  output with RADIX as numerical radix\n\
-  --target=TARGET                input files are in format TARGET\n", 123},
+  --target=TARGET                input files are in format TARGET\n", 124},
   {"\
 The default output format is `format=berkeley'.  The output format\n\
 `bsd' is a synonyme for `berkeley', the other choice is `sysv'.  Case is\n\
@@ -232,9 +233,9 @@ The numerical radix must be one of 10 (decimal, default), 8 (octal) or\n\
 Note that the output for executables in the extended MiNT format can\n\
 differ from the size reported by the `size' program because `size'\n\
 always reports the real section sizes whereas this program reports the\n\
-kernel's notion of the segment sizes.\n", 124},
-  {"%s: supported target: a.out-mintprg gemdos\n", 125},
-  {"Strip old-style GEMDOS executables.\n", 126},
+kernel's notion of the segment sizes.\n", 125},
+  {"%s: supported target: a.out-mintprg gemdos\n", 126},
+  {"Strip old-style GEMDOS executables.\n", 127},
   {"\
   -s, --strip-all                remove all symbols\n\
   -u, --strip-unneded            remove all unneeded symbols\n\
@@ -243,7 +244,7 @@ kernel's notion of the segment sizes.\n", 124},
   -o, --output-file=OUTPUTFILE   put stripped output into OUTPUTFILE\n\
   -p, --preserve-dates           preserve the access and modification\n\
                                  dates of the file\n\
-  -v, --verbose                  verbose: list all files modified\n", 127},
+  -v, --verbose                  verbose: list all files modified\n", 128},
   {"\
 \n\
 By default the program strips all unneeded symbols, that are all symbols\n\
@@ -260,50 +261,50 @@ is specified both as being to keep and to strip, it is kept.\n\
 Only old-style GEMDOS executables or MiNT executables with a DRI\n\
 symbol-table (linked with the option `--traditional-format') are \
 recognized.\n\
-Use the program `strip' for all other formats.\n", 128},
-  {"copy from %s(%s) to %s(%s)\n", 129},
-  {"%s: header corrupted", 130},
-  {"%s: file format not recognized, use `strip' instead", 131},
+Use the program `strip' for all other formats.\n", 129},
+  {"copy from %s(%s) to %s(%s)\n", 130},
+  {"%s: header corrupted", 131},
+  {"%s: file format not recognized, use `strip' instead", 132},
   {"\
-%s: error reading symbol table, use `%s --strip-all' to force stripping", 132},
-  {"can't create output file `%s'", 133},
-  {"can't close output file `%s'", 134},
-  {"error renaming `%s' to `%s'", 135},
-  {"error copying `%s' to `%s'", 136},
-  {"error setting timestamp of `%s'", 137},
-  {"List symbols of old-style GEMDOS executables.\n", 138},
+%s: error reading symbol table, use `%s --strip-all' to force stripping", 133},
+  {"can't create output file `%s'", 134},
+  {"can't close output file `%s'", 135},
+  {"error renaming `%s' to `%s'", 136},
+  {"error copying `%s' to `%s'", 137},
+  {"error setting timestamp of `%s'", 138},
+  {"List symbols of old-style GEMDOS executables.\n", 139},
   {"\
   -g, --globals-only, --extern-only\n\
                                  display only global symbols\n\
-  -u, --unsorted                 do not sort symbols by value\n", 139},
+  -u, --unsorted                 do not sort symbols by value\n", 140},
   {"\
 \n\
 The output format is non-standard (but traditionally used with this\n\
-program).\n", 140},
-  {"%s: file format not recognized, use `nm' instead", 141},
-  {"no slots mem %lu\n", 142},
-  {"one slot mem %lu\n", 143},
-  {"%lu slots mem %lu\n", 144},
-  {"%lu slots mem %lu \n", 145},
-  {"no global symbols\n", 146},
-  {"one global symbol\n", 147},
-  {"%lu global symbols\n", 148},
-  {"%lu global symbols \n", 149},
-  {"no symbols\n", 150},
-  {"one symbol\n", 151},
-  {"%lu symbols\n", 152},
-  {"text file ", 153},
-  {"external ", 154},
-  {"equated register ", 155},
-  {"global ", 156},
-  {"equated ", 157},
-  {"defined ", 158},
-  {"Bss ", 159},
-  {"bss ", 160},
-  {"Text ", 161},
-  {"text ", 162},
-  {"Data ", 163},
-  {"data ", 164},
+program).\n", 141},
+  {"%s: file format not recognized, use `nm' instead", 142},
+  {"no slots mem %lu\n", 143},
+  {"one slot mem %lu\n", 144},
+  {"%lu slots mem %lu\n", 145},
+  {"%lu slots mem %lu \n", 146},
+  {"no global symbols\n", 147},
+  {"one global symbol\n", 148},
+  {"%lu global symbols\n", 149},
+  {"%lu global symbols \n", 150},
+  {"no symbols\n", 151},
+  {"one symbol\n", 152},
+  {"%lu symbols\n", 153},
+  {"text file ", 154},
+  {"external ", 155},
+  {"equated register ", 156},
+  {"global ", 157},
+  {"equated ", 158},
+  {"defined ", 159},
+  {"Bss ", 160},
+  {"bss ", 161},
+  {"Text ", 162},
+  {"text ", 163},
+  {"Data ", 164},
+  {"data ", 165},
 };
 
-int _msg_tbl_length = 164;
+int _msg_tbl_length = 165;

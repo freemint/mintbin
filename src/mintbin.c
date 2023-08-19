@@ -227,6 +227,9 @@ MiNT demand-paged executable with traditional symbol table.\n"),
     case oldstyle_prg_target:
       fputs (_("Old-style GEMDOS executable.\n"), stdout);
       break;
+    case prgelf_target:
+      fputs (_("PRG/ELF executable.\n"), stdout);
+      break;
     default:
       fputs (_("Unrecognized file format.\n"), stdout); 
       break;

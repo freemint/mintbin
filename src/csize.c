@@ -230,7 +230,8 @@ invalid argument to `--format'"));
 	  continue;
 	}
       if (target->format != oldstyle_prg_target
-	  && target->format != prg_target)
+	  && target->format != prg_target
+	  && target->format != prgelf_target)
 	{
 	  status = EXIT_FAILURE;
 	  error (EXIT_SUCCESS, 0, _("%s: not a MiNT executable file"),

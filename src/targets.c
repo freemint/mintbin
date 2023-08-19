@@ -187,6 +187,7 @@ swap_prg_header_in (target)
 {
   int is_601a = 1;
   int is_extended_mint = 0;
+  int elfheader_offset = 0;
   unsigned char* crs = target->header;
   
   target->format = invalid_target;
@@ -217,6 +218,11 @@ swap_prg_header_in (target)
     {
       is_extended_mint = 1;
     }
+  else if (crs[0] == 'E' && crs[1] == 'L'
+           && crs[2] == 'F' && crs[3] >= 0x28)
+    {
+      elfheader_offset = crs[3];
+    }
   crs += 4;
   target->execp.g_flags = get32 (crs);
   crs += 4;
@@ -229,6 +235,15 @@ swap_prg_header_in (target)
       + target->execp.g_text + target->execp.a_data
       + target->execp.g_syms;
     target->execp.g_symbol_format = 1;
+
+    if (elfheader_offset != 0) {
+      target->format = prgelf_target;
+      target->execp.g_symbol_format = 2;
+      target->execp.g_stkpos = get32 (target->header + 0x24); /* PRGELF_HEADER.g_stkpos */
+      target->stksize_looked_up = 1;
+      target->execp.a_entry = get32 (target->header + elfheader_offset + 0x18); /* ehdr.e_entry */
+    }
+
     return 0;
   }
 

@@ -88,7 +88,11 @@ enum mintbin_targets_enum {
   /* Old-style prg executables or other 0x601a files that are
      not recognized.  */
 #define oldstyle_prg_target oldstyle_prg_target
-  oldstyle_prg_target
+  oldstyle_prg_target,
+
+  /* PRG/ELF executables.  */
+#define prgelf_target prgelf_target
+  prgelf_target
 };
 
 struct mintbin_target {
