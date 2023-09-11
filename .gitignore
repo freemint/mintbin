@@ -18,6 +18,7 @@ src/flags
 src/mintbin
 src/stack
 src/symex
+src/stripex
 stamp-*
 .deps
 *.o

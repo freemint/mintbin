@@ -1,5 +1,5 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT(mintbin, 0.3, [https://github.com/freemint/mintbin/issues/],,[https://github.com/freemint/mintbin/])
+AC_INIT(mintbin, 0.4, [https://github.com/freemint/mintbin/issues/],,[https://github.com/freemint/mintbin/])
 AC_CONFIG_SRCDIR(src/mintbin.c)
 AC_CANONICAL_HOST
 AM_CONFIG_HEADER(config.h)

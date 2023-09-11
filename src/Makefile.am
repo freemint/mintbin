@@ -17,7 +17,7 @@ LIBS = $(INTLLIBS) @LIBS@
 
 noinst_HEADERS = exec.h symbols.h targets.h ar.h
 
-bin_PROGRAMS = arconv cnm csize cstrip flags mintbin stack symex
+bin_PROGRAMS = arconv cnm csize cstrip flags mintbin stack symex stripex
 
 arconv_SOURCES = arconv.c targets.c version.c
 cnm_SOURCES = cnm.c symbols.c targets.c version.c
@@ -27,6 +27,7 @@ flags_SOURCES = flags.c targets.c version.c
 mintbin_SOURCES = mintbin.c targets.c version.c
 stack_SOURCES = stack.c symbols.c targets.c version.c
 symex_SOURCES = symex.c targets.c version.c
+stripex_SOURCES = stripex.c
 
 install-exec-local:
 	@$(NORMAL_INSTALL)

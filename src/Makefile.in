@@ -93,7 +93,7 @@ build_triplet = @build@
 host_triplet = @host@
 bin_PROGRAMS = arconv$(EXEEXT) cnm$(EXEEXT) csize$(EXEEXT) \
 	cstrip$(EXEEXT) flags$(EXEEXT) mintbin$(EXEEXT) stack$(EXEEXT) \
-	symex$(EXEEXT)
+	symex$(EXEEXT) stripex$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
@@ -142,6 +142,10 @@ am_stack_OBJECTS = stack.$(OBJEXT) symbols.$(OBJEXT) targets.$(OBJEXT) \
 stack_OBJECTS = $(am_stack_OBJECTS)
 stack_LDADD = $(LDADD)
 stack_DEPENDENCIES = ../lib/libmb.a
+am_stripex_OBJECTS = stripex.$(OBJEXT)
+stripex_OBJECTS = $(am_stripex_OBJECTS)
+stripex_LDADD = $(LDADD)
+stripex_DEPENDENCIES = ../lib/libmb.a
 am_symex_OBJECTS = symex.$(OBJEXT) targets.$(OBJEXT) version.$(OBJEXT)
 symex_OBJECTS = $(am_symex_OBJECTS)
 symex_LDADD = $(LDADD)
@@ -164,9 +168,10 @@ am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/arconv.Po ./$(DEPDIR)/cnm.Po \
 	./$(DEPDIR)/csize.Po ./$(DEPDIR)/cstrip.Po \
 	./$(DEPDIR)/flags.Po ./$(DEPDIR)/mintbin.Po \
-	./$(DEPDIR)/stack.Po ./$(DEPDIR)/symbols.Po \
-	./$(DEPDIR)/symex.Po ./$(DEPDIR)/targets.Po \
-	./$(DEPDIR)/tempname.Po ./$(DEPDIR)/version.Po
+	./$(DEPDIR)/stack.Po ./$(DEPDIR)/stripex.Po \
+	./$(DEPDIR)/symbols.Po ./$(DEPDIR)/symex.Po \
+	./$(DEPDIR)/targets.Po ./$(DEPDIR)/tempname.Po \
+	./$(DEPDIR)/version.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -182,10 +187,10 @@ am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
 SOURCES = $(arconv_SOURCES) $(cnm_SOURCES) $(csize_SOURCES) \
 	$(cstrip_SOURCES) $(flags_SOURCES) $(mintbin_SOURCES) \
-	$(stack_SOURCES) $(symex_SOURCES)
+	$(stack_SOURCES) $(stripex_SOURCES) $(symex_SOURCES)
 DIST_SOURCES = $(arconv_SOURCES) $(cnm_SOURCES) $(csize_SOURCES) \
 	$(cstrip_SOURCES) $(flags_SOURCES) $(mintbin_SOURCES) \
-	$(stack_SOURCES) $(symex_SOURCES)
+	$(stack_SOURCES) $(stripex_SOURCES) $(symex_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -350,6 +355,7 @@ flags_SOURCES = flags.c targets.c version.c
 mintbin_SOURCES = mintbin.c targets.c version.c
 stack_SOURCES = stack.c symbols.c targets.c version.c
 symex_SOURCES = symex.c targets.c version.c
+stripex_SOURCES = stripex.c
 all: all-am
 
 .SUFFIXES:
@@ -470,6 +476,10 @@ stack$(EXEEXT): $(stack_OBJECTS) $(stack_DEPENDENCIES) $(EXTRA_stack_DEPENDENCIE
 	@rm -f stack$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(stack_OBJECTS) $(stack_LDADD) $(LIBS)
 
+stripex$(EXEEXT): $(stripex_OBJECTS) $(stripex_DEPENDENCIES) $(EXTRA_stripex_DEPENDENCIES) 
+	@rm -f stripex$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(stripex_OBJECTS) $(stripex_LDADD) $(LIBS)
+
 symex$(EXEEXT): $(symex_OBJECTS) $(symex_DEPENDENCIES) $(EXTRA_symex_DEPENDENCIES) 
 	@rm -f symex$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(symex_OBJECTS) $(symex_LDADD) $(LIBS)
@@ -487,6 +497,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/flags.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mintbin.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stack.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stripex.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/symbols.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/symex.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/targets.Po@am__quote@ # am--include-marker
@@ -646,6 +657,7 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/flags.Po
 	-rm -f ./$(DEPDIR)/mintbin.Po
 	-rm -f ./$(DEPDIR)/stack.Po
+	-rm -f ./$(DEPDIR)/stripex.Po
 	-rm -f ./$(DEPDIR)/symbols.Po
 	-rm -f ./$(DEPDIR)/symex.Po
 	-rm -f ./$(DEPDIR)/targets.Po
@@ -703,6 +715,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/flags.Po
 	-rm -f ./$(DEPDIR)/mintbin.Po
 	-rm -f ./$(DEPDIR)/stack.Po
+	-rm -f ./$(DEPDIR)/stripex.Po
 	-rm -f ./$(DEPDIR)/symbols.Po
 	-rm -f ./$(DEPDIR)/symex.Po
 	-rm -f ./$(DEPDIR)/targets.Po
