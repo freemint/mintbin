@@ -9,11 +9,13 @@ then
 	DEPLOY_ARCHIVE="zip"
 fi
 
+toolsuffix=${CROSS_TOOL##*-}
+
 if [ -n "${CPU_TARGET+x}" ]
 then
-	ARCHIVE_NAME="${PROJECT_NAME}-${PROJECT_VERSION}-${SHORT_ID}-${CPU_TARGET}.${DEPLOY_ARCHIVE}"
+	ARCHIVE_NAME="${PROJECT_NAME}-${PROJECT_VERSION}-${toolsuffix}-${SHORT_ID}-${CPU_TARGET}.${DEPLOY_ARCHIVE}"
 else
-	ARCHIVE_NAME="${PROJECT_NAME}-${PROJECT_VERSION}-${SHORT_ID}.${DEPLOY_ARCHIVE}"
+	ARCHIVE_NAME="${PROJECT_NAME}-${PROJECT_VERSION}-${toolsuffix}-${SHORT_ID}.${DEPLOY_ARCHIVE}"
 fi
 ARCHIVE_PATH="${DEPLOY_DIR}/${ARCHIVE_NAME}"
 
@@ -70,7 +72,11 @@ link_file() {
 upload_file "$ARCHIVE_PATH" "${UPLOAD_DIR}/${PROJECT_DIR}/${ARCHIVE_NAME}"
 if test -z "${CPU_TARGET}"
 then
-	link_file "$ARCHIVE_NAME" "${PROJECT_DIR}-latest.${DEPLOY_ARCHIVE}"
+	link_file "$ARCHIVE_NAME" "${PROJECT_DIR}-${toolsuffix}-latest.${DEPLOY_ARCHIVE}"
+	# traditionally, that link did not contain the cross toolchain suffix
+	if test "$toolsuffix" = "mint"; then
+		link_file "$ARCHIVE_NAME" "${PROJECT_DIR}-latest.${DEPLOY_ARCHIVE}"
+	fi
 fi
 
 echo ${PROJECT_NAME}-${PROJECT_VERSION}-${SHORT_ID} > .latest_version

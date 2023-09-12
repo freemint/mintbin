@@ -3,8 +3,13 @@
 # -u: Treat unset variables as an error when substituting.
 # -x: Display expanded script commands
 
+# no need to install anything here.
+# we just need the hosts compiler
+exit 0
+
 DOWNLOAD_DIR=http://tho-otto.de/snapshots
-SYSROOT_DIR=${SYSROOT_DIR:-"/usr/m68k-atari-mint/sys-root/usr"}
+CROSS_TOOL=${CROSS_TOOL:-m68k-atari-mint}
+SYSROOT_DIR=${SYSROOT_DIR:-"/usr/$CROSS_TOOL/sys-root/usr"}
 
 sudo mkdir -p "${SYSROOT_DIR}" && cd "${SYSROOT_DIR}"
 

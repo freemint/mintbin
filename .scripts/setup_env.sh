@@ -23,6 +23,9 @@ BRANCH=$(echo "${GITHUB_REF}" | cut -d '/' -f 3)
 if test "$CPU_TARGET" != ""; then
 	echo "CPU_TARGET=$CPU_TARGET" >> $GITHUB_ENV
 fi
+if test "$CROSS_TOOL" != ""; then
+	echo "CROSS_TOOL=$CROSS_TOOL" >> $GITHUB_ENV
+fi
 
 # GITHUB_HEAD_REF is only set for pull requests
 if [ "${GITHUB_HEAD_REF}" = "" ]
