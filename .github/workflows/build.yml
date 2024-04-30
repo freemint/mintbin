@@ -10,8 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     strategy:
+      fail-fast: false
       matrix:
-        cross_tool: [ "m68k-atari-mint" ]
+        cross_tool: [ "m68k-atari-mint", "m68k-atari-mintelf" ]
     steps:
       - uses: actions/checkout@v4
       - name: Install SSH keys

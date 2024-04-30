@@ -5,9 +5,8 @@
 
 export ACLOCAL=aclocal
 export AUTOMAKE=automake
-CROSS_TOOL=${CROSS_TOOL:-m68k-atari-mint}
 # wrong: we need the cross-compiler version here
-# CC=${CROSS_TOOL}-gcc RANLIB=m68k-atari-mint-ranlib ./configure --prefix=/usr --disable-nls --host=${CROSS_TOOL} --target=${CROSS_TOOL} && make
+# CC=${CROSS_TOOL}-gcc RANLIB=${CROSS_TOOL}-ranlib ./configure --prefix=/usr --disable-nls --host=${CROSS_TOOL} --target=${CROSS_TOOL} && make
 
 CC=gcc ./configure --prefix=/usr --disable-nls --target=${CROSS_TOOL}
 
