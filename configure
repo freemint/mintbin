@@ -6100,7 +6100,7 @@ crossincludedir=$crossincludedir/$target/include
 crossbindir=$crossbindir/$target/bin
 nativeincludedir=""
 nativebindir=""
-if test x$host_os != xmint; then
+if test x$host_os != xmint && test x$host_os != xmintelf; then
   includedir=$crossincludedir
   bindir=$crossbindir
   nativebindir='$(prefix)/bin'
