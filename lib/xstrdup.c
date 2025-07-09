@@ -24,7 +24,7 @@
 #else
 # include <strings.h>
 #endif
-char *xmalloc ();
+char *xmalloc (size_t n);
 
 /* Return a newly allocated copy of STRING.  */
 
