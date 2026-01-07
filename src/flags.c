@@ -334,11 +334,6 @@ warning: changing the shared text flag is dangerous"));
       error (EXIT_SUCCESS, 0, _("\
 (it normally requires recompilation)."));
     }
-  if (!BE_SILENT && plus_bestfit)
-    {
-      error (EXIT_SUCCESS, 0, _("\
-warning: changing the bestfit flag is dangerous"));
-    }
 
   /* Calculate flags.  */
   if (has_flags)
@@ -406,12 +401,20 @@ warning: changing the bestfit flag is dangerous"));
   for (i = fileind; i < lastind; i++)
     {
       const char *filename = files[i];
-      struct mintbin_target* target = open_target (filename,
-						   (do_print ?
-						   O_RDONLY : O_RDWR) | O_BINARY);
+      struct mintbin_target* target;
       unsigned long new_flags;
       char cflags[4];
       int had_error = 0;
+
+      if (!BE_SILENT && plus_bestfit)
+        {
+          char *p = strrchr(filename, '.');
+          if (p == NULL || strcasecmp(p, ".slb") != 0)
+            error (EXIT_SUCCESS, 0, _("\
+%s: warning: changing the bestfit flag is dangerous"), filename);
+        }
+
+      target = open_target (filename, (do_print ? O_RDONLY : O_RDWR) | O_BINARY);
 
       if (target == NULL)
 	{
