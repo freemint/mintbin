@@ -7,7 +7,7 @@
 # we just need the hosts compiler
 exit 0
 
-DOWNLOAD_DIR=http://tho-otto.de/snapshots
+DOWNLOAD_DIR=https://atari.joska.no/snapshots
 CROSS_TOOL=${CROSS_TOOL:-m68k-atari-mint}
 SYSROOT_DIR=${SYSROOT_DIR:-"/usr/$CROSS_TOOL/sys-root"}
 
